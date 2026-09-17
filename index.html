@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mes Souvenirs Photo</title>
     <style>
-        /* --- STYLE CSS (Le costume du site) --- */
+        /* --- STYLE CSS --- */
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
             background-color: #f4f4f9;
@@ -14,7 +14,7 @@
             padding: 0;
             display: flex;
             flex-direction: column;
-            align-items: center; /* Tout centrer horizontalement */
+            align-items: center;
         }
 
         header {
@@ -34,7 +34,7 @@
             color: #666;
         }
 
-        /* Les Dossiers / Répertoires (Style Eklablog) */
+        /* Vos Dossiers */
         .folder-container {
             display: flex;
             justify-content: center;
@@ -61,7 +61,7 @@
             border-color: #111;
         }
 
-        /* La Grille de Photos */
+        /* La Grille de Photos - CACHÉE AU DÉMARRAGE */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -71,6 +71,7 @@
             padding-bottom: 60px;
         }
 
+        /* Les photos sont masquées par défaut (display: none) */
         .photo-item {
             background-color: #fff;
             border-radius: 8px;
@@ -78,7 +79,7 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.08);
             cursor: pointer;
             transition: transform 0.3s ease;
-            display: block; /* Requis pour le filtre */
+            display: none; 
         }
 
         .photo-item:hover {
@@ -97,6 +98,15 @@
             font-size: 0.95rem;
             font-weight: 500;
             text-align: center;
+        }
+
+        /* Message d'accueil quand aucun dossier n'est cliqué */
+        #welcome-msg {
+            text-align: center;
+            color: #777;
+            font-size: 1.2rem;
+            font-style: italic;
+            margin: 40px 0;
         }
 
         /* Zoom de la photo (Lightbox) */
@@ -127,97 +137,130 @@
 </head>
 <body>
 
-    <!-- --- STRUCTURE HTML (Le squelette) --- -->
+    <!-- --- STRUCTURE HTML --- -->
 
     <header>
-        <!-- MODIFIEZ VOTRE NOM ICI -->
         <h1>Les Souvenirs Photo de [Votre Nom]</h1>
         <p>Archives et clichés depuis 2015</p>
     </header>
 
-    <!-- Vos Répertoires / Dossiers -->
+    <!-- Boutons Dossiers -->
     <div class="folder-container">
-        <button class="folder-btn active" onclick="filterGallery('tous')">📁 Tout voir</button>
         <button class="folder-btn" onclick="filterGallery('macro')">🔍 Photo Macro</button>
         <button class="folder-btn" onclick="filterGallery('paysage')">🏔️ Photo Paysage</button>
         <button class="folder-btn" onclick="filterGallery('oiseaux')">🦅 Photo Oiseaux</button>
         <button class="folder-btn" onclick="filterGallery('voyage')">🚗 Photo Voyage</button>
     </div>
 
-    <!-- La Galerie (Exemples temporaires Unsplash) -->
+    <!-- Message d'attente au démarrage -->
+    <div id="welcome-msg">📁 Veuillez choisir un dossier ci-dessus pour ouvrir la galerie.</div>
+
+    <!-- La Galerie avec vos cases prêtes à remplir -->
     <div class="gallery-grid">
 
-        <!-- Exemple Macro -->
+        <!-- ==================== DOSSIER MACRO ==================== -->
         <div class="photo-item" data-category="macro" onclick="openLightbox(this)">
             <img src="https://unsplash.com" alt="Macro">
-            <div class="photo-info">Goutte de rosée (2015)</div>
+            <div class="photo-info">Macro 1 - Exemple</div>
+        </div>
+        <div class="photo-item" data-category="macro" onclick="openLightbox(this)">
+            <img src="https://unsplash.com" alt="Macro">
+            <div class="photo-info">Macro 2 - Exemple</div>
+        </div>
+        <div class="photo-item" data-category="macro" onclick="openLightbox(this)">
+            <img src="" alt="Macro 3">
+            <div class="photo-info">Macro 3 (Lien vide)</div>
+        </div>
+        <div class="photo-item" data-category="macro" onclick="openLightbox(this)">
+            <img src="" alt="Macro 4">
+            <div class="photo-info">Macro 4 (Lien vide)</div>
         </div>
 
-        <!-- Exemple Paysage -->
+        <!-- ==================== DOSSIER PAYSAGE ==================== -->
         <div class="photo-item" data-category="paysage" onclick="openLightbox(this)">
             <img src="https://unsplash.com" alt="Paysage">
-            <div class="photo-info">Coucher de soleil sur la vallée</div>
+            <div class="photo-info">Paysage 1 - Exemple</div>
+        </div>
+        <div class="photo-item" data-category="paysage" onclick="openLightbox(this)">
+            <img src="https://unsplash.com" alt="Paysage">
+            <div class="photo-info">Paysage 2 - Exemple</div>
+        </div>
+        <div class="photo-item" data-category="paysage" onclick="openLightbox(this)">
+            <img src="" alt="Paysage 3">
+            <div class="photo-info">Paysage 3 (Lien vide)</div>
+        </div>
+        <div class="photo-item" data-category="paysage" onclick="openLightbox(this)">
+            <img src="" alt="Paysage 4">
+            <div class="photo-info">Paysage 4 (Lien vide)</div>
         </div>
 
-        <!-- Exemple Oiseaux -->
+        <!-- ==================== DOSSIER OISEAUX ==================== -->
         <div class="photo-item" data-category="oiseaux" onclick="openLightbox(this)">
             <img src="https://unsplash.com" alt="Oiseaux">
-            <div class="photo-info">Rouge-gorge au printemps</div>
+            <div class="photo-info">Oiseaux 1 - Exemple</div>
+        </div>
+        <div class="photo-item" data-category="oiseaux" onclick="openLightbox(this)">
+            <img src="https://unsplash.com" alt="Oiseaux">
+            <div class="photo-info">Oiseaux 2 - Exemple</div>
+        </div>
+        <div class="photo-item" data-category="oiseaux" onclick="openLightbox(this)">
+            <img src="" alt="Oiseaux 3">
+            <div class="photo-info">Oiseaux 3 (Lien vide)</div>
+        </div>
+        <div class="photo-item" data-category="oiseaux" onclick="openLightbox(this)">
+            <img src="" alt="Oiseaux 4">
+            <div class="photo-info">Oiseaux 4 (Lien vide)</div>
         </div>
 
-        <!-- Exemple Voyage -->
+        <!-- ==================== DOSSIER VOYAGE ==================== -->
         <div class="photo-item" data-category="voyage" onclick="openLightbox(this)">
             <img src="https://unsplash.com" alt="Voyage">
-            <div class="photo-info">Souvenir de voyage en montagne</div>
+            <div class="photo-info">Voyage 1 - Exemple</div>
+        </div>
+        <div class="photo-item" data-category="voyage" onclick="openLightbox(this)">
+            <img src="https://unsplash.com" alt="Voyage">
+            <div class="photo-info">Voyage 2 - Exemple</div>
+        </div>
+        <div class="photo-item" data-category="voyage" onclick="openLightbox(this)">
+            <img src="" alt="Voyage 3">
+            <div class="photo-info">Voyage 3 (Lien vide)</div>
+        </div>
+        <div class="photo-item" data-category="voyage" onclick="openLightbox(this)">
+            <img src="" alt="Voyage 4">
+            <div class="photo-info">Voyage 4 (Lien vide)</div>
         </div>
 
- <!-- Zone des Commentaires -->
+    </div>
+
+    <!-- Zone des Commentaires -->
     <div style="width: 90%; max-width: 800px; margin: 50px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
         <h2 style="text-align: center; margin-bottom: 20px; color: #111;">💬 Espace Commentaires</h2>
-        
-        <!-- C'est ici que l'on collera le code de l'outil de commentaires (Disqus ou Cusdis) -->
         <p style="text-align: center; color: #666; font-style: italic;">L'espace de discussion est en cours de configuration...</p>
-        
     </div>
-    <!-- Fenêtre de zoom masquée par défaut -->
+
+    <!-- Fenêtre de zoom -->
     <div id="lightbox" class="lightbox" onclick="closeLightbox()">
         <span class="lightbox-close">&times;</span>
         <img id="lightbox-img" src="" alt="Zoom">
     </div>
 
-    <!-- --- JAVASCRIPT (La logique des dossiers et du zoom) --- -->
+    <!-- --- JAVASCRIPT --- -->
     <script>
-        // Fonction pour filtrer par dossier
         function filterGallery(category) {
-            // Gérer le style des boutons
+            // Masquer le message d'accueil
+            document.getElementById('welcome-msg').style.display = 'none';
+
+            // Gérer les boutons actifs
             const buttons = document.querySelectorAll('.folder-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
             event.currentTarget.classList.add('active');
 
-            // Filtrer les images
+            // Afficher ou masquer les photos
             const items = document.querySelectorAll('.photo-item');
             items.forEach(item => {
-                if (category === 'tous' || item.getAttribute('data-category') === category) {
-                    item.style.display = 'block';
+                if (item.getAttribute('data-category') === category) {
+                    item.style.display = 'block'; // On affiche uniquement les photos de la catégorie cliquée
                 } else {
                     item.style.display = 'none';
-                }
-            });
-        }
-
-        // Fonctions pour le Zoom
-        function openLightbox(element) {
-            const imgSrc = element.querySelector('img').src;
-            document.getElementById('lightbox-img').src = imgSrc;
-            document.getElementById('lightbox').style.display = 'flex';
-        }
-
-        function closeLightbox() {
-            document.getElementById('lightbox').style.display = 'none';
-        }
-    </script>
-
-</body>
-</html>
 
 
