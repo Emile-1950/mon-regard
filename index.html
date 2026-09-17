@@ -34,44 +34,87 @@
             color: #666;
         }
 
-        /* Vos Dossiers */
-        .folder-container {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
+        /* ÉCRAN D'ACCUEIL : La grille des Dossiers */
+        .albums-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            width: 90%;
+            max-width: 1000px;
+            margin-bottom: 50px;
         }
 
-        .folder-btn {
+        .album-card {
             background-color: #fff;
-            border: 2px solid #ddd;
-            padding: 12px 24px;
-            font-size: 1rem;
-            font-weight: bold;
-            border-radius: 30px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
         }
 
-        .folder-btn:hover, .folder-btn.active {
+        .album-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .album-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .album-title {
+            padding: 20px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #111;
+            background-color: #fff;
+            border-top: 1px solid #eee;
+        }
+
+        /* ÉCRAN GALERIE (Masqué au départ) */
+        .gallery-view {
+            display: none;
+            width: 90%;
+            max-width: 1200px;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .back-btn {
             background-color: #111;
             color: #fff;
-            border-color: #111;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-bottom: 30px;
+            transition: background 0.2s;
         }
 
-        /* La Grille de Photos - CACHÉE AU DÉMARRAGE */
+        .back-btn:hover {
+            background-color: #444;
+        }
+
+        .gallery-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #111;
+            text-transform: capitalize;
+        }
+
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 20px;
-            width: 90%;
-            max-width: 1200px;
-            padding-bottom: 60px;
+            width: 100%;
+            padding-bottom: 40px;
         }
 
-        /* Les photos sont masquées par défaut (display: none) */
         .photo-item {
             background-color: #fff;
             border-radius: 8px;
@@ -79,7 +122,6 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.08);
             cursor: pointer;
             transition: transform 0.3s ease;
-            display: none; 
         }
 
         .photo-item:hover {
@@ -100,15 +142,6 @@
             text-align: center;
         }
 
-        /* Message d'accueil quand aucun dossier n'est cliqué */
-        #welcome-msg {
-            text-align: center;
-            color: #777;
-            font-size: 1.2rem;
-            font-style: italic;
-            margin: 40px 0;
-        }
-
         /* Zoom de la photo (Lightbox) */
         .lightbox {
             display: none;
@@ -124,7 +157,6 @@
             max-width: 90%;
             max-height: 85%;
             border-radius: 4px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
         }
 
         .lightbox-close {
@@ -137,102 +169,51 @@
 </head>
 <body>
 
-    <!-- --- STRUCTURE HTML --- -->
-
     <header>
         <h1>Les Souvenirs Photo de [Votre Nom]</h1>
         <p>Archives et clichés depuis 2015</p>
     </header>
 
-    <!-- Boutons Dossiers -->
-    <div class="folder-container">
-        <button class="folder-btn" onclick="filterGallery('macro')">🔍 Photo Macro</button>
-        <button class="folder-btn" onclick="filterGallery('paysage')">🏔️ Photo Paysage</button>
-        <button class="folder-btn" onclick="filterGallery('oiseaux')">🦅 Photo Oiseaux</button>
-        <button class="folder-btn" onclick="filterGallery('voyage')">🚗 Photo Voyage</button>
-    </div>
-
-    <!-- Message d'attente au démarrage -->
-    <div id="welcome-msg">📁 Veuillez choisir un dossier ci-dessus pour ouvrir la galerie.</div>
-
-    <!-- La Galerie avec vos cases prêtes à remplir -->
-    <div class="gallery-grid">
-
-        <!-- ==================== DOSSIER MACRO ==================== -->
-        <div class="photo-item" data-category="macro" onclick="openLightbox(this)">
-            <img src="https://unsplash.com" alt="Macro">
-            <div class="photo-info">Macro 1 - Exemple</div>
-        </div>
-        <div class="photo-item" data-category="macro" onclick="openLightbox(this)">
-            <img src="https://unsplash.com" alt="Macro">
-            <div class="photo-info">Macro 2 - Exemple</div>
-        </div>
-        <div class="photo-item" data-category="macro" onclick="openLightbox(this)">
-            <img src="" alt="Macro 3">
-            <div class="photo-info">Macro 3 (Lien vide)</div>
-        </div>
-        <div class="photo-item" data-category="macro" onclick="openLightbox(this)">
-            <img src="" alt="Macro 4">
-            <div class="photo-info">Macro 4 (Lien vide)</div>
+    <!-- ==================== ÉCRAN 1 : LES DOSSIERS (ACCUEIL) ==================== -->
+    <div id="albums-view" class="albums-grid">
+        
+        <!-- Album Macro -->
+        <div class="album-card" onclick="openGallery('macro')">
+            <img src="https://unsplash.com" alt="Couverture Macro">
+            <div class="album-title">🔍 Photo Macro</div>
         </div>
 
-        <!-- ==================== DOSSIER PAYSAGE ==================== -->
-        <div class="photo-item" data-category="paysage" onclick="openLightbox(this)">
-            <img src="https://unsplash.com" alt="Paysage">
-            <div class="photo-info">Paysage 1 - Exemple</div>
-        </div>
-        <div class="photo-item" data-category="paysage" onclick="openLightbox(this)">
-            <img src="https://unsplash.com" alt="Paysage">
-            <div class="photo-info">Paysage 2 - Exemple</div>
-        </div>
-        <div class="photo-item" data-category="paysage" onclick="openLightbox(this)">
-            <img src="" alt="Paysage 3">
-            <div class="photo-info">Paysage 3 (Lien vide)</div>
-        </div>
-        <div class="photo-item" data-category="paysage" onclick="openLightbox(this)">
-            <img src="" alt="Paysage 4">
-            <div class="photo-info">Paysage 4 (Lien vide)</div>
+        <!-- Album Paysage -->
+        <div class="album-card" onclick="openGallery('paysage')">
+            <img src="https://unsplash.com" alt="Couverture Paysage">
+            <div class="album-title">🏔️ Photo Paysage</div>
         </div>
 
-        <!-- ==================== DOSSIER OISEAUX ==================== -->
-        <div class="photo-item" data-category="oiseaux" onclick="openLightbox(this)">
-            <img src="https://unsplash.com" alt="Oiseaux">
-            <div class="photo-info">Oiseaux 1 - Exemple</div>
-        </div>
-        <div class="photo-item" data-category="oiseaux" onclick="openLightbox(this)">
-            <img src="https://unsplash.com" alt="Oiseaux">
-            <div class="photo-info">Oiseaux 2 - Exemple</div>
-        </div>
-        <div class="photo-item" data-category="oiseaux" onclick="openLightbox(this)">
-            <img src="" alt="Oiseaux 3">
-            <div class="photo-info">Oiseaux 3 (Lien vide)</div>
-        </div>
-        <div class="photo-item" data-category="oiseaux" onclick="openLightbox(this)">
-            <img src="" alt="Oiseaux 4">
-            <div class="photo-info">Oiseaux 4 (Lien vide)</div>
+        <!-- Album Oiseaux -->
+        <div class="album-card" onclick="openGallery('oiseaux')">
+            <img src="https://unsplash.com" alt="Couverture Oiseaux">
+            <div class="album-title">🦅 Photo Oiseaux</div>
         </div>
 
-        <!-- ==================== DOSSIER VOYAGE ==================== -->
-        <div class="photo-item" data-category="voyage" onclick="openLightbox(this)">
-            <img src="https://unsplash.com" alt="Voyage">
-            <div class="photo-info">Voyage 1 - Exemple</div>
-        </div>
-        <div class="photo-item" data-category="voyage" onclick="openLightbox(this)">
-            <img src="https://unsplash.com" alt="Voyage">
-            <div class="photo-info">Voyage 2 - Exemple</div>
-        </div>
-        <div class="photo-item" data-category="voyage" onclick="openLightbox(this)">
-            <img src="" alt="Voyage 3">
-            <div class="photo-info">Voyage 3 (Lien vide)</div>
-        </div>
-        <div class="photo-item" data-category="voyage" onclick="openLightbox(this)">
-            <img src="" alt="Voyage 4">
-            <div class="photo-info">Voyage 4 (Lien vide)</div>
+        <!-- Album Voyage -->
+        <div class="album-card" onclick="openGallery('voyage')">
+            <img src="https://unsplash.com" alt="Couverture Voyage">
+            <div class="album-title">🚗 Photo Voyage</div>
         </div>
 
     </div>
 
-    <!-- Zone des Commentaires -->
+    <!-- ==================== ÉCRAN 2 : LA GALERIE D'UN ALBUM (CACHÉE) ==================== -->
+    <div id="gallery-view" class="gallery-view">
+        <button class="back-btn" onclick="closeGallery()">🔙 Retour aux albums</button>
+        <h2 id="current-gallery-title" class="gallery-title">Nom de l'album</h2>
+        
+        <div class="gallery-grid" id="gallery-images-container">
+            <!-- Les photos s'injecteront ici dynamiquement grâce au JavaScript -->
+        </div>
+    </div>
+
+    <!-- Zone des Commentaires (Toujours visible en bas) -->
     <div style="width: 90%; max-width: 800px; margin: 50px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
         <h2 style="text-align: center; margin-bottom: 20px; color: #111;">💬 Espace Commentaires</h2>
         <p style="text-align: center; color: #666; font-style: italic;">L'espace de discussion est en cours de configuration...</p>
@@ -244,23 +225,67 @@
         <img id="lightbox-img" src="" alt="Zoom">
     </div>
 
-    <!-- --- JAVASCRIPT --- -->
+    <!-- --- JAVASCRIPT (La base de données de vos photos) --- -->
     <script>
-        function filterGallery(category) {
-            // Masquer le message d'accueil
-            document.getElementById('welcome-msg').style.display = 'none';
+        // ======= RANGEZ VOS LIENS DE PHOTOS ICI APRÈS VOTRE SIESTE =======
+        const photoDatabase = {
+            macro: [
+                { src: "https://unsplash.com", desc: "Macro exemple 1 (2015)" },
+                { src: "https://unsplash.com", desc: "Macro exemple 2" },
+                { src: "", desc: "Macro 3 (Emplacement libre)" },
+                { src: "", desc: "Macro 4 (Emplacement libre)" }
+            ],
+            paysage: [
+                { src: "https://unsplash.com", desc: "Paysage exemple 1" },
+                { src: "https://unsplash.com", desc: "Paysage exemple 2" }
+            ],
+            oiseaux: [
+                { src: "https://unsplash.com", desc: "Oiseau exemple 1" },
+                { src: "https://unsplash.com", desc: "Oiseau exemple 2" }
+            ],
+            voyage: [
+                { src: "https://unsplash.com", desc: "Voyage exemple 1" },
+                { src: "https://unsplash.com", desc: "Voyage exemple 2" }
+            ]
+        };
 
-            // Gérer les boutons actifs
-            const buttons = document.querySelectorAll('.folder-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.currentTarget.classList.add('active');
+        // Fonction pour ouvrir un album
+        function openGallery(category) {
+            // Masquer l'accueil des dossiers
+            document.getElementById('albums-view').style.display = 'none';
+            
+            // Configurer le titre de la galerie
+            document.getElementById('current-gallery-title').innerText = "Dossier : " + category;
+            
+            // Vider et reconstruire la grille de photos
+            const container = document.getElementById('gallery-images-container');
+            container.innerHTML = "";
+            
+            // Récupérer les photos de la catégorie choisie
+            const photos = photoDatabase[category];
+            
+            photos.forEach(photo => {
+                if(photo.src === "") return; // Ignore les cases vides
+                
+                const item = document.createElement('div');
+                item.className = 'photo-item';
+                item.onclick = function() { openLightbox(photo.src); };
+                item.innerHTML = `
+                    <img src="${photo.src}" alt="${photo.desc}">
+                    <div class="photo-info">${photo.desc}</div>
+                `;
+                container.appendChild(item);
+            });
+            
+            // Afficher l'écran galerie
+            document.getElementById('gallery-view').style.display = 'flex';
+        }
 
-            // Afficher ou masquer les photos
-            const items = document.querySelectorAll('.photo-item');
-            items.forEach(item => {
-                if (item.getAttribute('data-category') === category) {
-                    item.style.display = 'block'; // On affiche uniquement les photos de la catégorie cliquée
-                } else {
-                    item.style.display = 'none';
+        // Fonction pour revenir en arrière
+        function closeGallery() {
+            document.getElementById('gallery-view').style.display = 'none';
+            document.getElementById('albums-view').style.display = 'grid';
+        }
+
 
 
