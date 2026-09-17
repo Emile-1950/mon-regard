@@ -1,184 +1,217 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio Photo</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Police Google Fonts (optionnel mais recommandé) -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Mes Souvenirs Photo</title>
+    <style>
+        /* --- STYLE CSS (Le costume du site) --- */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Tout centrer horizontalement */
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            max-width: 800px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #111;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        /* Les Dossiers / Répertoires (Style Eklablog) */
+        .folder-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .folder-btn {
+            background-color: #fff;
+            border: 2px solid #ddd;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .folder-btn:hover, .folder-btn.active {
+            background-color: #111;
+            color: #fff;
+            border-color: #111;
+        }
+
+        /* La Grille de Photos */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            width: 90%;
+            max-width: 1200px;
+            padding-bottom: 60px;
+        }
+
+        .photo-item {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            display: block; /* Requis pour le filtre */
+        }
+
+        .photo-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .photo-info {
+            padding: 15px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        /* Zoom de la photo (Lightbox) */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 85%;
+            border-radius: 4px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px; right: 30px;
+            color: #fff; font-size: 40px; font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Entête / Navigation -->
+    <!-- --- STRUCTURE HTML (Le squelette) --- -->
+
     <header>
-        <div class="logo">
-            <h1>MonRegard<span>Photo</span></h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#categories">Catégories</a></li>
-                <li><a href="#galerie">Galerie</a></li>
-                <li><a href="#commentaires">Commentaires</a></li>
-            </ul>
-        </nav>
+        <!-- MODIFIEZ VOTRE NOM ICI -->
+        <h1>Les Souvenirs Photo de [Votre Nom]</h1>
+        <p>Archives et clichés depuis 2015</p>
     </header>
 
-    <!-- Bannière d'accueil -->
-    <section id="accueil" class="hero">
-        <div class="hero-content">
-            <h2>Bienvenue dans mon univers visuel</h2>
-            <p>Explorez mes différentes collections de photographies</p>
-            <a href="#galerie" class="btn">Voir la galerie</a>
+    <!-- Vos Répertoires / Dossiers -->
+    <div class="folder-container">
+        <button class="folder-btn active" onclick="filterGallery('tous')">📁 Tout voir</button>
+        <button class="folder-btn" onclick="filterGallery('macro')">🔍 Photo Macro</button>
+        <button class="folder-btn" onclick="filterGallery('paysage')">🏔️ Photo Paysage</button>
+        <button class="folder-btn" onclick="filterGallery('oiseaux')">🦅 Photo Oiseaux</button>
+        <button class="folder-btn" onclick="filterGallery('voyage')">🚗 Photo Voyage</button>
+    </div>
+
+    <!-- La Galerie (Exemples temporaires Unsplash) -->
+    <div class="gallery-grid">
+
+        <!-- Exemple Macro -->
+        <div class="photo-item" data-category="macro" onclick="openLightbox(this)">
+            <img src="https://unsplash.com" alt="Macro">
+            <div class="photo-info">Goutte de rosée (2015)</div>
         </div>
-    </section>
 
-    <!-- Section Catégories / Répertoires -->
-    <section id="categories" class="container">
-        <h2 class="section-title">Mes Répertoires</h2>
-        <div class="categories-grid">
-            
-            <div class="category-card">
-                <img src="https://picsum.photos/400/300?random=1" alt="Photos Macro">
-                <div class="card-overlay">
-                    <h3>Photos Macro</h3>
-                    <p>L'infiniment petit révélé</p>
-                </div>
-            </div>
-
-            <div class="category-card">
-                <img src="https://picsum.photos/400/300?random=2" alt="Paysages">
-                <div class="card-overlay">
-                    <h3>Paysages</h3>
-                    <p>Grandes étendues & nature</p>
-                </div>
-            </div>
-
-            <div class="category-card">
-                <img src="https://picsum.photos/400/300?random=3" alt="Oiseaux">
-                <div class="card-overlay">
-                    <h3>Oiseaux</h3>
-                    <p>Photographie animalière</p>
-                </div>
-            </div>
-
-            <div class="category-card">
-                <img src="https://picsum.photos/400/300?random=4" alt="Voyages">
-                <div class="card-overlay">
-                    <h3>Voyages</h3>
-                    <p>Découvertes autour du monde</p>
-                </div>
-            </div>
-
-            <div class="category-card">
-                <img src="https://picsum.photos/400/300?random=5" alt="Portraits">
-                <div class="card-overlay">
-                    <h3>Portraits</h3>
-                    <p>Émotions & visages</p>
-                </div>
-            </div>
-
+        <!-- Exemple Paysage -->
+        <div class="photo-item" data-category="paysage" onclick="openLightbox(this)">
+            <img src="https://unsplash.com" alt="Paysage">
+            <div class="photo-info">Coucher de soleil sur la vallée</div>
         </div>
-    </section>
 
-    <!-- Section Galerie d'images -->
-    <section id="galerie" class="container">
-        <h2 class="section-title">Galerie Photo</h2>
-        
-        <!-- Grille de photos -->
-        <div class="gallery-grid">
-            <div class="photo-item">
-                <img src="https://picsum.photos/600/400?random=10" alt="Exemple Macro">
-                <div class="photo-info">
-                    <h4>Goutte de rosée</h4>
-                    <span>Macro</span>
-                </div>
-            </div>
-            <div class="photo-item">
-                <img src="https://picsum.photos/600/400?random=11" alt="Exemple Paysage">
-                <div class="photo-info">
-                    <h4>Coucher de soleil sur la montagne</h4>
-                    <span>Paysage</span>
-                </div>
-            </div>
-            <div class="photo-item">
-                <img src="https://picsum.photos/600/400?random=12" alt="Exemple Oiseau">
-                <div class="photo-info">
-                    <h4>Aigle royal en vol</h4>
-                    <span>Oiseaux</span>
-                </div>
-            </div>
-            <div class="photo-item">
-                <img src="https://picsum.photos/600/400?random=13" alt="Exemple Voyage">
-                <div class="photo-info">
-                    <h4>Ruelle de Kyoto</h4>
-                    <span>Voyage</span>
-                </div>
-            </div>
-            <div class="photo-item">
-                <img src="https://picsum.photos/600/400?random=14" alt="Exemple Portrait">
-                <div class="photo-info">
-                    <h4>Sourire spontané</h4>
-                    <span>Portrait</span>
-                </div>
-            </div>
-            <div class="photo-item">
-                <img src="https://picsum.photos/600/400?random=15" alt="Exemple Paysage">
-                <div class="photo-info">
-                    <h4>Lac miroir</h4>
-                    <span>Paysage</span>
-                </div>
-            </div>
+        <!-- Exemple Oiseaux -->
+        <div class="photo-item" data-category="oiseaux" onclick="openLightbox(this)">
+            <img src="https://unsplash.com" alt="Oiseaux">
+            <div class="photo-info">Rouge-gorge au printemps</div>
         </div>
-    </section>
 
-    <!-- Section Commentaires -->
-    <section id="commentaires" class="container bg-light">
-        <h2 class="section-title">Espace Commentaires</h2>
-
-        <div class="comments-container">
-            <!-- Formulaire pour ajouter un commentaire -->
-            <form class="comment-form">
-                <h3>Laissez un message</h3>
-                <div class="form-group">
-                    <label for="name">Nom / Pseudo :</label>
-                    <input type="text" id="name" placeholder="Votre nom" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message :</label>
-                    <textarea id="message" rows="5" placeholder="Votre commentaire ici..." required></textarea>
-                </div>
-                <button type="submit" class="btn">Envoyer</button>
-            </form>
-
-            <!-- Liste des commentaires existants -->
-            <div class="comments-list">
-                <h3>Derniers commentaires</h3>
-
-                <div class="comment">
-                    <div class="comment-header">
-                        <strong>Sophie L.</strong>
-                        <span class="date">14 Septembre 2026</span>
-                    </div>
-                    <p>Vos photos de la catégorie "Oiseaux" sont tout simplement magnifiques ! Quel piqué sur les détails.</p>
-                </div>
-
-                <div class="comment">
-                    <div class="comment-header">
-                        <strong>Marc D.</strong>
-                        <span class="date">10 Septembre 2026</span>
-                    </div>
-                    <p>Superbe travail sur les macros. On a hâte d'en voir plus !</p>
-                </div>
-            </div>
+        <!-- Exemple Voyage -->
+        <div class="photo-item" data-category="voyage" onclick="openLightbox(this)">
+            <img src="https://unsplash.com" alt="Voyage">
+            <div class="photo-info">Souvenir de voyage en montagne</div>
         </div>
-    </section>
 
-    <!-- Pied de page -->
-    <footer>
-        <p>&copy; 2026 MonRegardPhoto - Tous droits réservés.</p>
-    </footer>
+    </div>
+
+    <!-- Fenêtre de zoom masquée par défaut -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Zoom">
+    </div>
+
+    <!-- --- JAVASCRIPT (La logique des dossiers et du zoom) --- -->
+    <script>
+        // Fonction pour filtrer par dossier
+        function filterGallery(category) {
+            // Gérer le style des boutons
+            const buttons = document.querySelectorAll('.folder-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+
+            // Filtrer les images
+            const items = document.querySelectorAll('.photo-item');
+            items.forEach(item => {
+                if (category === 'tous' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Fonctions pour le Zoom
+        function openLightbox(element) {
+            const imgSrc = element.querySelector('img').src;
+            document.getElementById('lightbox-img').src = imgSrc;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+    </script>
 
 </body>
 </html>
+
+
