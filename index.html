@@ -236,23 +236,34 @@
 
     <!-- --- JAVASCRIPT ET EMPLACEMENTS PHOTOS --- -->
     <script>
+               // C'est ici que vous ajoutez vos photos à la suite (1 ligne = 1 photo)
         const photoDatabase = {
-            fleurs: Array(40).fill(null).map((_, i) => ({ src: "", desc: `Fleur n°${i+1}` })),
-            insectes: Array(40).fill(null).map((_, i) => ({ src: "", desc: `Insecte n°${i+1}` })),
-            ciels: Array(40).fill(null).map((_, i) => ({ src: "", desc: `Ciel n°${i+1}` })),
-            macros: Array(40).fill(null).map((_, i) => ({ src: "", desc: `Macro n°${i+1}` })),
-            paysages: Array(40).fill(null).map((_, i) => ({ src: "", desc: `Paysage n°${i+1}` })),
-            oiseaux: Array(40).fill(null).map((_, i) => ({ src: "", desc: `Oiseau n°${i+1}` })),
-            animaux: Array(40).fill(null).map((_, i) => ({ src: "", desc: `Animal n°${i+1}` })),
-            saisons: Array(40).fill(null).map((_, i) => ({ src: "", desc: `Saison n°${i+1}` }))
+            fleurs: [
+                { src: "https://i.postimg.cc/zBmkQVZN/DSC07928-topaz-denoise-sharpen-lighting-upscale-1-5x.jpg", desc: "coquelicot" },
+                { src: "https://i.postimg.cc/MHqmWNGw/DSC07936-topaz-denoise-sharpen-lighting-color-upscale-1-5x.jpg", desc: "gerbera" }
+            ],
+            insectes: [
+                { src: "https://unsplash.com", desc: "Exemple Coccinelle" }
+            ],
+            ciels: [
+                { src: "", desc: "" }
+            ],
+            macros: [
+                { src: "", desc: "" }
+            ],
+            paysages: [
+                { src: "", desc: "" }
+            ],
+            oiseaux: [
+                { src: "", desc: "" }
+            ],
+            animaux: [
+                { src: "", desc: "" }
+            ],
+            saisons: [
+                { src: "", desc: "" }
+            ]
         };
-
-        // Remplissez vos premières vraies photos ci-dessous !
-        // EXEMPLE POUR COMMENCER :
-        photoDatabase.fleurs[0] = { src: "https://i.postimg.cc/brh3Zd3V/DSC07903-topaz-sharpen-denoise-lighting-upscale-1-5x.jpg", desc: "coquelicot" };
-        photoDatabase.fleurs[1] = { src: "", desc: "Ma deuxième fleur" };
-        
-        photoDatabase.insectes[0] = { src: "https://unsplash.com", desc: "Coccinelle au printemps" };
 
         // --- MOTEUR TECHNIQUE ---
         function openGallery(category) {
