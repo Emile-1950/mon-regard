@@ -17,7 +17,6 @@
             align-items: center;
         }
 
-        /* La Bannière en haut */
         .banner {
             width: 100%;
             background-color: #111;
@@ -41,7 +40,6 @@
             font-style: italic;
         }
 
-        /* Bouton Accueil discret dans la bannière */
         .home-btn {
             background-color: transparent;
             color: #fff;
@@ -58,17 +56,15 @@
             color: #111;
         }
 
-        /* Conteneur des 8 boutons (2 rangées de 4) */
         .menu-container {
             display: grid;
-            grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
+            grid-template-columns: repeat(4, 1fr);
             gap: 15px;
             width: 90%;
             max-width: 900px;
             margin: 40px 0;
         }
 
-        /* Boutons répertoires discrets */
         .folder-btn {
             background-color: #fff;
             border: 1px solid #ccc;
@@ -88,7 +84,6 @@
             border-color: #111;
         }
 
-        /* Zone d'affichage de la Galerie */
         .gallery-view {
             width: 90%;
             max-width: 1200px;
@@ -141,7 +136,6 @@
             text-align: center;
         }
 
-        /* Message d'attente sur l'accueil */
         #welcome-msg {
             text-align: center;
             color: #777;
@@ -150,7 +144,6 @@
             margin: 40px 0;
         }
 
-        /* Espace Commentaires tout en bas */
         .comments-section {
             width: 90%;
             max-width: 800px;
@@ -165,12 +158,11 @@
         .comments-section h2 {
             text-align: center;
             margin-top: 0;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             color: #111;
             font-size: 1.5rem;
         }
 
-        /* Zoom Lightbox */
         .lightbox {
             display: none;
             position: fixed;
@@ -187,24 +179,23 @@
             border-radius: 4px;
         }
 
-        /* Adaptation pour les téléphones portables */
         @media (max-width: 768px) {
             .menu-container {
-                grid-template-columns: repeat(2, 1fr); /* 2x4 sur mobile pour que ça passe */
+                grid-template-columns: repeat(2, 1fr);
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- 1. LA BANNIÈRE AVEC BOUTON ACCUEIL -->
+    <!-- 1. BANNIÈRE -->
     <div class="banner">
         <h1>Les Souvenirs Photo de [Votre Nom]</h1>
         <p>Clichés et archives depuis 2015</p>
         <button class="home-btn" onclick="resetToHome()">🏠 Accueil</button>
     </div>
 
-    <!-- 2. LES 8 BOUTONS DISCRETS (Alignés en 4x2) -->
+    <!-- 2. MENU 4x2 -->
     <div class="menu-container">
         <button class="folder-btn" onclick="openGallery('fleurs')">🌸 Fleurs</button>
         <button class="folder-btn" onclick="openGallery('insectes')">🐞 Insectes</button>
@@ -216,83 +207,85 @@
         <button class="folder-btn" onclick="openGallery('saisons')">🍂 Saisons</button>
     </div>
 
-    <!-- Message affiché par défaut sur l'accueil -->
     <div id="welcome-msg">Sélectionnez une catégorie ci-dessus pour découvrir la galerie.</div>
 
-    <!-- 3. ZONE D'AFFICHAGE DES PHOTOS (Masquée au départ) -->
+    <!-- 3. ZONE PHOTOS -->
     <div id="gallery-view" class="gallery-view" style="display: none;">
         <h2 id="current-gallery-title" class="gallery-title">Nom</h2>
-        <div class="gallery-grid" id="gallery-images-container">
-            <!-- Les photos s'injecteront ici -->
-        </div>
+        <div class="gallery-grid" id="gallery-images-container"></div>
     </div>
 
-    <!-- 4. L'ESPACE COMMENTAIRES TOUJOURS EN BAS -->
+    <!-- 4. L'ESPACE COMMENTAIRES -->
     <div class="comments-section">
         <h2>💬 Espace Commentaires</h2>
-        <p style="text-align: center; color: #666; font-style: italic;">L'espace de discussion est en cours de configuration...</p>
+        <!-- Module Cusdis de confiance -->
+        <div id="cusdis_thread" 
+          data-host="https://cusdis.com"
+          data-app-id="99c5d1e6-b605-4f36-9b51-b84784a9ff35"
+          data-page-id="accueil_portfolio"
+          data-page-url="https://github.io"
+          data-page-title="Mon Portfolio Photo">
+        </div>
+        <script async src="https://cusdis.com"></script>
     </div>
 
-    <!-- Fenêtre de zoom masquée -->
+    <!-- ZOOM -->
     <div id="lightbox" class="lightbox" onclick="closeLightbox()">
         <img id="lightbox-img" src="" alt="Zoom">
     </div>
 
-    <!-- --- JAVASCRIPT : BANQUE DE DONNÉES ET MOTEUR --- -->
+    <!-- --- JAVASCRIPT ET EMPLACEMENTS PHOTOS --- -->
     <script>
-        // C'est ici que vous rangerez vos liens Postimages pour chaque dossier
         const photoDatabase = {
-            fleurs: [
-                { src: "https://unsplash.com", desc: "Exemple Fleur (2015)" }
-            ],
-            insectes: [
-                { src: "https://unsplash.com", desc: "Exemple Insecte" }
-            ],
-            ciels: [
-                { src: "https://unsplash.com", desc: "Exemple Ciel" }
-            ],
-            macros: [
-                { src: "https://unsplash.com", desc: "Exemple Macro" }
-            ],
-            paysages: [
-                { src: "https://unsplash.com", desc: "Exemple Paysage" }
-            ],
-            oiseaux: [
-                { src: "https://unsplash.com", desc: "Exemple Oiseaux" }
-            ],
-            animaux: [
-                { src: "https://unsplash.com", desc: "Exemple Animaux" }
-            ],
-            saisons: [
-                { src: "https://unsplash.com", desc: "Exemple Saisons" }
-            ]
+            fleurs: Array(40).fill(null).map((_, i) => ({ src: "", desc: `Fleur n°${i+1}` })),
+            insectes: Array(40).fill(null).map((_, i) => ({ src: "", desc: `Insecte n°${i+1}` })),
+            ciels: Array(40).fill(null).map((_, i) => ({ src: "", desc: `Ciel n°${i+1}` })),
+            macros: Array(40).fill(null).map((_, i) => ({ src: "", desc: `Macro n°${i+1}` })),
+            paysages: Array(40).fill(null).map((_, i) => ({ src: "", desc: `Paysage n°${i+1}` })),
+            oiseaux: Array(40).fill(null).map((_, i) => ({ src: "", desc: `Oiseau n°${i+1}` })),
+            animaux: Array(40).fill(null).map((_, i) => ({ src: "", desc: `Animal n°${i+1}` })),
+            saisons: Array(40).fill(null).map((_, i) => ({ src: "", desc: `Saison n°${i+1}` }))
         };
 
-        // Ouvrir une galerie
+        // Remplissez vos premières vraies photos ci-dessous !
+        // EXEMPLE POUR COMMENCER :
+        photoDatabase.fleurs[0] = { src: "https://unsplash.com", desc: "Ma première rose (2015)" };
+        photoDatabase.fleurs[1] = { src: "", desc: "Ma deuxième fleur" };
+        
+        photoDatabase.insectes[0] = { src: "https://unsplash.com", desc: "Coccinelle au printemps" };
+
+        // --- MOTEUR TECHNIQUE ---
         function openGallery(category) {
             document.getElementById('welcome-msg').style.display = 'none';
-            
-            // Gérer la couleur active sur les boutons
             const buttons = document.querySelectorAll('.folder-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
             event.currentTarget.classList.add('active');
             
-            // Titre de la galerie
-            let titleText = event.currentTarget.innerText;
-            document.getElementById('current-gallery-title').innerText = titleText;
+            document.getElementById('current-gallery-title').innerText = event.currentTarget.innerText;
             
-            // Vider et remplir la grille
             const container = document.getElementById('gallery-images-container');
             container.innerHTML = "";
             
             const photos = photoDatabase[category];
             if (photos) {
                 photos.forEach(photo => {
-                    if(photo.src === "") return;
+                    if(!photo.src || photo.src === "") return;
                     const item = document.createElement('div');
                     item.className = 'photo-item';
                     item.onclick = function() { openLightbox(photo.src); };
                     item.innerHTML = `
                         <img src="${photo.src}" alt="${photo.desc}">
+                        <div class="photo-info">${photo.desc}</div>
+                    `;
+                    container.appendChild(item);
+                });
+            }
+            // Message si le dossier est vide
+            if (container.children.length === 0) {
+                container.innerHTML = "<p style='grid-column: 1/-1; text-align: center; color: #888; font-style: italic;'>Cet album ne contient pas encore de photos.</p>";
+            }
+            document.getElementById('gallery-view').style.display = 'flex';
+        }
 
-
+        function resetToHome() {
+            document.getElementById('gallery-view').style.display = 'none';
