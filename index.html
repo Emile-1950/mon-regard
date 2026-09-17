@@ -80,36 +80,40 @@
         .lightbox img { max-width: 90%; max-height: 85%; border-radius: 4px; }
 
         @media (max-width: 768px) { .menu-container { grid-template-columns: repeat(2, 1fr); } }
+        
     </style>
-    
-    <style>        /* Bouton Remonter en haut discret et flottant */
+          <style> 
+                      /* Bouton Remonter Fantaisie et Élégant */
         .scroll-top-btn {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            width: 45px;
-            height: 45px;
-            background-color: #111;
-            color: #fff;
-            border: 1px solid #333;
-            border-radius: 50%; /* Donne la forme d'un rond */
-            font-size: 1.3rem;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #111111, #333333); /* Joli dégradé */
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: bold;
             cursor: pointer;
-            display: flex; /* Toujours visible pour le test */
-
+            display: flex; /* Laisser sur flex pour le voir tout de suite */
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            transition: all 0.2s ease;
-            z-index: 2000; /* Reste toujours au-dessus des photos */
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* Ombre plus marquée */
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Effet de rebond */
+            z-index: 2000;
         }
 
+        /* Effet magique quand la souris passe dessus */
         .scroll-top-btn:hover {
-            background-color: #fff;
-            color: #111;
-            border-color: #111;
-            transform: scale(1.1); /* Grossit un tout petit peu au survol */
+            background: linear-gradient(135deg, #ffffff, #e0e0e0);
+            color: #111111;
+            border-color: #111111;
+            transform: translateY(-5px) scale(1.1); /* Il monte et grossit un peu */
+            box-shadow: 0 12px 25px rgba(0,0,0,0.4);
         }
+
 </style>
 </head>
 <body>
@@ -225,8 +229,7 @@
             document.getElementById('lightbox').style.display = 'none';
         }
     </script>
-        <!-- Le bouton flottant avec sa flèche -->
-    <button id="scrollTopBtn" class="scroll-top-btn" onclick="scrollToTop()">▲</button>
-
+            <!-- Bouton avec une flèche double stylisée -->
+    <button id="scrollTopBtn" class="scroll-top-btn" onclick="scrollToTop()">⤊</button>
 </body>
 </html>
