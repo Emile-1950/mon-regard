@@ -10,180 +10,76 @@
             font-family: 'Helvetica Neue', Arial, sans-serif;
             background-color: #f4f4f9;
             color: #333;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            margin: 0; padding: 0;
+            display: flex; flex-direction: column; align-items: center;
         }
 
         .banner {
-            width: 100%;
-            background-color: #111;
-            color: #fff;
-            text-align: center;
-            padding: 50px 20px;
-            box-sizing: border-box;
+            width: 100%; background-color: #111; color: #fff;
+            text-align: center; padding: 50px 20px; box-sizing: border-box;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        .banner h1 {
-            margin: 0 0 10px 0;
-            font-size: 2.3rem;
-            letter-spacing: 1px;
-        }
-
-        .banner p {
-            margin: 0 0 20px 0;
-            font-size: 1rem;
-            color: #aaa;
-            font-style: italic;
-        }
+        .banner h1 { margin: 0 0 10px 0; font-size: 2.3rem; letter-spacing: 1px; }
+        .banner p { margin: 0 0 20px 0; font-size: 1rem; color: #aaa; font-style: italic; }
 
         .home-btn {
-            background-color: transparent;
-            color: #fff;
-            border: 1px solid #fff;
-            padding: 8px 20px;
-            font-size: 0.9rem;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.2s;
+            background-color: transparent; color: #fff; border: 1px solid #fff;
+            padding: 8px 20px; font-size: 0.9rem; border-radius: 4px;
+            cursor: pointer; transition: all 0.2s;
         }
-
-        .home-btn:hover {
-            background-color: #fff;
-            color: #111;
-        }
+        .home-btn:hover { background-color: #fff; color: #111; }
 
         .menu-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-            width: 90%;
-            max-width: 900px;
-            margin: 40px 0;
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 15px; width: 90%; max-width: 900px; margin: 40px 0;
         }
 
         .folder-btn {
-            background-color: #fff;
-            border: 1px solid #ccc;
-            padding: 12px 10px;
-            font-size: 0.95rem;
-            font-weight: 500;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-align: center;
+            background-color: #fff; border: 1px solid #ccc; padding: 12px 10px;
+            font-size: 0.95rem; font-weight: 500; border-radius: 6px;
+            cursor: pointer; transition: all 0.2s ease; text-align: center;
             box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
-
-        .folder-btn:hover, .folder-btn.active {
-            background-color: #111;
-            color: #fff;
-            border-color: #111;
-        }
+        .folder-btn:hover, .folder-btn.active { background-color: #111; color: #fff; border-color: #111; }
 
         .gallery-view {
-            width: 90%;
-            max-width: 1200px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 40px;
+            width: 90%; max-width: 1200px; display: flex;
+            flex-direction: column; align-items: center; margin-bottom: 40px;
         }
 
         .gallery-title {
-            font-size: 1.6rem;
-            margin-bottom: 25px;
-            color: #111;
-            text-transform: capitalize;
-            border-bottom: 2px solid #111;
-            padding-bottom: 5px;
+            font-size: 1.6rem; margin-bottom: 25px; color: #111;
+            text-transform: capitalize; border-bottom: 2px solid #111; padding-bottom: 5px;
         }
 
         .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-            width: 100%;
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; width: 100%;
         }
 
         .photo-item {
-            background-color: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-            cursor: pointer;
-            transition: transform 0.3s ease;
+            background-color: #fff; border-radius: 8px; overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.06); cursor: pointer; transition: transform 0.3s ease;
         }
+        .photo-item:hover { transform: translateY(-4px); }
+        .photo-item img { width: 100%; height: 220px; object-fit: cover; display: block; }
+        .photo-info { padding: 15px; font-size: 0.95rem; font-weight: 500; text-align: center; }
 
-        .photo-item:hover {
-            transform: translateY(-4px);
-        }
-
-        .photo-item img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .photo-info {
-            padding: 15px;
-            font-size: 0.95rem;
-            font-weight: 500;
-            text-align: center;
-        }
-
-        #welcome-msg {
-            text-align: center;
-            color: #777;
-            font-size: 1.1rem;
-            font-style: italic;
-            margin: 40px 0;
-        }
+        #welcome-msg { text-align: center; color: #777; font-size: 1.1rem; font-style: italic; margin: 40px 0; }
 
         .comments-section {
-            width: 90%;
-            max-width: 800px;
-            margin: 40px auto 60px auto;
-            padding: 30px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-            box-sizing: border-box;
+            width: 90%; max-width: 800px; margin: 40px auto 60px auto;
+            padding: 30px; background: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); box-sizing: border-box;
         }
-
-        .comments-section h2 {
-            text-align: center;
-            margin-top: 0;
-            margin-bottom: 25px;
-            color: #111;
-            font-size: 1.5rem;
-        }
+        .comments-section h2 { text-align: center; margin-top: 0; margin-bottom: 25px; color: #111; font-size: 1.5rem; }
 
         .lightbox {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.9);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.9); justify-content: center; align-items: center; z-index: 1000;
         }
+        .lightbox img { max-width: 90%; max-height: 85%; border-radius: 4px; }
 
-        .lightbox img {
-            max-width: 90%;
-            max-height: 85%;
-            border-radius: 4px;
-        }
-
-        @media (max-width: 768px) {
-            .menu-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
+        @media (max-width: 768px) { .menu-container { grid-template-columns: repeat(2, 1fr); } }
     </style>
 </head>
 <body>
@@ -218,15 +114,14 @@
     <!-- 4. L'ESPACE COMMENTAIRES -->
     <div class="comments-section">
         <h2>💬 Espace Commentaires</h2>
-        <!-- Module Cusdis de confiance -->
         <div id="cusdis_thread" 
           data-host="https://cusdis.com"
           data-app-id="99c5d1e6-b605-4f36-9b51-b84784a9ff35"
           data-page-id="accueil_portfolio"
-          data-page-url="https://github.io"
+          data-page-url="https://votre-pseudo.github.io/"
           data-page-title="Mon Portfolio Photo">
         </div>
-        <script async src="https://cusdis.com"></script>
+        <script async src="https://cusdis.com/js/cusdis.es.js"></script>
     </div>
 
     <!-- ZOOM -->
@@ -234,35 +129,23 @@
         <img id="lightbox-img" src="" alt="Zoom">
     </div>
 
-    <!-- --- JAVASCRIPT ET EMPLACEMENTS PHOTOS --- -->
+    <!-- --- JAVASCRIPT --- -->
     <script>
-               // C'est ici que vous ajoutez vos photos à la suite (1 ligne = 1 photo)
+        // C'est ICI que vous mettez vos liens Postimages (1 ligne = 1 photo)
         const photoDatabase = {
             fleurs: [
-                { src: "https://i.postimg.cc/zBmkQVZN/DSC07928-topaz-denoise-sharpen-lighting-upscale-1-5x.jpg", desc: "coquelicot" },
-                { src: "https://i.postimg.cc/MHqmWNGw/DSC07936-topaz-denoise-sharpen-lighting-color-upscale-1-5x.jpg", desc: "gerbera" }
+                { src: "https://unsplash.com", desc: "Exemple : Rose rouge de mon jardin (2015)" },
+                { src: "", desc: "" } // Prêt pour votre deuxième photo
             ],
             insectes: [
-                { src: "https://unsplash.com", desc: "Exemple Coccinelle" }
+                { src: "https://unsplash.com", desc: "Exemple : Coccinelle" }
             ],
-            ciels: [
-                { src: "", desc: "" }
-            ],
-            macros: [
-                { src: "", desc: "" }
-            ],
-            paysages: [
-                { src: "", desc: "" }
-            ],
-            oiseaux: [
-                { src: "", desc: "" }
-            ],
-            animaux: [
-                { src: "", desc: "" }
-            ],
-            saisons: [
-                { src: "", desc: "" }
-            ]
+            ciels: [],
+            macros: [],
+            paysages: [],
+            oiseaux: [],
+            animaux: [],
+            saisons: []
         };
 
         // --- MOTEUR TECHNIQUE ---
@@ -270,15 +153,14 @@
             document.getElementById('welcome-msg').style.display = 'none';
             const buttons = document.querySelectorAll('.folder-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
-            event.currentTarget.classList.add('active');
+            if(event) event.currentTarget.classList.add('active');
             
-            document.getElementById('current-gallery-title').innerText = event.currentTarget.innerText;
-            
+            document.getElementById('current-gallery-title').innerText = category;
             const container = document.getElementById('gallery-images-container');
             container.innerHTML = "";
             
             const photos = photoDatabase[category];
-            if (photos) {
+            if (photos && photos.length > 0) {
                 photos.forEach(photo => {
                     if(!photo.src || photo.src === "") return;
                     const item = document.createElement('div');
@@ -291,7 +173,7 @@
                     container.appendChild(item);
                 });
             }
-            // Message si le dossier est vide
+            
             if (container.children.length === 0) {
                 container.innerHTML = "<p style='grid-column: 1/-1; text-align: center; color: #888; font-style: italic;'>Cet album ne contient pas encore de photos.</p>";
             }
@@ -300,3 +182,18 @@
 
         function resetToHome() {
             document.getElementById('gallery-view').style.display = 'none';
+            document.getElementById('welcome-msg').style.display = 'block';
+            const buttons = document.querySelectorAll('.folder-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+        }
+
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
