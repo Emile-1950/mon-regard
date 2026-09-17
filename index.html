@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Souvenirs Photo</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f4f4f9; color: #333; margin: 0; padding: 0;
+            display: flex; flex-direction: column; align-items: center;
+        }
+        .banner {
+            width: 100%; background-color: #111; color: #fff; text-align: center;
+            padding: 50px 20px; box-sizing: border-box; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .banner h1 { margin: 0 0 10px 0; font-size: 2.3rem; letter-spacing: 1px; }
+        .banner p { margin: 0 0 20px 0; font-size: 1rem; color: #aaa; font-style: italic; }
+        .home-btn {
+            background-color: transparent; color: #fff; border: 1px solid #fff;
+            padding: 8px 20px; font-size: 0.9rem; border-radius: 4px;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .home-btn:hover { background-color: #fff; color: #111; }
+        .menu-container {
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 15px; width: 90%; max-width: 900px; margin: 40px 0;
+        }
+        .folder-btn {
+            background-color: #fff; border: 1px solid #ccc; padding: 12px 10px;
+            font-size: 0.95rem; font-weight: 500; border-radius: 6px;
+            cursor: pointer; transition: all 0.2s ease; text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        .folder-btn:hover, .folder-btn.active { background-color: #111; color: #fff; border-color: #111; }
+        .gallery-view {
+            width: 90%; max-width: 1200px; display: flex; flex-direction: column; align-items: center; margin-bottom: 40px;
+        }
+        .gallery-title {
+            font-size: 1.6rem; margin-bottom: 25px; color: #111;
+            text-transform: capitalize; border-bottom: 2px solid #111; padding-bottom: 5px;
+        }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; width: 100%; }
+        .photo-item {
+            background-color: #fff; border-radius: 8px; overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.06); cursor: pointer; transition: transform 0.3s ease;
+        }
+        .photo-item:hover { transform: translateY(-4px); }
+        .photo-item img { width: 100%; height: 220px; object-fit: cover; display: block; }
+        .photo-info { padding: 15px; font-size: 0.95rem; font-weight: 500; text-align: center; }
+        #welcome-msg { text-align: center; color: #777; font-size: 1.1rem; font-style: italic; margin: 40px 0; }
+        .comments-section {
+            width: 90%; max-width: 800px; margin: 40px auto 60px auto;
+            padding: 30px; background: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); box-sizing: border-box;
+        }
+        .comments-section h2 { text-align: center; margin-top: 0; margin-bottom: 25px; color: #111; font-size: 1.5rem; }
+        .lightbox {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.9); justify-content: center; align-items: center; z-index: 1000;
+        }
+        .lightbox img { max-width: 90%; max-height: 85%; border-radius: 4px; }
+        .scroll-top-btn {
+            position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px;
+            background: linear-gradient(135deg, #111111, #333333); color: #ffffff;
+            border: 2px solid #ffffff; border-radius: 50%; font-size: 1.5rem; font-weight: bold;
+            cursor: pointer; display: none; align-items: center; justify-content: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 2000;
+        }
+        .scroll-top-btn:hover {
+            background: linear-gradient(135deg, #ffffff, #e0e0e0); color: #111111; border-color: #111111;
+            transform: translateY(-5px) scale(1.1); box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+        }
+        @media (max-width: 768px) { .menu-container { grid-template-columns: repeat(2, 1fr); } }
+    </style>
+</head>
+<body>
+
+    <div class="banner">
+        <h1>Les Souvenirs Photo d'Émile</h1>
+        <p>Clichés et archives depuis 2015</p>
+        <button class="home-btn" onclick="resetToHome()">🏠 Accueil</button>
+    </div>
+
+    <div class="menu-container">
+        <button class="folder-btn" onclick="openGallery('fleurs')">🌸 Fleurs</button>
+        <button class="folder-btn" onclick="openGallery('insectes')">🐞 Insectes</button>
+        <button class="folder-btn" onclick="openGallery('ciels')">☁️ Ciels</button>
+        <button class="folder-btn" onclick="openGallery('macros')">🔍 Macros</button>
+        <button class="folder-btn" onclick="openGallery('paysages')">🏔️ Paysages</button>
+        <button class="folder-btn" onclick="openGallery('oiseaux')">🦅 Oiseaux</button>
+        <button class="folder-btn" onclick="openGallery('animaux')">🦊 Animaux divers</button>
+        <button class="folder-btn" onclick="openGallery('saisons')">🍂 Saisons</button>
+    </div>
+
+    <div id="welcome-msg">Sélectionnez une catégorie ci-dessus pour découvrir la galerie.</div>
+
+    <div id="gallery-view" class="gallery-view" style="display: none;">
+        <h2 id="current-gallery-title" class="gallery-title">Nom</h2>
+        <div class="gallery-grid" id="gallery-images-container"></div>
+    </div>
+
+    <div class="comments-section">
+        <h2>💬 Espace Commentaires</h2>
+        <div id="cusdis_thread" data-host="https://cusdis.com" data-app-id="99c5d1e6-b605-4f36-9b51-b84784a9ff35" data-page-id="accueil_portfolio" data-page-url="https://github.io" data-page-title="Mon Portfolio Photo"></div>
+        <script async src="https://cusdis.com"></script>
+    </div>
+
+    <button id="scrollTopBtn" class="scroll-top-btn" onclick="scrollToTop()">⤊</button>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Zoom">
+    </div>
+
+    <script>
+        const photoDatabase = {
+            fleurs: [
+                { src: "https://filedn.eu", desc: "tulipier de virginie" },
+                { src: "https://postimg.cc", desc: "gerbera" },
+                { src: "https://postimg.cc", desc: "coquelicot" },
+                { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" },
+                { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" },
+                { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" },
+                { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }
+            ],
+            insectes: [
+                { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" },
+                { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" },
+                { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" },
+                { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }
+            ],
+            ciels: [
+                { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" },
+                { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" },
+                { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" },
+                { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }
+            ],
+            macros: [
+                { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" },
+                { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" },
+                { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" },
+                { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }
+            ],
+            paysages: [
+                { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" },
+                { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" },
+                { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" },
+                { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }
+            ],
+            oiseaux: [
+                { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" },
+                { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" },
+                { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" }, { src: "", desc: "" },
