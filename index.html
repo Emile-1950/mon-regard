@@ -31,7 +31,7 @@
 <body>
 
     <div class="banner">
-        <h1>Les Souvenirs Photo d'Émile</h1>
+        <h1>Les Souvenirs photos d'Émile</h1>
         <p>Clichés et archives depuis 2015</p>
         <button class="home-btn" onclick="resetToHome()">🏠 Accueil</button>
     </div>
@@ -45,6 +45,10 @@
         <button class="folder-btn" onclick="openGallery('oiseaux')">🦅 Oiseaux</button>
         <button class="folder-btn" onclick="openGallery('animaux')">🦊 Animaux divers</button>
         <button class="folder-btn" onclick="openGallery('saisons')">🍂 Saisons</button>
+        <button class="folder-btn" onclick="openGallery('Voyages')">🌸 Voyages</button>
+        <button class="folder-btn" onclick="openGallery('Papillons')">🌸 Papillons</button>
+        <button class="folder-btn" onclick="openGallery('Cervidés')">🌸 Cervidés</button>
+        <button class="folder-btn" onclick="openGallery('Renards')">🌸 Renards</button>
     </div>
 
     <div id="welcome-msg">Sélectionnez une catégorie ci-dessus pour découvrir la galerie.</div>
@@ -112,8 +116,7 @@
                         { src: "", desc: "" }, 
                         { src: "", desc: "" }, 
                         { src: "", desc: "" }, 
-                      ],
-        
+                    ],
             oiseaux:[ { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/oiseaux%201/DSC07997-topaz-denoise-sharpen-upscale-1.5x.jpeg", desc: "Fauvette à tête noire" }, 
                        { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/oiseaux%201/DSC08209-topaz-denoise-sharpen-upscale-1.5x.jpeg", desc: "Chardonneret élégant" },   
                        { src: "", desc: "" }, 
@@ -136,6 +139,38 @@
                       { src: "", desc: "" }, 
                       { src: "", desc: "" },
                    ],
+
+            Voyages:[
+                      { src: "", desc: "" },
+                      { src: "", desc: "" }, 
+                      { src: "", desc: "" }, 
+                      { src: "", desc: "" }, 
+                      { src: "", desc: "" },
+                   ],
+
+            Papillons:[
+                      { src: "", desc: "" },
+                      { src: "", desc: "" }, 
+                      { src: "", desc: "" }, 
+                      { src: "", desc: "" }, 
+                      { src: "", desc: "" },
+                   ],   
+                   
+            Cervidés:[
+                      { src: "", desc: "" },
+                      { src: "", desc: "" }, 
+                      { src: "", desc: "" }, 
+                      { src: "", desc: "" }, 
+                      { src: "", desc: "" },
+                   ],    
+                   
+            Renards:[
+                      { src: "", desc: "" },
+                      { src: "", desc: "" }, 
+                      { src: "", desc: "" }, 
+                      { src: "", desc: "" }, 
+                      { src: "", desc: "" },
+                   ],       
         };
 
         function openGallery(category) {
