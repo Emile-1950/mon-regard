@@ -53,7 +53,21 @@
 
     <div id="welcome-msg">Sélectionnez une catégorie ci-dessus pour découvrir la galerie.</div>
 
-   
+       <!-- Espace Commentaires avec Waline -->
+    <div id="waline-comments"></div>
+    <link rel="stylesheet" href="https://unpkg.com" />
+    <script type="module">
+      import { init } from 'https://unpkg.com';
+
+      init({
+        el: '#waline-comments',
+        serverURL: 'https://vercel.app',
+        lang: 'fr',
+        dark: 'auto',
+        commentSorting: 'latest',
+      });
+    </script>
+
     <button id="scrollTopBtn" class="scroll-top-btn" onclick="scrollToTop()">⤊</button>
 
     <div id="lightbox" class="lightbox" onclick="closeLightbox()">
@@ -225,23 +239,5 @@
             window.scrollTo({ top: 0, behavior: "smooth" });
         }
     </script>
-
-
-<!-- Zone d'affichage des commentaires Waline -->
-<div id="waline-comments"></div>
-
-<link rel="stylesheet" href="https://unpkg.com" />
-<script type="module">
-  import { init } from 'https://unpkg.com';
-
-  init({
-    el: '#waline-comments',
-    serverURL: 'https://vercel.app',
-    lang: 'fr',
-    dark: 'auto',
-    commentSorting: 'latest',
-  });
-</script>
-
 </body>
 </html>
