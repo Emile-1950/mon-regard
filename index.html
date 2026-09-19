@@ -235,5 +235,23 @@
             window.scrollTo({ top: 0, behavior: "smooth" });
         }
     </script>
+
+
+<!-- Zone d'affichage des commentaires Waline -->
+<div id="waline-comments"></div>
+
+<link rel="stylesheet" href="https://unpkg.com" />
+<script type="module">
+  import { init } from 'https://unpkg.com';
+
+  init({
+    el: '#waline-comments',
+    serverURL: 'https://vercel.app',
+    lang: 'fr',
+    dark: 'auto',
+    commentSorting: 'latest',
+  });
+</script>
+
 </body>
 </html>
