@@ -61,6 +61,23 @@
     </div>
 
 
+    <!-- 4. L'ESPACE COMMENTAIRES DISQUS SANS INSCRIPTION -->
+    <div class="comments-section">
+        <h2>💬 Espace Commentaires</h2>
+        <div id="disqus_thread"></div>
+        <script>
+            var disqus_config = function () {
+                this.page.url = "https://emile-1950.github.io/mon-regard/";
+                this.page.identifier = "mon_regard_emile_principal";
+            };
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://disqus.com';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    </div>
 
    
 
