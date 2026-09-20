@@ -62,24 +62,24 @@
 
 
 
-        <!-- Espace Commentaires avec Waline -->
+       <!-- 4. L'ESPACE COMMENTAIRES DISQUS SANS INSCRIPTION -->
     <div class="comments-section">
         <h2>💬 Espace Commentaires</h2>
-        <div id="waline-comments"></div>
+        <div id="disqus_thread"></div>
+        <script>
+            var disqus_config = function () {
+                this.page.url = "https://emile-1950.github.io/mon-regard/";
+                this.page.identifier = "mon_regard_emile_principal";
+            };
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://disqus.com';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
     </div>
 
-    <link rel="stylesheet" href="https://unpkg.com" />
-    <script type="module">
-      import { init } from 'https://unpkg.com';
-
-      init({
-        el: '#waline-comments',
-        serverURL: 'https://vercel.app',
-        lang: 'fr',
-        dark: 'auto',
-        commentSorting: 'latest',
-      });
-    </script>
 
 
     <button id="scrollTopBtn" class="scroll-top-btn" onclick="scrollToTop()">⤊</button>
