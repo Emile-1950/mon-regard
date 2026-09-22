@@ -45,25 +45,28 @@
         <a href="Provence-page2.html">2 »</a>
     </div>
 <script>
-  // Ce script ajoute la description et l'agrandissement sur tes images existantes !
   document.querySelectorAll('.galerie img').forEach(img => {
-    // 1. On récupère le texte du "alt" pour en faire une description
-    const descText = img.getAttribute('alt') || "Photo de Provence";
+    // 1. On crée une boîte pour regrouper l'image et sa description
+    const boite = document.createElement('div');
+    boite.style.cssText = "display: flex; flex-direction: column; align-items: center; background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;";
     
-    // 2. On crée la légende sous l'image
+    // 2. On récupère la description du "alt"
+    const descText = img.getAttribute('alt') || "Photo de Provence";
     const desc = document.createElement('p');
-    desc.style.cssText = "margin-top: 8px; font-weight: bold; color: #fff; font-size: 14px; text-align: center;";
+    desc.style.cssText = "margin-top: 10px; font-weight: bold; color: #fff; font-size: 14px; text-align: center; margin-bottom: 0;";
     desc.textContent = descText;
     
-    // 3. On entoure l'image d'un lien pour pouvoir l'agrandir au clic
+    // 3. On crée le lien pour agrandir (dans un style propre)
     const lien = document.createElement('a');
     lien.href = img.src;
-    lien.target = "_blank"; // Ouvre l'image en grand dans un nouvel onglet
+    lien.target = "_blank";
+    lien.style.width = "100%";
     
-    // 4. On installe le tout proprement dans ta galerie
-    img.parentNode.insertBefore(lien, img);
+    // 4. On réorganise le tout dans la galerie
+    img.parentNode.insertBefore(boite, img);
     lien.appendChild(img);
-    lien.parentNode.insertBefore(desc, lien.nextSibling);
+    boite.appendChild(lien);
+    boite.appendChild(desc);
   });
 </script>
 </body>
