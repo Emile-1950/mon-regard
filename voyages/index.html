@@ -44,6 +44,27 @@
         <!-- Quand tu créeras la page 2, ce bouton fonctionnera tout seul -->
         <a href="Provence-page2.html">2 »</a>
     </div>
-
+<script>
+  // Ce script ajoute la description et l'agrandissement sur tes images existantes !
+  document.querySelectorAll('.galerie img').forEach(img => {
+    // 1. On récupère le texte du "alt" pour en faire une description
+    const descText = img.getAttribute('alt') || "Photo de Provence";
+    
+    // 2. On crée la légende sous l'image
+    const desc = document.createElement('p');
+    desc.style.cssText = "margin-top: 8px; font-weight: bold; color: #fff; font-size: 14px; text-align: center;";
+    desc.textContent = descText;
+    
+    // 3. On entoure l'image d'un lien pour pouvoir l'agrandir au clic
+    const lien = document.createElement('a');
+    lien.href = img.src;
+    lien.target = "_blank"; // Ouvre l'image en grand dans un nouvel onglet
+    
+    // 4. On installe le tout proprement dans ta galerie
+    img.parentNode.insertBefore(lien, img);
+    lien.appendChild(img);
+    lien.parentNode.insertBefore(desc, lien.nextSibling);
+  });
+</script>
 </body>
 </html>
