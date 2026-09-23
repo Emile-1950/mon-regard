@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Voyage au Mont Saint Michel - Mon Portfolio</title>
+    <style>
+        body { background-color: #121212; color: white; font-family: sans-serif; padding: 20px; }
+        .galerie { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 20px; }
+        .galerie img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; }
+        .photo-item { display: flex; flex-direction: column; align-items: center; background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px; }
+        .description { margin-top: 10px; font-weight: bold; color: #fff; font-size: 14px; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <h1>✝️ Voyage au Mont Saint Michel</h1>
+    
+    <div class="galerie">
+       <div class="photo-item"><img src="METS_TON_LIEN_PCLOUD_1_ICI.jpg" alt="📸 Description de la photo 1"></div>
+       <div class="photo-item"><img src="METS_TON_LIEN_PCLOUD_2_ICI.jpg" alt="📸 Description de la photo 2"></div>
+       <div class="photo-item"><img src="METS_TON_LIEN_PCLOUD_3_ICI.jpg" alt="📸 Description de la photo 3"></div>
+       <div class="photo-item"><img src="METS_TON_LIEN_PCLOUD_4_ICI.jpg" alt="📸 Description de la photo 4"></div>
+       <div class="photo-item"><img src="METS_TON_LIEN_PCLOUD_5_ICI.jpg" alt="📸 Description de la photo 5"></div>
+       <div class="photo-item"><img src="METS_TON_LIEN_PCLOUD_6_ICI.jpg" alt="📸 Description de la photo 6"></div>
+       <div class="photo-item"><img src="METS_TON_LIEN_PCLOUD_7_ICI.jpg" alt="📸 Description de la photo 7"></div>
+       <div class="photo-item"><img src="METS_TON_LIEN_PCLOUD_8_ICI.jpg" alt="📸 Description de la photo 8"></div>
+       <div class="photo-item"><img src="METS_TON_LIEN_PCLOUD_9_ICI.jpg" alt="📸 Description de la photo 9"></div>
+       <div class="photo-item"><img src="METS_TON_LIEN_PCLOUD_10_ICI.jpg" alt="📸 Description de la photo 10"></div>
+       <div class="photo-item"><img src="METS_TON_LIEN_PCLOUD_1_ICI.jpg" alt="📸 Description de la photo 1"></div>
+       <div class="photo-item"><img src="METS_TON_LIEN_PCLOUD_2_ICI.jpg" alt="📸 Description de la photo 2"></div>
+    </div>
+    <script>
+        // Ton système de zoom automatique magique qui fonctionne tout seul !
+        const popup = document.createElement('div');
+        popup.style.cssText = "display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; justify-content:center; align-items:center; cursor:pointer;";
+        const popupImg = document.createElement('img');
+        popupImg.style.cssText = "max-width:90%; max-height:85%; border-radius:8px; object-fit:contain;";
+        popup.appendChild(popupImg);
+        document.body.appendChild(popup);
+
+        document.querySelectorAll('.galerie img').forEach(img => {
+            img.style.cursor = "pointer";
+            img.addEventListener('click', () => {
+                popupImg.src = img.src;
+                popup.style.display = "flex";
+            });
+        });
+        popup.addEventListener('click', () => popup.style.display = "none");
+    </script>
+</body>
+</html>
