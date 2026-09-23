@@ -5,8 +5,8 @@
     <title>Mes Voyages - Mon Portfolio</title>
     <style>
         body { font-family: sans-serif; background-color: #121212; color: white; text-align: center; padding: 40px 20px; }
-        .menu-voyages { display: flex; flex-direction: column; align-items: center; gap: 20px; margin-top: 50px; }
-        .btn-destination { width: 80%; max-width: 400px; padding: 20px; font-size: 20px; font-weight: bold; color: white; background-color: #1e1e1e; border: 2px solid #333; border-radius: 12px; cursor: pointer; transition: 0.3s; text-align: left; padding-left: 30px; }
+                .menu-voyages { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin: 40px auto; max-width: 800px; }
+        .btn-destination { padding: 15px; font-size: 16px; font-weight: bold; color: white; background-color: #1e1e1e; border: 2px solid #333; border-radius: 8px; cursor: pointer; transition: 0.3s; text-align: center; }
         .btn-destination:hover { background-color: #2a2a2a; border-color: #007bff; transform: scale(1.02); }
         .bouton-accueil { display: inline-block; margin-bottom: 30px; text-decoration: none; color: #aaa; font-size: 16px; }
         .bouton-accueil:hover { color: #fff; }
