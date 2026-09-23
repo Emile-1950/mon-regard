@@ -1,31 +1,28 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>🗼Voyage à Paris - Mon Portfolio</title>
+    <meta charset="UTF-8"> 
+    <title>🗼 Voyage à Paris - Mon Portfolio</title>
     <style>
         body { background-color: #121212; color: white; font-family: sans-serif; padding: 20px; }
         .galerie { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 20px; }
-        .galerie img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; }
-        .photo-item { display: flex; flex-direction: column; align-items: center; background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px; }
+        .photo-item { display: flex; flex-direction: column; align-items: center; background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px; width: 250px; margin: 0 auto; }
+        .photo-item img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; display: block; }
         .description { margin-top: 10px; font-weight: bold; color: #fff; font-size: 14px; text-align: center; }
     </style>
 </head>
 <body>
-<div style="text-align: center;"><a href="index.html" style="display: inline-block; margin-bottom: 20px; text-decoration: none; color: #aaa; font-size: 16px;">⬅️ Retour au menu des voyages</a></div>
-<h1 style="text-align: center; margin-top: 25px;">🗼 Voyage à Paris</h1>
+    <div style="text-align: center;"><a href="index.html" style="display: inline-block; margin-bottom: 20px; text-decoration: none; color: #aaa; font-size: 16px;">⬅️ Retour au menu des voyages</a></div>
+    <h1 style="text-align: center; margin-top: 25px;">🗼 Voyage à Paris</h1>
 
-            <div class="galerie">
+    <div class="galerie">
         <div class="photo-item">
             <img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/6W1A7248.JPG" alt="Le pont Alexandre III">
             <div class="description">Le pont Alexandre III</div>
         </div>
     </div>
 
-    
-
-
-    <script>
+     <script>
         // Ton système de zoom automatique magique qui fonctionne tout seul !
         const popup = document.createElement('div');
         popup.style.cssText = "display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; justify-content:center; align-items:center; cursor:pointer;";
