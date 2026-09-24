@@ -24,23 +24,37 @@
             <div class="photo-item"><img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Paris/6W1A7398.JPG" alt="Les Invalides"></div>
             <div class="photo-item"><img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Paris/6W1A7326.JPG" alt="Montmartre"></div>
             <div class="photo-item"><img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Paris/6W1A7221.JPG" alt="champ-de-Mars"></div>
+       <!-- Ton système de zoom automatique ET affichage automatique des légendes ! -->
     <script>
-        // Ton système de zoom automatique magique qui fonctionne tout seul !
+        // 1. Création de la boîte de texte sous chaque image automatiquement
+        document.querySelectorAll('.photo-item').forEach(item => {
+            const img = item.querySelector('img');
+            if (img && img.getAttribute('alt')) {
+                const desc = document.createElement('div');
+                desc.className = 'description';
+                desc.innerText = img.getAttribute('alt');
+                item.appendChild(desc);
+            }
+        });
+
+        // 2. Système de zoom Pop-up au clic
         const popup = document.createElement('div');
-        popup.style.cssText = "display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; justify-content:center; align-items:center; cursor:pointer;";
+        popup.style.cssText = "display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:1000; justify-content:center; align-items:center; cursor:pointer;";
         const popupImg = document.createElement('img');
         popupImg.style.cssText = "max-width:90%; max-height:85%; border-radius:8px; object-fit:contain;";
         popup.appendChild(popupImg);
         document.body.appendChild(popup);
 
-        document.querySelectorAll('.galerie img').forEach(img => {
-            img.style.cursor = "pointer";
+        document.querySelectorAll('.photo-item img').forEach(img => {
             img.addEventListener('click', () => {
                 popupImg.src = img.src;
-                popup.style.display = "flex";
+                popup.style.display = 'flex';
             });
         });
-        popup.addEventListener('click', () => popup.style.display = "none");
+
+        popup.addEventListener('click', () => {
+            popup.style.display = 'none';
+        });
     </script>
 </body>
 </html>
