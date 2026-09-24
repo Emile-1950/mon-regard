@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu Oiseaux - Mon Portfolio</title>
+    <style>
+        body { font-family: sans-serif; background-color: #121212; color: white; text-align: center; padding: 20px; }
+        .menu-oiseaux { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin: 40px auto; max-width: 800px; }
+        .btn-oiseau { padding: 15px; font-size: 16px; font-weight: bold; color: white; background-color: #1e1e1e; border: 2px solid #333; border-radius: 8px; cursor: pointer; transition: 0.3s; text-align: center; }
+        .btn-oiseau:hover { background-color: #2a2a2a; border-color: #007bff; transform: scale(1.02); }
+        .bouton-accueil { display: inline-block; margin-bottom: 20px; text-decoration: none; color: #aaa; }
+        .bouton-accueil:hover { color: #fff; }
+    </style>
+</head>
+<body>
+
+    <div style="text-align: center;">
+        <a href="../index.html" class="bouton-accueil">⬅️ Retour à l'accueil générale</a>
+    </div>
+
+    <h1>🦅 Univers des Oiseaux</h1>
+    <p>Choisissez une catégorie pour découvrir mes clichés :</p>
+
+    <div class="menu-oiseaux">
+        <!-- On va personnaliser tes boutons juste ici ! -->
+        <button class="btn-oiseau" onclick="window.location.href='rapaces.html'">🦅 Rapaces</button>
+        <button class="btn-oiseau" onclick="window.location.href='passereaux.html'">🐦 Passereaux</button>
+    </div>
+
+</body>
+</html>
