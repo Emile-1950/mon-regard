@@ -55,48 +55,37 @@
     <div style="text-align: center; margin-top: 30px;">
    </div>
 
-<script>
-  // 1. On crée la boîte de zoom cachée en arrière-plan
-  const popup = document.createElement('div');
-  popup.style.cssText = "display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; justify-content:center; align-items:center; cursor:pointer;";
-  
-  const popupImg = document.createElement('img');
-  popupImg.style.cssText = "max-width:90%; max-height:85%; border-radius:8px; box-shadow:0 0 20px rgba(0,0,0,0.5); object-fit:contain;";
-  
-  const boutonFermer = document.createElement('span');
-  boutonFermer.textContent = "✕";
-  boutonFermer.style.cssText = "position:absolute; top:20px; right:30px; color:#fff; font-size:30px; font-weight:bold;";
-  
-  popup.appendChild(popupImg);
-  popup.appendChild(boutonFermer);
-  document.body.appendChild(popup);
+    <!-- Ton système de zoom automatique ET affichage automatique des légendes ! -->
+    <script>
+        // 1. Création de la boîte de texte sous chaque image automatiquement
+        document.querySelectorAll('.photo-item').forEach(item => {
+            const img = item.querySelector('img');
+            if (img && img.getAttribute('alt')) {
+                const desc = document.createElement('div');
+                desc.className = 'description';
+                desc.innerText = img.getAttribute('alt');
+                item.appendChild(desc);
+            }
+        });
 
-  // 2. On configure tes images de la galerie
-  document.querySelectorAll('.galerie img').forEach(img => {
-    const boite = document.createElement('div');
-    boite.style.cssText = "display: flex; flex-direction: column; align-items: center; background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;";
-    
-    const descText = img.getAttribute('alt') || "Photo de Provence";
-    const desc = document.createElement('p');
-    desc.style.cssText = "margin-top: 10px; font-weight: bold; color: #fff; font-size: 14px; text-align: center; margin-bottom: 0;";
-    desc.textContent = descText;
-    
-    // On rend l'image cliquable pour ouvrir le zoom
-    img.style.cursor = "pointer";
-    img.addEventListener('click', () => {
-      popupImg.src = img.src;
-      popup.style.display = "flex";
-    });
-    
-    img.parentNode.insertBefore(boite, img);
-    boite.appendChild(img);
-    boite.appendChild(desc);
-  });
+        // 2. Système de zoom Pop-up au clic
+        const popup = document.createElement('div');
+        popup.style.cssText = "display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:1000; justify-content:center; align-items:center; cursor:pointer;";
+        const popupImg = document.createElement('img');
+        popupImg.style.cssText = "max-width:90%; max-height:85%; border-radius:8px; object-fit:contain;";
+        popup.appendChild(popupImg);
+        document.body.appendChild(popup);
 
-  // 3. On ferme le zoom quand on clique sur le fond noir ou la croix
-  popup.addEventListener('click', () => {
-    popup.style.display = "none";
-  });
-</script>
+        document.querySelectorAll('.photo-item img').forEach(img => {
+            img.addEventListener('click', () => {
+                popupImg.src = img.src;
+                popup.style.display = 'flex';
+            });
+        });
+
+        popup.addEventListener('click', () => {
+            popup.style.display = 'none';
+        });
+    </script>
 </body>
 </html>
