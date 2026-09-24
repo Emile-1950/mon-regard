@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Voyage au Pays des Passereaux - Mon Portfolio</title>
+    <style>
+        body { font-family: sans-serif; background: #121212; color: white; text-align: center; padding: 20px; }
+        .galerie { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1200px; margin: 40px auto; }
+        .galerie img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        .bouton-retour { display: inline-block; margin-bottom: 20px; text-decoration: none; color: #aaa; transition: 0.3s; }
+        .bouton-retour:hover { color: #fff; }
+    </style>
+</head>
+<body>
+
+    <div style="text-align: center;">
+        <!-- Ce bouton te ramène directement à ton magnifique menu noir des oiseaux -->
+        <a href="index.html" class="bouton-retour">⬅️ Retour au menu des oiseaux</a>
+    </div>
+
+    <h1 style="text-align: center; margin-top: 25px;">🐦 Galerie des Passereaux</h1>
+    <p>Page 1 - Mes 8 premiers clichés</p>
+
+    <div class="galerie">
+        <!-- Tes deux premières photos magnifiques déjà installées -->
+        <div class="photo-item"><img src="https://filedn.eu" alt="Fauvette à tête noire"></div>
+        <div class="photo-item"><img src="https://filedn.eu" alt="Chardonneret élégant"></div>
+        
+        <!-- Bloc d'attente de 6 lignes vierges pour tes futurs passereaux pCloud -->
+        <div class="photo-item"><img src="LIEN_PCLOUD_ICI.jpg" alt="📸 Description de la photo 3"></div>
+        <div class="photo-item"><img src="LIEN_PCLOUD_ICI.jpg" alt="📸 Description de la photo 4"></div>
+        <div class="photo-item"><img src="LIEN_PCLOUD_ICI.jpg" alt="📸 Description de la photo 5"></div>
+        <div class="photo-item"><img src="LIEN_PCLOUD_ICI.jpg" alt="📸 Description de la photo 6"></div>
+        <div class="photo-item"><img src="LIEN_PCLOUD_ICI.jpg" alt="📸 Description de la photo 7"></div>
+        <div class="photo-item"><img src="LIEN_PCLOUD_ICI.jpg" alt="📸 Description de la photo 8"></div>
+    </div>
+ 
+    <!-- Bloc de navigation : Page 1 (Prêt pour quand tu feras la page 2 !) -->
+    <div class="pagination" style="text-align: center; margin-top: 40px; margin-bottom: 20px;">
+        <span style="padding: 10px 15px; margin: 0 5px; background-color: #007bff; color: white; border-radius: 5px; font-weight: bold;">1</span>
+        <a href="passereaux-page2.html" style="padding: 10px 15px; margin: 0 5px; background-color: #1e1e1e; color: white; border: 1px solid #333; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s; display: none;">2 ➡️</a>
+    </div>
+
+<script>
+    // Système d'affichage automatique des descriptions blanches à partir du "alt"
+    document.querySelectorAll('.photo-item').forEach(item => {
+        const img = item.querySelector('img');
+        if (img && img.getAttribute('alt')) {
+            const desc = document.createElement('div');
+            desc.className = 'description';
+            desc.style.cssText = "margin-top: 10px; font-weight: bold; color: #fff; font-size: 14px; text-align: center;";
+            desc.innerText = img.getAttribute('alt');
+            item.appendChild(desc);
+        }
+    });
+
+    // Système de zoom Pop-up automatique au clic
+    const popup = document.createElement('div');
+    popup.style.cssText = "display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; justify-content:center; align-items:center; cursor:pointer;";
+    const popupImg = document.createElement('img');
+    popupImg.style.cssText = "max-width:90%; max-height:85%; border-radius:8px; object-fit:contain;";
+    popup.appendChild(popupImg);
+    document.body.appendChild(popup);
+
+    document.querySelectorAll('.photo-item img').forEach(img => {
+        img.style.cursor = "pointer";
+        img.addEventListener('click', () => {
+            popupImg.src = img.src;
+            popup.style.display = "flex";
+        });
+    });
+
+    popup.addEventListener('click', () => {
+        popup.style.display = "none";
+    });
+</script>
+</body>
+</html>
