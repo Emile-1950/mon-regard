@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Voyage Provence - Mon Portfolio</title>
+    <style>
+        body { font-family: sans-serif; background: #f4f4f4; text-align: center; padding: 20px; }
+        .galerie { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1200px; margin: 40px auto; }
+        .galerie img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        
+        /* Style pour la pagination tout en bas */
+        .pagination { margin: 40px 0; display: flex; justify-content: center; gap: 10px; }
+        .pagination a, .pagination span { padding: 10px 15px; border-radius: 5px; text-decoration: none; color: #333; background: white; border: 1px solid #ddd; }
+        .pagination .active { background: #007bff; color: white; border-color: #007bff; font-weight: bold; }
+        .pagination a:hover { background: #eee; }
+        
+        .bouton-retour { display: inline-block; margin-bottom: 20px; text-decoration: none; color: #666; }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="bouton-retour">⬅️ Retour aux destinations</a>
+
+    <h1>🌞 Voyage Provence</h1>
+    <p>Page 1 - Les 10 premières photos</p>
+
+    <!-- C'est ici que tu mettras tes 10 premières images -->
+    <div class="galerie">
+        <img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Provence%20I/DSC03499-Avec%20accentuation-Bruit.jpg" alt="pont du Gard">
+        <img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Provence%20I/DSC03458-Avec%20accentuation-Bruit.jpg" alt="Avignon">
+        <img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Provence%20I/DSC03521.jpg" alt="Isle-sur-la-Sorgues">
+        <img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Provence%20I/DSC03554.jpg" alt="Gordes">
+        <img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Provence%20II/DSC03569.jpg" alt="Fontaine de Vaucluse">
+        <img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Provence%20I/DSC03546les%20calades.jpg" alt="Vallée Provencale">
+        <img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Provence%20II/DSC03509.jpg" alt="Pont du Gard">
+
+
+        <!-- Tu pourras copier-coller ces lignes pour aller jusqu'à 10 photos -->
+    </div>
+ 
+    <!-- Les boutons de pagination magiques -->
+    <div class="pagination">
+        <span class="active">1</span>
+        <!-- Quand tu créeras la page 2, ce bouton fonctionnera tout seul -->
+        <a href="Provence-page2.html">2 »</a>
+        <a href="Provence-page3.html">3 »</a>
+        <a href="Provence-page4.html">4 »</a>
+        <a href="Provence-page5.html">5 »</a>
+        <a href="Provence-page6.html">6 »</a>
+    </div>
+    <div style="text-align: center; margin-top: 30px;">
+   </div>
+
+<script>
+  // 1. On crée la boîte de zoom cachée en arrière-plan
+  const popup = document.createElement('div');
+  popup.style.cssText = "display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; justify-content:center; align-items:center; cursor:pointer;";
+  
+  const popupImg = document.createElement('img');
+  popupImg.style.cssText = "max-width:90%; max-height:85%; border-radius:8px; box-shadow:0 0 20px rgba(0,0,0,0.5); object-fit:contain;";
+  
+  const boutonFermer = document.createElement('span');
+  boutonFermer.textContent = "✕";
+  boutonFermer.style.cssText = "position:absolute; top:20px; right:30px; color:#fff; font-size:30px; font-weight:bold;";
+  
+  popup.appendChild(popupImg);
+  popup.appendChild(boutonFermer);
+  document.body.appendChild(popup);
+
+  // 2. On configure tes images de la galerie
+  document.querySelectorAll('.galerie img').forEach(img => {
+    const boite = document.createElement('div');
+    boite.style.cssText = "display: flex; flex-direction: column; align-items: center; background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;";
+    
+    const descText = img.getAttribute('alt') || "Photo de Provence";
+    const desc = document.createElement('p');
+    desc.style.cssText = "margin-top: 10px; font-weight: bold; color: #fff; font-size: 14px; text-align: center; margin-bottom: 0;";
+    desc.textContent = descText;
+    
+    // On rend l'image cliquable pour ouvrir le zoom
+    img.style.cursor = "pointer";
+    img.addEventListener('click', () => {
+      popupImg.src = img.src;
+      popup.style.display = "flex";
+    });
+    
+    img.parentNode.insertBefore(boite, img);
+    boite.appendChild(img);
+    boite.appendChild(desc);
+  });
+
+  // 3. On ferme le zoom quand on clique sur le fond noir ou la croix
+  popup.addEventListener('click', () => {
+    popup.style.display = "none";
+  });
+</script>
+</body>
+</html>
