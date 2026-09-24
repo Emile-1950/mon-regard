@@ -35,49 +35,10 @@
 
         <!-- Tu pourras copier-coller ces lignes pour aller jusqu'à 10 photos -->
     </div>
- 
-<script>
-  // 1. On crée la boîte de zoom cachée en arrière-plan
-  const popup = document.createElement('div');
-  popup.style.cssText = "display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; justify-content:center; align-items:center; cursor:pointer;";
-  
-  const popupImg = document.createElement('img');
-  popupImg.style.cssText = "max-width:90%; max-height:85%; border-radius:8px; box-shadow:0 0 20px rgba(0,0,0,0.5); object-fit:contain;";
-  
-  const boutonFermer = document.createElement('span');
-  boutonFermer.textContent = "✕";
-  boutonFermer.style.cssText = "position:absolute; top:20px; right:30px; color:#fff; font-size:30px; font-weight:bold;";
-  
-  popup.appendChild(popupImg);
-  popup.appendChild(boutonFermer);
-  document.body.appendChild(popup);
-
-  // 2. On configure tes images de la galerie
-  document.querySelectorAll('.galerie img').forEach(img => {
-    const boite = document.createElement('div');
-    boite.style.cssText = "display: flex; flex-direction: column; align-items: center; background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;";
-    
-    const descText = img.getAttribute('alt') || "Photo de Provence";
-    const desc = document.createElement('p');
-    desc.style.cssText = "margin-top: 10px; font-weight: bold; color: #fff; font-size: 14px; text-align: center; margin-bottom: 0;";
-    desc.textContent = descText;
-    
-    // On rend l'image cliquable pour ouvrir le zoom
-    img.style.cursor = "pointer";
-    img.addEventListener('click', () => {
-      popupImg.src = img.src;
-      popup.style.display = "flex";
-    });
-    
-    img.parentNode.insertBefore(boite, img);
-    boite.appendChild(img);
-    boite.appendChild(desc);
-  });
-
-  // 3. On ferme le zoom quand on clique sur le fond noir ou la croix
-  popup.addEventListener('click', () => {
-    popup.style.display = "none";
-  });
-</script>
+    <!-- Bloc de navigation : Page 1 -->
+    <div class="pagination" style="text-align: center; margin-top: 40px; margin-bottom: 20px;">
+        <span style="padding: 10px 15px; margin: 0 5px; background-color: #007bff; color: white; border-radius: 5px; font-weight: bold;">1</span>
+        <a href="provence-page2.html" style="padding: 10px 15px; margin: 0 5px; background-color: #1e1e1e; color: white; border: 1px solid #333; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s;">2 ➡️</a>
+    </div>
 </body>
 </html>
