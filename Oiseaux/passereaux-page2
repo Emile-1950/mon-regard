@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Voyage au Pays des Passereaux - Mon Portfolio</title>
+    <title>Voyage au Pays des Passereaux - Page 2 - Mon Portfolio</title>
     <style>
         body { font-family: sans-serif; background: #121212; color: white; text-align: center; padding: 20px; }
         .galerie { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1200px; margin: 40px auto; }
@@ -14,72 +14,60 @@
 <body>
 
     <div style="text-align: center;">
-        <!-- Ce bouton te ramène directement à ton magnifique menu noir des oiseaux -->
         <a href="index.html" class="bouton-retour">⬅️ Retour au menu des oiseaux</a>
     </div>
 
     <h1 style="text-align: center; margin-top: 25px;">🐦 Galerie des Passereaux</h1>
+    <p>Page 2 - Les 8 photos suivantes</p>
 
     <div class="galerie">
-        <!-- Tes deux premières photos magnifiques déjà installées -->
-        <div class="photo-item"><img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/oiseaux%201/DSC08073-topaz-denoise-sharpen-upscale-2x.jpeg" alt="Fauvette à tête noire"></div>
-        <div class="photo-item"><img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/oiseaux%201/DSC08209-topaz-denoise-sharpen-upscale-1.5x.jpeg" alt="Chardonneret élégant"></div>
-        <div class="photo-item"><img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/oiseaux%201/DSC07911-topaz-denoise-sharpen-upscale-1.5x.jpeg" alt="mésanges Nonette"></div>
-        <div class="photo-item"><img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/oiseaux%201/DSC07924-topaz-denoise-sharpen-upscale-2x.jpeg" alt="bruant jaune"></div>
-        <div class="photo-item"><img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/oiseaux%201/DSC08294-topaz-denoise-sharpen-upscale-1.5x.jpeg" alt="pinson des arbres"></div>
-        <div class="photo-item"><img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/oiseaux%201/DSC08236-topaz-denoise-sharpen-upscale-2x.jpeg" alt="rouge-gorge, familier"></div>
-        <div class="photo-item"><img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/oiseaux%201/DSC07934-topaz-denoise-sharpen-upscale-2x.jpeg" alt="pouillot véloce"></div>
-        <div class="photo-item"><img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/oiseaux%201/DSC08038-topaz-denoise-sharpen-upscale-1.5x.jpeg" alt="grive litorne"></div>
+        <!-- J'ai mis 8 lignes prêtes pour tes futurs passereaux pCloud -->
+        <div class="photo-item"><img src="LIEN_PCLOUD_ICI.jpg" alt="📸 Description de la photo 9"></div>
+        <div class="photo-item"><img src="LIEN_PCLOUD_ICI.jpg" alt="📸 Description de la photo 10"></div>
+        <div class="photo-item"><img src="LIEN_PCLOUD_ICI.jpg" alt="📸 Description de la photo 11"></div>
+        <div class="photo-item"><img src="LIEN_PCLOUD_ICI.jpg" alt="📸 Description de la photo 12"></div>
+        <div class="photo-item"><img src="LIEN_PCLOUD_ICI.jpg" alt="📸 Description de la photo 13"></div>
+        <div class="photo-item"><img src="LIEN_PCLOUD_ICI.jpg" alt="📸 Description de la photo 14"></div>
+        <div class="photo-item"><img src="LIEN_PCLOUD_ICI.jpg" alt="📸 Description de la photo 15"></div>
+        <div class="photo-item"><img src="LIEN_PCLOUD_ICI.jpg" alt="📸 Description de la photo 16"></div>
     </div>
  
-     <!-- Bloc de navigation : Page 2 -->
+    <!-- Bloc de navigation : Page 2 parfaitement corrigé -->
     <div class="pagination" style="text-align: center; margin-top: 40px; margin-bottom: 20px;">
         <a href="passereaux.html" style="padding: 10px 15px; margin: 0 5px; background-color: #1e1e1e; color: white; border: 1px solid #333; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s;">⬅️ 1</a>
         <span style="padding: 10px 15px; margin: 0 5px; background-color: #007bff; color: white; border-radius: 5px; font-weight: bold;">2</span>
     </div>
 
 <script>
-  // 1. On crée la boîte de zoom cachée en arrière-plan
-  const popup = document.createElement('div');
-  popup.style.cssText = "display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; justify-content:center; align-items:center; cursor:pointer;";
-  
-  const popupImg = document.createElement('img');
-  popupImg.style.cssText = "max-width:90%; max-height:85%; border-radius:8px; box-shadow:0 0 20px rgba(0,0,0,0.5); object-fit:contain;";
-  
-  const boutonFermer = document.createElement('span');
-  boutonFermer.textContent = "✕";
-  boutonFermer.style.cssText = "position:absolute; top:20px; right:30px; color:#fff; font-size:30px; font-weight:bold;";
-  
-  popup.appendChild(popupImg);
-  popup.appendChild(boutonFermer);
-  document.body.appendChild(popup);
-
-  // 2. On configure tes images de la galerie
-  document.querySelectorAll('.galerie img').forEach(img => {
-    const boite = document.createElement('div');
-    boite.style.cssText = "display: flex; flex-direction: column; align-items: center; background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;";
-    
-    const descText = img.getAttribute('alt') || "Photo de Provence";
-    const desc = document.createElement('p');
-    desc.style.cssText = "margin-top: 10px; font-weight: bold; color: #fff; font-size: 14px; text-align: center; margin-bottom: 0;";
-    desc.textContent = descText;
-    
-    // On rend l'image cliquable pour ouvrir le zoom
-    img.style.cursor = "pointer";
-    img.addEventListener('click', () => {
-      popupImg.src = img.src;
-      popup.style.display = "flex";
+    document.querySelectorAll('.photo-item').forEach(item => {
+        const img = item.querySelector('img');
+        if (img && img.getAttribute('alt')) {
+            const desc = document.createElement('div');
+            desc.className = 'description';
+            desc.style.cssText = "margin-top: 10px; font-weight: bold; color: #fff; font-size: 14px; text-align: center;";
+            desc.innerText = img.getAttribute('alt');
+            item.appendChild(desc);
+        }
     });
-    
-    img.parentNode.insertBefore(boite, img);
-    boite.appendChild(img);
-    boite.appendChild(desc);
-  });
 
-  // 3. On ferme le zoom quand on clique sur le fond noir ou la croix
-  popup.addEventListener('click', () => {
-    popup.style.display = "none";
-  });
+    const popup = document.createElement('div');
+    popup.style.cssText = "display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; justify-content:center; align-items:center; cursor:pointer;";
+    const popupImg = document.createElement('img');
+    popupImg.style.cssText = "max-width:90%; max-height:85%; border-radius:8px; object-fit:contain;";
+    popup.appendChild(popupImg);
+    document.body.appendChild(popup);
+
+    document.querySelectorAll('.photo-item img').forEach(img => {
+        img.style.cursor = "pointer";
+        img.addEventListener('click', () => {
+            popupImg.src = img.src;
+            popup.style.display = "flex";
+        });
+    });
+
+    popup.addEventListener('click', () => {
+        popup.style.display = "none";
+    });
 </script>
 </body>
 </html>
