@@ -38,20 +38,7 @@
     <!-- Le bloc du bouton Accueil habillé avec ton image de fond -->
     <div style="width: 100%; max-width: 1250px; margin: 0 auto; padding: 20px 0; box-sizing: border-box; background-image: url('https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bannie%CC%80re/kunal-patil-8ZKlgI_G-mw-unsplash.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat; border-radius: 35px; box-shadow: 1px 1px 5px #E1C9A8; border: 3px #7A4801 double; text-align: center;">
         
- <button class="folder-btn" onclick="window.location.href='index.html'" style="
-    color: white !important;
-    font-size: 18px !important;
-    font-weight: bold !important;
-    padding: 14px 35px !important;
-    background: linear-gradient(135deg, #a86b18, #613903) !important;
-    border: none !important;
-    border-radius: 50px !important;
-    box-shadow: 0 6px 0 #422601, 0 10px 20px rgba(0, 0, 0, 0.6) !important;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
-    cursor: pointer !important;
-    transition: all 0.15s ease !important;
-">🏠 Accueil</button>
-
+ <button class="folder-btn" onclick="window.location.href='index.html'" style="color: white !important;">🏠 Accueil</button>
 
    <div class="menu-container">
     <button class="folder-btn" onclick="window.location.href='voyages/index.html'">✈️ Voyages</button>
@@ -77,55 +64,13 @@
     </div>
 
 
-    <!-- 4. L'ESPACE COMMENTAIRES DISQUS SANS INSCRIPTION -->
-    <div class="comments-section">
-        <h2>💬 Espace Commentaires</h2>
-        <div id="disqus_thread"></div>
-        <script>
-            var disqus_config = function () {
-                this.page.url = "https://emile-1950.github.io/mon-regard/";
-                this.page.identifier = "mon_regard_emile_principal";
-            };
-            (function() {
-                var d = document, s = d.createElement('script');
-                s.src = 'https://disqus.com';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-            })();
-        </script>
-    </div>
-
-   
-
-
-<script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-    /*
-    var disqus_config = function () {
-    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://mon-regard-emile.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-    
-
-    <button id="scrollTopBtn" class="scroll-top-btn" onclick="scrollToTop()">⤊</button>
+ <button id="scrollTopBtn" class="scroll-top-btn" onclick="scrollToTop()">⤊</button>
 
     <div id="lightbox" class="lightbox" onclick="closeLightbox()">
         <img id="lightbox-img" src="" alt="Zoom">
     </div>
 
-  <script>
+<script>
         const photoDatabase = {
             fleurs:[
                 { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Fleurs/DSC07869-topaz-sharpen-denoise-lighting.jpeg", desc: "tulipier de virginie" },
