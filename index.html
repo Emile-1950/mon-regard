@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <style>
+<style>
         body { font-family: sans-serif; background: #f4f4f9; color: #333; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; }
         .banner { width: 1250px; background: #111; color: #fff; text-align: center; padding: 0px; box-sizing: border-box; }    
         .home-btn { background: transparent; color: #fff; border: 1px solid #fff; padding: 8px 20px; border-radius: 4px; cursor: pointer; margin-top: 10px; }
@@ -27,22 +27,22 @@
         .comments-section h2 { text-align: center; margin-top: 0; margin-bottom: 25px; color: #111; font-size: 1.5rem; }
         @media (max-width: 768px) { .menu-container { grid-template-columns: repeat(2, 1fr); } }
 
-        /* Style pour toutes les icônes Lucide */
         .folder-btn [data-lucide] {
-        width: 18px;
-        height: 18px;
+        width: 16px;
+        height: 16px;
         margin-right: 10px;
         vertical-align: middle;
-        stroke-width: 2.5; /* Épaissit un peu le trait pour qu'il soit moins fin */
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        background: rgba(255, 255, 255, 0.1); /* Petit fond translucide derrière l'icône */
+        padding: 6px;
+        border-radius: 6px; /* Rend le fond de l'icône arrondi */
+        transition: all 0.3s ease;
         }
 
-        /* Effet néon au survol */
-        .folder-btn:hover [data-lucide] {
-        color: #ffb84d; /* Un beau jaune doré chaud */
-        filter: drop-shadow(0 0 8px #ffb84d); /* Crée la lueur lumineuse */
-        transform: scale(1.2) rotate(-5deg); /* Grossit et bascule légèrement l'icône */
-        }
+       .folder-btn:hover [data-lucide] {
+       background: #ff9f43; /* Le fond de l'icône devient jaune/orange */
+       color: #000000; /* L'icône passe en noir pour trancher sur le fond */
+       transform: translateY(-2px); /* L'icône s'élève légèrement */
+       }
 </style>
 </head>
 
