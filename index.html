@@ -27,21 +27,23 @@
         .comments-section h2 { text-align: center; margin-top: 0; margin-bottom: 25px; color: #111; font-size: 1.5rem; }
         @media (max-width: 768px) { .menu-container { grid-template-columns: repeat(2, 1fr); } }
 
-       /* Style pour toutes les icônes Lucide de vos boutons */
-       .folder-btn [data-lucide] {
-        width: 18px;               /* Ajuste la largeur de l'icône */
-        height: 18px;              /* Ajuste la hauteur de l'icône */
-        margin-right: 8px;         /* Crée un espace parfait entre l'icône et le texte */
-        vertical-align: middle;    /* Aligne l'icône parfaitement sur la hauteur du texte */
-        transition: transform 0.3s, color 0.3s; /* Prépare une animation fluide */
+        /* Style pour toutes les icônes Lucide */
+        .folder-btn [data-lucide] {
+        width: 18px;
+        height: 18px;
+        margin-right: 10px;
+        vertical-align: middle;
+        stroke-width: 2.5; /* Épaissit un peu le trait pour qu'il soit moins fin */
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-       /* Effet dynamique quand la souris passe sur le bouton */
-       .folder-btn:hover [data-lucide] {
-       color: #ff9f43;            /* Change la couleur de l'icône au survol (ici un bel orange doux) */
-       transform: scale(1.15);    /* Grossit très légèrement l'icône pour un effet moderne */
-       } 
-    </style>
+        /* Effet néon au survol */
+        .folder-btn:hover [data-lucide] {
+        color: #ffb84d; /* Un beau jaune doré chaud */
+        filter: drop-shadow(0 0 8px #ffb84d); /* Crée la lueur lumineuse */
+        transform: scale(1.2) rotate(-5deg); /* Grossit et bascule légèrement l'icône */
+        }
+</style>
 </head>
 
 
