@@ -26,6 +26,21 @@
         .comments-section { width: 90%; max-width: 800px; margin: 40px auto 60px auto; padding: 30px; background: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); box-sizing: border-box; }
         .comments-section h2 { text-align: center; margin-top: 0; margin-bottom: 25px; color: #111; font-size: 1.5rem; }
         @media (max-width: 768px) { .menu-container { grid-template-columns: repeat(2, 1fr); } }
+
+       /* Style pour toutes les icônes Lucide de vos boutons */
+       .folder-btn [data-lucide] {
+        width: 18px;               /* Ajuste la largeur de l'icône */
+        height: 18px;              /* Ajuste la hauteur de l'icône */
+        margin-right: 8px;         /* Crée un espace parfait entre l'icône et le texte */
+        vertical-align: middle;    /* Aligne l'icône parfaitement sur la hauteur du texte */
+        transition: transform 0.3s, color 0.3s; /* Prépare une animation fluide */
+        }
+
+       /* Effet dynamique quand la souris passe sur le bouton */
+       .folder-btn:hover [data-lucide] {
+       color: #ff9f43;            /* Change la couleur de l'icône au survol (ici un bel orange doux) */
+       transform: scale(1.15);    /* Grossit très légèrement l'icône pour un effet moderne */
+       } 
     </style>
 </head>
 
