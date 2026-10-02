@@ -27,22 +27,26 @@
         .comments-section h2 { text-align: center; margin-top: 0; margin-bottom: 25px; color: #111; font-size: 1.5rem; }
         @media (max-width: 768px) { .menu-container { grid-template-columns: repeat(2, 1fr); } }
 
+        /* Métamorphose complète des icônes d'accueil et de contact */
         .folder-btn [data-lucide] {
-        width: 16px;
-        height: 12px;
+        width: 18px;
+        height: 18px;
         margin-right: 10px;
         vertical-align: middle;
-        background: rgba(255, 255, 255, 0.1); /* Petit fond translucide derrière l'icône */
+        background: linear-gradient(135deg, #ff9f43, #ff5252); /* Un dégradé chaud et dynamique */
         padding: 6px;
-        border-radius: 6px; /* Rend le fond de l'icône arrondi */
+        border-radius: 8px; /* Un joli carré arrondi autour de l'icône */
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Un bel effet d'ombre en relief */
+        color: white;
+        stroke-width: 2.5; /* Trait plus épais et visible */
         transition: all 0.3s ease;
         }
 
-        .folder-btn:hover [data-lucide] {
-        background: #ff9f43; /* Le fond de l'icône devient jaune/orange */
-        color: #000000; /* L'icône passe en noir pour trancher sur le fond */
-        transform: translateY(-2px); /* L'icône s'élève légèrement */
-        }
+        /* L'effet quand la souris passe dessus */
+       .folder-btn:hover [data-lucide] {
+       transform: translateY(-3px) scale(1.1); /* Le petit bouton d'icône s'anime et s'élève */
+       box-shadow: 0 6px 12px rgba(255, 159, 67, 0.5); /* Une lueur intense apparaît sous l'icône */
+       }
 </style>
 </head>
 
