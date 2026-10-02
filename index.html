@@ -28,18 +28,20 @@
         @media (max-width: 768px) { .menu-container { grid-template-columns: repeat(2, 1fr); } }
 
         .folder-btn [data-lucide] {
-        width: 18px;
-        height: 18px;
+        width: 16px;
+        height: 16px;
         margin-right: 10px;
         vertical-align: middle;
-        fill: transparent; /* L'icône est vide au départ */
-        transition: all 0.4s ease;
+        background: rgba(255, 255, 255, 0.1); /* Petit fond translucide derrière l'icône */
+        padding: 6px;
+        border-radius: 6px; /* Rend le fond de l'icône arrondi */
+        transition: all 0.3s ease;
         }
 
         .folder-btn:hover [data-lucide] {
-        color: #ffc107;
-        fill: #ffc107; /* L'icône se remplit de jaune d'un coup ! */
-        transform: scale(1.1);
+        background: #ff9f43; /* Le fond de l'icône devient jaune/orange */
+        color: #000000; /* L'icône passe en noir pour trancher sur le fond */
+        transform: translateY(-2px); /* L'icône s'élève légèrement */
         }
 </style>
 </head>
