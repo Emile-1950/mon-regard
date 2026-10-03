@@ -269,7 +269,28 @@
 <script>
 lucide.createIcons();
 </script>
-
+       <!-- ========================================== -->
+    <!--          LE LIVRE D'OR D'ÉMILE            -->
+    <!-- ========================================== -->
+    <div style="width: 100%; max-width: 1250px; margin: 40px auto; padding: 30px 20px; box-sizing: border-box; background-image: url('https://filedn.eu'); background-size: cover; background-position: center; border-radius: 15px; box-shadow: 1px 1px 10px #E1C9A8; border: 3px #7A4801 double; text-align: center;">
+        
+        <h3 style="color: #E1C9A8; font-family: 'Times New Roman', serif; font-size: 26px; margin-top: 0; margin-bottom: 10px; text-shadow: 1px 1px 3px rgba(0,0,0,0.8);">✍️ Laissez-moi un petit mot</h3>
+        <p style="color: white; font-size: 15px; margin-bottom: 25px;">Écrivez votre message ci-dessous. En cliquant sur le bouton, votre application de messagerie s'ouvrira pour me l'envoyer directement !</p>
+        
+        <!-- Formulaire magique sans serveur extérieur -->
+        <form action="mailto:pochbe@outlook.fr" method="GET" enctype="text-plain" style="max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px;">
+            
+            <!-- Le sujet de l'e-mail automatique -->
+            <input type="hidden" name="subject" value="Un petit mot pour le Livre d'or d'Émile">
+            
+            <!-- La grande case pour écrire le message -->
+            <textarea name="body" placeholder="Votre prénom, suivi de votre gentil message ici..." rows="5" required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #7A4801; background-color: rgba(26, 26, 26, 0.9); color: white; font-size: 16px; font-family: sans-serif; resize: vertical; box-sizing: border-box;"></textarea>
+            
+            <!-- Le bouton envoyer orange en relief -->
+            <button type="submit" class="folder-btn" style="color: white !important; background: linear-gradient(135deg, #a86b18, #613903) !important; border: none !important; padding: 12px 30px !important; font-size: 16px !important; font-weight: bold !important; border-radius: 25px !important; box-shadow: 0 4px 6px rgba(0,0,0,0.4) !important; cursor: pointer !important; align-self: center; transition: 0.2s;">🚀 Envoyer mon message</button>
+            
+        </form>
+    </div>
 </body>
 </html>
 
