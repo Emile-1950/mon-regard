@@ -9,24 +9,24 @@
         body { font-family: sans-serif; background: #1a1a1a; color: #333; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; }
         .menu-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; width: 90%; max-width: 1250px; margin-top: 25px; }
         /* La nouvelle boîte pour votre bannière */
-.ma-banniere-accueil {
-  width: 100%;
-  max-width: 1110px;
-  margin: 0 auto;
-  padding: 20px;
+    .ma-banniere-accueil {
+  width: 90%;                  /* Aligné sur la largeur de votre menu-container */
+  max-width: 1250px;           /* Largeur exacte de votre menu pour un alignement parfait */
+  height: 500px;               /* Hauteur fixe de 500 pixels comme vous le souhaitez */
+  margin: 15px auto 5px auto;  /* Gère toutes les marges (Haut: 15px, Droite: auto, Bas: 5px, Gauche: auto) */
   box-sizing: border-box;
   background-image: url('https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bannie%CC%80re/IMG_1504.png');
-  background-size: cover;
-  background-position: center;
+  background-size: cover;      /* L'image remplit toute la boîte sans être déformée */
+  background-position: center; /* L'image reste parfaitement centrée */
   background-repeat: no-repeat;
   border-radius: 15px;
   box-shadow: 1px 1px 5px #E1C9A8;
   border: 3px #7A4801 double;
-  text-align: center;
-  
-  /* C'est ICI que vous pouvez régler l'espace en dessous ! */
-  margin-bottom: 5px; 
+  display: flex;               /* Permet de centrer verticalement ce qu'il y a dedans */
+  justify-content: center;
+  align-items: center;
 }
+
         .folder-btn { background: #fff; border: 1px solid #ccc; padding: 12px; font-weight: bold; border-radius: 6px; cursor: pointer; margin: 10px 12px; }
         .folder-btn:hover, .folder-btn.active { background: #111; color: #fff; }
         .gallery-view { width: 90%; max-width: 1200px; display: none; flex-direction: column; align-items: center; margin-bottom: 40px; }
