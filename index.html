@@ -10,22 +10,34 @@
         .menu-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; width: 90%; max-width: 1250px; margin-top: 0px; }
 
         /* La nouvelle boîte pour votre bannière */
-    .ma-banniere-accueil {
-  width: 90%;                  /* Aligné sur la largeur de votre menu-container */
-  max-width: 1250px;           /* Largeur exacte de votre menu pour un alignement parfait */
-  height: 500px;               /* Hauteur fixe de 500 pixels comme vous le souhaitez */
-  margin: 5px auto 5px auto;  /* Gère toutes les marges (Haut: 15px, Droite: auto, Bas: 5px, Gauche: auto) */
-  box-sizing: border-box;
-  background-image: url('https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bannie%CC%80re/IMG_1504.png');
-  background-size: cover;      /* L'image remplit toute la boîte sans être déformée */
-  background-position: center; /* L'image reste parfaitement centrée */
-  background-repeat: no-repeat;
-  border-radius: 15px;
-  box-shadow: 1px 1px 5px #E1C9A8;
-  border: 3px #7A4801 double;
-  display: flex;               /* Permet de centrer verticalement ce qu'il y a dedans */
-  justify-content: center;
-  align-items: center; }
+        .ma-banniere-accueil {
+         width: 90%;
+         max-width: 1250px;
+         height: 500px;
+  
+        /* 🌟 CORRECTION 1 : On force la bannière à remonter tout en haut (marge haute à 0) */
+         margin-top: 0px !important; 
+  
+        /* 🌟 CORRECTION 2 : On ajoute un espace de 30px en dessous pour décoller les boutons Voyages/Oiseaux */
+         margin-bottom: 30px !important; 
+  
+        box-sizing: border-box;
+        background-image: url('https://filedn.eu');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 15px;
+        box-shadow: 1px 1px 5px #E1C9A8;
+        border: 3px #7A4801 double;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+
+        /* 🌟 CORRECTION 3 : Si l'espace au-dessus du site résiste encore, on rabote la marge du haut de la page */
+    body {
+        margin-top: 10px !important;
+        padding-top: 0px !important ; }
+
 
         .folder-btn { background: #fff; border: 1px solid #ccc; padding: 12px; font-weight: bold; border-radius: 6px; cursor: pointer; margin: 10px 12px; }
         .folder-btn:hover, .folder-btn.active { background: #111; color: #fff; }
