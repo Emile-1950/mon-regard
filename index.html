@@ -5,6 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
+<style>
+        body { font-family: sans-serif; background: #1a1a1a; color: #333; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; }
+        .menu-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; width: 90%; max-width: 1250px; margin: 30px 0; }
+        .folder-btn { background: #fff; border: 1px solid #ccc; padding: 12px; font-weight: bold; border-radius: 6px; cursor: pointer; }
+        .folder-btn:hover, .folder-btn.active { background: #111; color: #fff; }
+        .gallery-view { width: 90%; max-width: 1200px; display: none; flex-direction: column; align-items: center; margin-bottom: 40px; }
+        .gallery-title { font-size: 1.6rem; margin-bottom: 25px; text-transform: capitalize; border-bottom: 2px solid #111; padding-bottom: 5px; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; width: 100%; }
+        .photo-item { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.06); cursor: pointer; transition: transform 0.3s ease; }
+        .photo-item:hover { transform: translateY(-4px); }
+        .photo-item img { width: 100%; height: 220px; object-fit: cover; display: block; }
+        .photo-info { padding: 15px; text-align: center; font-weight: 500; }
+        #welcome-msg { text-align: center; color: #777; font-style: italic; margin: 40px 0; }
+        .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; z-index: 1000; }
+        .lightbox img { max-width: 90%; max-height: 85%; border-radius: 4px; }
+        .scroll-top-btn { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background: linear-gradient(135deg, #111111, #333333); color: #ffffff; border: 2px solid #ffffff; border-radius: 50%; font-size: 1.5rem; font-weight: bold; cursor: pointer; display: none; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(0,0,0,0.3); transition: all 0.3s; z-index: 2000; }
+        .scroll-top-btn:hover { background: linear-gradient(135deg, #ffffff, #e0e0e0); color: #111111; border-color: #111111; transform: translateY(-5px) scale(1.1); }
+        .comments-section { width: 90%; max-width: 800px; margin: 40px auto 60px auto; padding: 30px; background: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); box-sizing: border-box; }
+        .comments-section h2 { text-align: center; margin-top: 0; margin-bottom: 25px; color: #111; font-size: 1.5rem; }
+        @media (max-width: 768px) { .menu-container { grid-template-columns: repeat(2, 1fr); } }
+
+        /* Métamorphose complète des icônes d'accueil et de contact */
+        .folder-btn [data-lucide] {
+        width: 18px;
+        height: 18px;
+        margin-right: 10px;
+        vertical-align: middle;
+        background: linear-gradient(135deg, #ff9f43, #ff5252); /* Un dégradé chaud et dynamique */
+        padding: 6px;
+        border-radius: 8px; /* Un joli carré arrondi autour de l'icône */
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Un bel effet d'ombre en relief */
+        color: white;
+        stroke-width: 2.5; /* Trait plus épais et visible */
+        transition: all 0.3s ease;
+        }
+
+        /* L'effet quand la souris passe dessus */
+       .folder-btn:hover [data-lucide] {
+       transform: translateY(-3px) scale(1.1); /* Le petit bouton d'icône s'anime et s'élève */
+       box-shadow: 0 6px 12px rgba(255, 159, 67, 0.5); /* Une lueur intense apparaît sous l'icône */
+       }
+</style>
+
     <!-- Ta bannière pure sans boîte, avec sa double bordure dorée, méthode Émile -->
     <img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bannie%CC%80re/IMG_1504.png" alt="Bannière Mon Portfolio"> 
 
