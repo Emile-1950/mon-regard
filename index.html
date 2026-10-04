@@ -26,26 +26,25 @@
         .comments-section h2 { text-align: center; margin-top: 0; margin-bottom: 25px; color: #111; font-size: 1.5rem; }
         @media (max-width: 768px) { .menu-container { grid-template-columns: repeat(2, 1fr); } }
 
-        /* Métamorphose complète des icônes d'accueil et de contact */
-        .folder-btn [data-lucide] {
-        width: 18px;
-        height: 18px;
-        margin-right: 10px;
-        vertical-align: middle;
-        background: linear-gradient(135deg, #ff9f43, #ff5252); /* Un dégradé chaud et dynamique */
-        padding: 6px;
-        border-radius: 8px; /* Un joli carré arrondi autour de l'icône */
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Un bel effet d'ombre en relief */
-        color: white;
-        stroke-width: 2.5; /* Trait plus épais et visible */
-        transition: all 0.3s ease;
-        }
-
-        /* L'effet quand la souris passe dessus */
-       .folder-btn:hover [data-lucide] {
-       transform: translateY(-3px) scale(1.1); /* Le petit bouton d'icône s'anime et s'élève */
-       box-shadow: 0 6px 12px rgba(255, 159, 67, 0.5); /* Une lueur intense apparaît sous l'icône */
-       }
+ /* Ligne 30 : Style pour TOUTES les icônes de vos boutons */
+.folder-btn [data-lucide] {
+  margin-right: 10px;
+  vertical-align: middle;
+  background: linear-gradient(135deg, #ff9f43, #ff5252); /* Votre dégradé chaud */
+  padding: 6px;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  color: white;
+  stroke-width: 2.5;
+  transition: all 0.3s ease;
+  width: 18px;  /* Sécurité pour la taille */
+  height: 18px; /* Sécurité pour la taille */
+}
+/* Ligne 45 : L'effet au survol pour TOUTES les icônes */
+.folder-btn:hover [data-lucide] {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 6px 12px rgba(255, 159, 67, 0.5);
+}
 </style>
 
     <!-- Ta bannière pure sans boîte, avec sa double bordure dorée, méthode Émile -->
