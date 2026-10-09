@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Le Livre d'Or d'Émile</title>
+    <style>
+        body { font-family: sans-serif; background: #1a1a1a; color: white; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+        .comment-box { background: rgba(26, 26, 26, 0.9); padding: 30px; border-radius: 15px; width: 100%; max-width: 700px; box-sizing: border-box; border: 3px #7A4801 double; box-shadow: 1px 1px 10px #E1C9A8; margin-top: 40px; }
+        h2 { color: #E1C9A8; font-family: 'Times New Roman', serif; text-align: center; margin-top: 0; font-size: 28px; }
+        p.subtitle { text-align: center; color: #bbb; font-size: 14px; margin-bottom: 25px; }
+        label { display: block; color: #E1C9A8; font-weight: bold; margin-top: 15px; margin-bottom: 5px; }
+        input[type="text"], textarea { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #7A4801; background-color: #111; color: white; font-size: 16px; box-sizing: border-box; }
+        textarea { resize: vertical; font-family: sans-serif; }
+        .btn-container { text-align: center; margin-top: 25px; }
+        .submit-btn { color: white; background: linear-gradient(135deg, #a86b18, #613903); border: none; padding: 12px 35px; font-size: 16px; font-weight: bold; border-radius: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.4); cursor: pointer; transition: 0.2s; }
+        .submit-btn:hover { transform: scale(1.05); }
+        .back-btn { display: inline-block; margin-top: 20px; color: #E1C9A8; text-decoration: none; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+    <!-- Le cadre du Livre d'or inspiré d'Eklablog et sublimé par Émile -->
+    <div class="comment-box">
+        <h2>Laisser un commentaire</h2>
+        <p class="subtitle">Votre message me sera envoyé directement par e-mail !</p>
+        
+        <form action="https://web3forms.com" method="POST">
+            <!-- Ta clé d'accès secrète récupérée sur ta capture -->
+            <input type="hidden" name="access_key" value="f7e36439-a640-4aac-9d79-cb32c03ca5e3">
+            
+            <label for="name">Votre nom ou pseudo :</label>
+            <input type="text" id="name" name="nom" placeholder="Ex : Marie, Malagou..." required>
+            
+            <label for="message">Votre message :</label>
+            <textarea id="message" name="message" rows="6" placeholder="Bonjour, une bien belle découverte..." required></textarea>
+            
+            <div class="btn-container">
+                <button type="submit" class="submit-btn">Envoyer mon message</button>
+            </div>
+        </form>
+    </div>
+
+    <a href="index.html" class="back-btn">⬅️ Retour à l'accueil</a>
+
+</body>
+</html>
