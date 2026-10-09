@@ -5,38 +5,103 @@
     <title>Le Livre d'Or d'Émile</title>
     <style>
         body { font-family: sans-serif; background: #1a1a1a; color: white; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
-        .comment-box { background: rgba(26, 26, 26, 0.9); padding: 30px; border-radius: 15px; width: 100%; max-width: 800px; box-sizing: border-box; border: 3px #7A4801 double; box-shadow: 1px 1px 10px #E1C9A8; margin-top: 40px; text-align: center; }
-        h2 { color: #E1C9A8; font-family: 'Times New Roman', serif; text-align: center; margin-top: 0; font-size: 28px; margin-bottom: 15px; }
-        p.subtitle { text-align: center; color: #bbb; font-size: 15px; margin-bottom: 25px; line-height: 1.5; }
-        
-        .messages-display { width: 100%; max-width: 800px; margin-top: 30px; display: flex; flex-direction: column; gap: 20px; text-align: left; }
+        .comment-box { background: rgba(26, 26, 26, 0.9); padding: 30px; border-radius: 15px; width: 100%; max-width: 800px; box-sizing: border-box; border: 3px #7A4801 double; box-shadow: 1px 1px 10px #E1C9A8; margin-top: 40px; }
+        h2 { color: #E1C9A8; font-family: 'Times New Roman', serif; text-align: center; margin-top: 0; font-size: 28px; margin-bottom: 20px; }
+        label { display: block; color: #E1C9A8; font-weight: bold; margin-top: 15px; margin-bottom: 5px; }
+        input[type="text"], textarea { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #7A4801; background-color: #111; color: white; font-size: 16px; box-sizing: border-box; }
+        textarea { resize: vertical; font-family: sans-serif; }
+        .btn-container { text-align: center; margin-top: 25px; }
+        .submit-btn { color: white; background: linear-gradient(135deg, #a86b18, #613903); border: none; padding: 12px 35px; font-size: 16px; font-weight: bold; border-radius: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.4); cursor: pointer; transition: 0.2s; }
+        .submit-btn:hover { transform: scale(1.05); }
+        .messages-display { width: 100%; max-width: 800px; margin-top: 40px; display: flex; flex-direction: column; gap: 20px; }
         .single-comment { background-color: rgba(35, 35, 35, 0.9); padding: 15px 20px; border-radius: 10px; border-left: 4px solid #7A4801; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
         .back-btn { display: inline-block; margin-top: 30px; color: #E1C9A8; text-decoration: none; font-size: 15px; font-weight: bold; }
-        .write-btn { display: inline-block; color: white !important; background: linear-gradient(135deg, #a86b18, #613903) !important; border: none; padding: 12px 30px; font-size: 16px; font-weight: bold; border-radius: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.4); text-decoration: none; margin-bottom: 10px; transition: 0.2s; }
     </style>
 </head>
 <body>
 
+    <!-- ZONE 1 : ÉCRIRE UN COMMENTAIRE -->
     <div class="comment-box">
         <h2>✍️ Le Livre d'Or du Portfolio</h2>
-        <p class="subtitle">Pour ajouter votre message sur cette page, cliquez sur le bouton ci-dessous pour me l'envoyer directement.</p>
         
-        <!-- Le gros bouton orange qui marche à tous les coups -->
-        <a href="mailto:pochbe@outlook.fr?subject=Message%20pour%20le%20Livre%20d%27or" class="write-btn">📝 Écrire un mot dans le Livre d'or</a>
-        
-        <!-- ZONE D'AFFICHAGE DES MESSAGES (C'est ici que s'alignent les mots) -->
-        <div class="messages-display">
-            <h3 style="color: #E1C9A8; font-family: 'Times New Roman', serif; font-size: 22px; border-bottom: 1px solid #7A4801; padding-bottom: 10px; margin-bottom: 10px; text-align: center;">💬 Les messages des visiteurs</h3>
+        <form id="commentForm" onsubmit="ajouterCommentaire(event)">
+            <label for="visitorName">Votre nom ou pseudo :</label>
+            <input type="text" id="visitorName" required placeholder="Ex: Marie, Jean...">
             
-            <!-- Commentaire 1 -->
-            <div class="single-comment">
-                <p style="margin: 0 0 8px 0; color: #E1C9A8; font-weight: bold; font-size: 16px;">👤 Un ami photographe <span style="color: #888; font-weight: normal; font-size: 12px; margin-left: 10px;">Vendredi 9 Octobre 2026</span></p>
-                <p style="margin: 0; color: white; font-size: 15px; line-height: 1.4;">"Félicitations pour ce superbe portfolio Émile ! La navigation avec les nouveaux boutons d'accueil, de messagerie et ce livre d'or est un régal absolu. Tes clichés sont de pures merveilles !"</p>
+            <label for="visitorMessage">Votre message :</label>
+            <textarea id="visitorMessage" rows="5" required placeholder="Laissez votre petit mot ici..."></textarea>
+            
+            <div class="btn-container">
+                <button type="submit" class="submit-btn">💬 Poster mon message</button>
             </div>
-        </div>
+        </form>
+    </div>
+
+    <!-- ZONE 2 : AFFICHAGE AUTOMATIQUE DES MESSAGES -->
+    <div class="messages-display">
+        <h3 style="color: #E1C9A8; font-family: 'Times New Roman', serif; font-size: 22px; border-bottom: 1px solid #7A4801; padding-bottom: 10px; margin-bottom: 10px; text-align: center;">💬 Les commentaires postés</h3>
+        <div id="commentsContainer"></div>
     </div>
 
     <a href="index.html" class="back-btn">⬅️ Retour à l'accueil</a>
+
+    <!-- LE SCRIPT SANS SERVEUR D'ÉMILE -->
+    <script>
+        // Fonction pour charger et afficher les messages stockés
+        function afficherCommentaires() {
+            const container = document.getElementById('commentsContainer');
+            container.innerHTML = '';
+            
+            // On récupère les messages dans la mémoire du navigateur
+            const commentaires = JSON.parse(localStorage.getItem('livreDorEmile')) || [];
+            
+            if (commentaires.length === 0) {
+                container.innerHTML = '<p style="text-align:center; color:#888; font-style:italic;">Aucun message pour le moment. Soyez le premier !</p>';
+                return;
+            }
+            
+            commentaires.forEach(c => {
+                const div = document.createElement('div');
+                div.className = 'single-comment';
+                div.innerHTML = `
+                    <p style="margin: 0 0 8px 0; color: #E1C9A8; font-weight: bold; font-size: 16px;">👤 ${c.nom} <span style="color: #888; font-weight: normal; font-size: 12px; margin-left: 10px;">${c.date}</span></p>
+                    <p style="margin: 0; color: white; font-size: 15px; line-height: 1.4;">"${c.texte}"</p>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        // Fonction pour ajouter un nouveau message
+        function ajouterCommentaire(event) {
+            event.preventDefault();
+            
+            const nomInput = document.getElementById('visitorName');
+            const messageInput = document.getElementById('visitorMessage');
+            
+            const dateActuelle = new Date().toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+            
+            const nouveauCommentaire = {
+                nom: nomInput.value,
+                texte: messageInput.value,
+                date: dateActuelle
+            };
+            
+            const commentaires = JSON.parse(localStorage.getItem('livreDorEmile')) || [];
+            commentaires.unshift(nouveauCommentaire); // Met le dernier message tout en haut
+            
+            localStorage.setItem('livreDorEmile', JSON.stringify(commentaires));
+            
+            // Nettoyage des cases vides
+            nomInput.value = '';
+            messageInput.value = '';
+            
+            // Rafraîchir l'affichage instantanément
+            afficherCommentaires();
+        }
+
+        // Lancement automatique au chargement de la page
+        document.addEventListener('DOMContentLoaded', afficherCommentaires);
+    </script>
 
 </body>
 </html>
