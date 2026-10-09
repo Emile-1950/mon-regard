@@ -14,30 +14,45 @@
         .btn-container { text-align: center; margin-top: 25px; }
         .submit-btn { color: white; background: linear-gradient(135deg, #a86b18, #613903); border: none; padding: 12px 35px; font-size: 16px; font-weight: bold; border-radius: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.4); cursor: pointer; transition: 0.2s; }
         .submit-btn:hover { transform: scale(1.05); }
-        .back-btn { display: inline-block; margin-top: 20px; color: #E1C9A8; text-decoration: none; font-size: 14px; }
+        .back-btn { display: inline-block; margin-top: 30px; color: #E1C9A8; text-decoration: none; font-size: 15px; font-weight: bold; }
+        
+        /* Style des messages affichés en dessous */
+        .messages-display { width: 100%; max-width: 700px; margin-top: 40px; display: flex; flex-direction: column; gap: 20px; }
+        .single-comment { background-color: rgba(26, 26, 26, 0.9); padding: 15px 20px; border-radius: 10px; border-left: 4px solid #7A4801; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border-top: 1px dashed rgba(225, 201, 168, 0.2); }
     </style>
 </head>
 <body>
 
-    <!-- Le cadre du Livre d'or inspiré d'Eklablog et sublimé par Émile -->
+    <!-- ZONE 1 : Le formulaire pour ÉCRIRE (Web3Forms) -->
     <div class="comment-box">
         <h2>Laisser un commentaire</h2>
-        <p class="subtitle">Votre message me sera envoyé directement par e-mail !</p>
+        <p class="subtitle">Vos messages sont soumis à approbation avant publication.</p>
         
         <form action="https://web3forms.com" method="POST">
-            <!-- Ta clé d'accès secrète récupérée sur ta capture -->
             <input type="hidden" name="access_key" value="f7e36439-a640-4aac-9d79-cb32c03ca5e3">
             
             <label for="name">Votre nom ou pseudo :</label>
-            <input type="text" id="name" name="nom" placeholder="Ex : Marie, Malagou..." required>
+            <input type="text" id="name" name="nom" placeholder="Ex : Marie, Jean..." required>
             
             <label for="message">Votre message :</label>
-            <textarea id="message" name="message" rows="6" placeholder="Bonjour, une bien belle découverte..." required></textarea>
+            <textarea id="message" name="message" rows="5" placeholder="Écrivez votre petit mot ici..." required></textarea>
             
             <div class="btn-container">
                 <button type="submit" class="submit-btn">Envoyer mon message</button>
             </div>
         </form>
+    </div>
+
+    <!-- ZONE 2 : L'affichage public des messages REÇUS -->
+    <div class="messages-display">
+        <h3 style="color: #E1C9A8; font-family: 'Times New Roman', serif; font-size: 22px; border-bottom: 1px solid #7A4801; padding-bottom: 10px; margin-bottom: 10px;">💬 Les mots des visiteurs</h3>
+        
+        <!-- COMMENTAIRE N°1 (Exemple à dupliquer quand tu recevras des vrais mails) -->
+        <div class="single-comment">
+            <p style="margin: 0 0 8px 0; color: #E1C9A8; font-weight: bold; font-size: 16px;">👤 Un ami photographe <span style="color: #888; font-weight: normal; font-size: 12px; margin-left: 10px;">09 Octobre 2026</span></p>
+            <p style="margin: 0; color: white; font-size: 15px; line-height: 1.4;">"Félicitations pour ce superbe portfolio Émile ! La navigation avec les boutons d'accueil est un régal. Tes photos sont magnifiques !"</p>
+        </div>
+        
     </div>
 
     <a href="index.html" class="back-btn">⬅️ Retour à l'accueil</a>
