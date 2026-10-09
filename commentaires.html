@@ -5,32 +5,35 @@
     <title>Le Livre d'Or d'Émile</title>
     <style>
         body { font-family: sans-serif; background: #1a1a1a; color: white; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
-        .comment-box { background: rgba(26, 26, 26, 0.9); padding: 30px; border-radius: 15px; width: 100%; max-width: 800px; box-sizing: border-box; border: 3px #7A4801 double; box-shadow: 1px 1px 10px #E1C9A8; margin-top: 40px; }
-        h2 { color: #E1C9A8; font-family: 'Times New Roman', serif; text-align: center; margin-top: 0; font-size: 28px; margin-bottom: 25px; }
+        .comment-box { background: rgba(26, 26, 26, 0.9); padding: 30px; border-radius: 15px; width: 100%; max-width: 800px; box-sizing: border-box; border: 3px #7A4801 double; box-shadow: 1px 1px 10px #E1C9A8; margin-top: 40px; text-align: center; }
+        h2 { color: #E1C9A8; font-family: 'Times New Roman', serif; text-align: center; margin-top: 0; font-size: 28px; margin-bottom: 15px; }
+        p.subtitle { text-align: center; color: #bbb; font-size: 15px; margin-bottom: 25px; line-height: 1.5; }
+        
+        .messages-display { width: 100%; max-width: 800px; margin-top: 30px; display: flex; flex-direction: column; gap: 20px; text-align: left; }
+        .single-comment { background-color: rgba(35, 35, 35, 0.9); padding: 15px 20px; border-radius: 10px; border-left: 4px solid #7A4801; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
         .back-btn { display: inline-block; margin-top: 30px; color: #E1C9A8; text-decoration: none; font-size: 15px; font-weight: bold; }
+        .write-btn { display: inline-block; color: white !important; background: linear-gradient(135deg, #a86b18, #613903) !important; border: none; padding: 12px 30px; font-size: 16px; font-weight: bold; border-radius: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.4); text-decoration: none; margin-bottom: 10px; transition: 0.2s; }
     </style>
 </head>
 <body>
 
-    <!-- Le cadre du Livre d'or automatique d'Émile -->
     <div class="comment-box">
         <h2>✍️ Le Livre d'Or du Portfolio</h2>
+        <p class="subtitle">Pour ajouter votre message sur cette page, cliquez sur le bouton ci-dessous pour me l'envoyer directement.</p>
         
-        <!-- Le module de discussion instantané -->
-        <div id="disqus_thread"></div>
+        <!-- Le gros bouton orange qui marche à tous les coups -->
+        <a href="mailto:pochbe@outlook.fr?subject=Message%20pour%20le%20Livre%20d%27or" class="write-btn">📝 Écrire un mot dans le Livre d'or</a>
         
-        <script>
-            var disqus_config = function () {
-                this.page.url = "https://github.io";
-                this.page.identifier = "emile_portfolio_commentaires";
-            };
-            (function() {
-                var d = document, s = d.createElement('script');
-                s.src = 'https://disqus.com';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-            })();
-        </script>
+        <!-- ZONE D'AFFICHAGE DES MESSAGES (C'est ici que s'alignent les mots) -->
+        <div class="messages-display">
+            <h3 style="color: #E1C9A8; font-family: 'Times New Roman', serif; font-size: 22px; border-bottom: 1px solid #7A4801; padding-bottom: 10px; margin-bottom: 10px; text-align: center;">💬 Les messages des visiteurs</h3>
+            
+            <!-- Commentaire 1 -->
+            <div class="single-comment">
+                <p style="margin: 0 0 8px 0; color: #E1C9A8; font-weight: bold; font-size: 16px;">👤 Un ami photographe <span style="color: #888; font-weight: normal; font-size: 12px; margin-left: 10px;">Vendredi 9 Octobre 2026</span></p>
+                <p style="margin: 0; color: white; font-size: 15px; line-height: 1.4;">"Félicitations pour ce superbe portfolio Émile ! La navigation avec les nouveaux boutons d'accueil, de messagerie et ce livre d'or est un régal absolu. Tes clichés sont de pures merveilles !"</p>
+            </div>
+        </div>
     </div>
 
     <a href="index.html" class="back-btn">⬅️ Retour à l'accueil</a>
