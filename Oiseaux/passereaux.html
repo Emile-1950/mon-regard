@@ -34,12 +34,21 @@
         <div class="photo-item"><img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/oiseaux%201/DSC08038-topaz-denoise-sharpen-upscale-1.5x.jpeg" alt="grive litorne"></div>
     </div>
  
-    <!-- Bloc de navigation : Page 1 -->
-    <div class="pagination" style="text-align: center; margin-top: 40px; margin-bottom: 20px;">
-        <span style="padding: 10px 15px; margin: 0 5px; background-color: #007bff; color: white; border-radius: 5px; font-weight: bold;">1</span>
-        <a href="passereaux-page2.html" style="padding: 10px 15px; margin: 0 5px; background-color: #1e1e1e; color: white; border: 1px solid #333; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s;">2 ➡️</a>
-    </div>
-
+<!-- La barre de pagination 100 % exacte pour la PAGE 1 du fichier provence.html -->
+    <div style="grid-column: 1 / -1; width: 100%; text-align: center; margin: 40px auto; display: flex; justify-content: center; align-items: center; gap: 10px;">  
+    <!-- Flèche Précédent -->
+    <a href="passereaux.html" style="color: #666; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">&laquo;</a>   
+    <!-- Page 1 allumée en orange Luciole -->
+    <a href="passereaux.html" style="color: white; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: linear-gradient(135deg, #a86b18, #613903); font-weight: bold;">1</a>  
+    <!-- Liens vers les pages suivantes corrigés sans le "n" parasite -->
+    <a href="passereaux-page2.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">2</a>
+    <a href="passereaux-page3.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">3</a>
+    <a href="passereaux-page4.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">4</a>
+    <a href="passereaux-page5.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">5</a>
+    <a href="passereaux-page6.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">6</a>
+    <!-- Flèche Suivant -->
+    <a href="passereaux-page2.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">&raquo;</a>
+</div>
 <script>
     // Système d'affichage automatique des descriptions blanches à partir du "alt"
     document.querySelectorAll('.photo-item').forEach(item => {
