@@ -12,6 +12,11 @@
     </style>
 </head>
 <body>
+            <!-- Le menu supérieur empilé verticalement et centré par Émile -->
+        <div style="grid-column: 1 / -1; width: 100%; text-align: center; margin: 20px 0; display: flex; flex-direction: column; align-items: center; gap: 12px;">
+            <button class="folder-btn" onclick="window.location.href='../commentaires.html'" style="color: white !important; background: linear-gradient(135deg, #a86b18, #613903) !important; border: none !important; padding: 10px 25px !important; font-size: 15px !important; font-weight: bold !important; border-radius: 25px !important; box-shadow: 0 4px 6px rgba(0,0,0,0.4) !important; cursor: pointer !important; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 5px;"><i data-lucide="book-open"></i> Livre d'or</button>
+    </div>
+
     <div style="text-align: center;"><a href="index.html" style="display: inline-block; margin-bottom: 20px; text-decoration: none; color: #aaa; font-size: 16px;">⬅️ Retour aux destinations</a></div>
     <h1 style="text-align: center; margin-top: 25px;">🗼 Voyage à Paris</h1>
 
@@ -56,5 +61,7 @@
             popup.style.display = 'none';
         });
     </script>
+    <script src="https://unpkg.com"></script>
+    <script>lucide.createIcons();</script>
 </body>
 </html>
