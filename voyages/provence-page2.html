@@ -42,16 +42,34 @@
 
     <div style="text-align: center; margin-top: 30px;">
    </div>
-       <!-- Bloc de navigation : PAGE 2 (Style Émile actuel) -->
-    <div class="pagination" style="text-align: center; margin-top: 40px; margin-bottom: 20px;">
-        <a href="provence.html" style="padding: 10px 15px; margin: 0 5px; background-color: #1e1e1e; color: white; border: 1px solid #333; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s;">⬅️ 1</a>
-        <span style="padding: 10px 15px; margin: 0 5px; background-color: #007bff; color: white; border-radius: 5px; font-weight: bold;">2</span>
-        <a href="provence-page3.html" style="padding: 10px 15px; margin: 0 5px; background-color: #1e1e1e; color: white; border: 1px solid #333; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s;">3</a>
-        <a href="provence-page4.html" style="padding: 10px 15px; margin: 0 5px; background-color: #1e1e1e; color: white; border: 1px solid #333; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s;">4</a>
-        <a href="provence-page5.html" style="padding: 10px 15px; margin: 0 5px; background-color: #1e1e1e; color: white; border: 1px solid #333; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s;">5</a>
-        <a href="provence-page6.html" style="padding: 10px 15px; margin: 0 5px; background-color: #1e1e1e; color: white; border: 1px solid #333; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s;">6 ➡️</a>
-    </div>
 
+<!-- La barre de pagination pour la PAGE 2 -->
+<div style="grid-column: 1 / -1; width: 100%; text-align: center; margin: 40px auto; display: flex; justify-content: center; align-items: center; gap: 10px;">
+    
+    <!-- Bouton Précédent (t'emmène à la page 1) -->
+    <a href="provenance.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">&laquo;</a>
+    
+    <!-- Page 1 (Éteinte, elle redevient noire et or) -->
+    <a href="provenance.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">1</a>
+    
+    <!-- Page 2 (Allumée en orange Luciole !) -->
+    <a href="provenance_page2.html" style="color: white; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: linear-gradient(135deg, #a86b18, #613903); font-weight: bold;">2</a>
+    
+    <!-- Page 3 -->
+    <a href="provenance_page3.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">3</a>
+    
+    <!-- Page 4 -->
+    <a href="provenance_page4.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">4</a>
+
+    <!-- Page 5 -->
+    <a href="provenance_page5.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">5</a>
+
+    <!-- Page 6 -->
+    <a href="provenance_page6.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">6</a>
+    
+    <!-- Bouton Suivant (t'emmène à la page 3) -->
+    <a href="provenance_page3.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">&raquo;</a>
+</div>
     
 <script>
   // 1. On crée la boîte de zoom cachée en arrière-plan
