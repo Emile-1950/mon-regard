@@ -95,7 +95,7 @@
  <div class="menu-container">
     <button class="folder-btn" onclick="window.location.href='voyages/index.html'"><i data-lucide="compass"></i> Voyages</button>
     <button class="folder-btn" onclick="window.location.href='Oiseaux/index.html'" style="color: white !important;"><i data-lucide="feather"></i> Oiseaux</button>
-    <button class="folder-btn" onclick="openGallery('fleurs')"><i data-lucide="flower"></i> Fleurs</button>
+    <button class="folder-btn" onclick="window.location.href='Fleurs/index.html'"><i data-lucide="flower"></i> Fleurs</button>
     <button class="folder-btn" onclick="openGallery('insectes')"><i data-lucide="bug"></i> Insectes</button>
     <button class="folder-btn" onclick="openGallery('ciels')"><i data-lucide="cloud-sun"></i> Ciels</button>
     <button class="folder-btn" onclick="openGallery('macros')"><i data-lucide="zoom-in"></i> Macros</button>
@@ -107,6 +107,11 @@
     <button class="folder-btn" onclick="openGallery('renards')"><i data-lucide="eye"></i> Renards</button>
 </div>
     <div id="welcome-msg">Sélectionnez une catégorie ci-dessus pour découvrir la galerie.</div>
+
+    <!-- Bouton Livre d'or pour la section Fleurs inséré par Émile -->
+<div style="width: 100%; text-align: center; margin: 20px 0;">
+    <button class="folder-btn" onclick="window.location.href='commentaires.html'" style="color: white !important; background: linear-gradient(135deg, #a86b18, #613903) !important; border: none !important; padding: 10px 25px !important; font-size: 15px !important; font-weight: bold !important; border-radius: 25px !important; box-shadow: 0 4px 6px rgba(0,0,0,0.4) !important; cursor: pointer !important; display: inline-flex; align-items: center; gap: 8px;"><i data-lucide="book-open"></i> Livre d'or</button>
+</div>
 
     <div id="gallery-view" class="gallery-view">
         <h2 id="current-gallery-title" class="gallery-title">Nom</h2>
@@ -137,6 +142,7 @@
                 { src: "", desc: "" }, 
                 { src: "", desc: "" },
             ],
+
             insectes:[ 
                 { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Insectes%202/Coccilnelle%207%20points-topaz-denoise-sharpen-lighting-upscale-4x.jpeg", desc: "Coccinelle 6 points" }, 
                        { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Insectes%202/Syrphe%20ceinture%CC%81%201.jpeg", desc: "Syrphe ceinturé" },
