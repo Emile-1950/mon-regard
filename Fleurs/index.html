@@ -54,5 +54,17 @@
     <!-- Le script pour l'icône du livre ouvert -->
     <script src="https://unpkg.com"></script>
     <script>lucide.createIcons();</script>
+
+        <!-- Système d'affichage automatique des descriptions d'Émile -->
+    <script>
+        document.querySelectorAll('.photo-item').forEach(item => {
+            const img = item.querySelector('img');
+            if(img && img.getAttribute('alt')) {
+                const p = document.createElement('p');
+                p.textContent = img.getAttribute('alt');
+                item.appendChild(p);
+            }
+        });
+    </script>
 </body>
 </html>
