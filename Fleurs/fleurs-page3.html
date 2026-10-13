@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌸 Mon Herbier - Fleurs</title>
+    <style>
+        body { font-family: sans-serif; background: #1a1a1a; color: white; margin: 0; padding: 20px; }
+        .galerie { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1200px; margin: 5px auto; }
+        .photo-item { background: #222; padding: 10px; border-radius: 8px; border: 1px solid #7A4801; box-shadow: 0 4px 6px rgba(0,0,0,0.3); text-align: center; }
+        .photo-item img { max-width: 100%; height: auto; border-radius: 4px; }
+        .bouton-retour { display: inline-block; text-decoration: none; color: #666; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="galerie">
+        
+        <!-- Menu supérieur Émile avec le bon chemin de retour arrière -->
+        <div style="grid-column: 1 / -1; width: 100%; text-align: center; margin: 20px 0; display: flex; flex-direction: column; align-items: center; gap: 12px;">
+            <button class="folder-btn" onclick="window.location.href='../commentaires.html'" style="color: white !important; background: linear-gradient(135deg, #a86b18, #613903) !important; border: none !important; padding: 10px 25px !important; font-size: 15px !important; font-weight: bold !important; border-radius: 25px !important; box-shadow: 0 4px 6px rgba(0,0,0,0.4) !important; cursor: pointer !important; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 5px;"><i data-lucide="book-open"></i> Livre d'or</button>
+            <a href="../index.html" class="bouton-retour" style="margin: 0;">⬅️ Retour à l'accueil général</a>
+        </div>
+
+        <!-- Le titre principal enfin centré au milieu exact de l'écran -->
+        <h1 style="grid-column: 1 / -1; width: 100%; text-align: center; color: white; margin-bottom: 30px;">🌸 Mon Herbier Photographique</h1>
+
+        <!-- VOS 4 IMAGES SUR DES LIGNES UNIQUES PARFAITES ET SIMPLES -->
+        <div class="photo-item"><img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Fleurs/DSC07869-topaz-sharpen-denoise-lighting.jpeg" alt="Tulipier de Virginie"></div>
+        <div class="photo-item"><img src="https://i.postimg.cc/MHqmWNGw/DSC07936-topaz-denoise-sharpen-lighting-color-upscale-1-5x.jpg" alt="Gerbera"></div>
+        <div class="photo-item"><img src="https://i.postimg.cc/zBmkQVZN/DSC07928-topaz-denoise-sharpen-lighting-upscale-1-5x.jpg" alt="Coquelicot"></div>
+        <div class="photo-item"><img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Fleurs/DSC00297-topaz-sharpen-denoise-lighting-upscale-1.5x.jpeg" alt="Soufflons-un peu"></div>
+        <div class="photo-item"><img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Fleurs/DSC07877-topaz-sharpen-denoise-lighting-upscale-1.5x.jpeg" alt="hémérocalle jaune"></div>
+        <div class="photo-item"><img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Fleurs/DSC07879-topaz-sharpen-denoise-lighting.jpeg" alt="échinops"></div>
+        <div class="photo-item"><img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Fleurs/DSC07881-topaz-denoise-sharpen-lighting-upscale-2x.jpeg" alt="compagnon rouge"></div>
+        <div class="photo-item"><img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Fleurs/DSC07886-topaz-denoise-sharpen-lighting-upscale-1.5x.jpeg" alt="souci officinal"></div>
+    </div>
+
+        <!-- La barre de pagination d'Émile calée sur la structure du dossier -->
+        <div style="grid-column: 1 / -1; width: 100%; text-align: center; margin: 40px auto; display: flex; justify-content: center; align-items: center; gap: 10px;">
+            <a href="index.html" style="color: #666; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">&laquo;</a>
+            <a href="index.html" style="color: white; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: linear-gradient(135deg, #a86b18, #613903); font-weight: bold;">1</a>
+            <a href="fleurs-page2.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">2</a>
+            <a href="fleurs-page3.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">3</a>
+            <a href="fleurs-page4.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">4</a>
+            <a href="fleurs-page5.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">5</a>
+            <a href="fleurs-page6.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">6</a>
+            <a href="fleurs-page2.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">&raquo;</a>
+        </div>
+
+    </div>
+
+    <!-- Le script pour l'icône du livre ouvert -->
+    <script src="https://unpkg.com"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
