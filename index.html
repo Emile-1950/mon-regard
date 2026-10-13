@@ -33,8 +33,7 @@
         justify-content: center;
         align-items: center; }
 
-         
-        .folder-btn { background: #241714; border: 1px solid #ccc; padding: 15px 25px 15px 25px; font-weight: bold; border-radius: 6px; cursor: pointer; margin-top: 30px; margin: 5px; }
+        .folder-btn { background: url('https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bannie%CC%80re/94013.jpg'); border: 1px solid #ccc; padding: 15px 25px 15px 25px; font-weight: bold; border-radius: 6px; cursor: pointer; margin-top: 30px; margin: 5px; }
         .folder-btn:hover, .folder-btn.active { background: #111; color: #fff; }
         .gallery-view { width: 90%; max-width: 1200px; display: none; flex-direction: column; align-items: center; margin-bottom: 40px; }
         .gallery-title { font-size: 1.6rem; margin-bottom: 25px; text-transform: capitalize; border-bottom: 2px solid #111; padding-bottom: 5px; }
@@ -86,27 +85,27 @@
         -webkit-box-shadow: 0px 0px 30px 5px rgba(219, 209, 149, 0.5);
      " />
 
-    <div class="nav-container">
-        <a href="index.html" class="folder-btn"><i data-lucide="home"></i> Accueil</a>
-        <a href="commentaires.html" class="folder-btn"><i data-lucide="book-open"></i> Livre d'or</a>
-        <a href="contact.html" class="folder-btn"><i data-lucide="mail"></i> Contact</a>
-    </div>
+<div class="ma-banniere-accueil">
+    <!-- Ta barre de navigation nettoyée et harmonisée par Émile -->
+    <button class="folder-btn" onclick="window.location.href='index.html'" style="color: white !important; margin: 0 15px;"><i data-lucide="house"></i> Accueil</button>
+    <button class="folder-btn" onclick="window.location.href='commentaires.html'" style="color: white !important; margin: 0 15px;"><i data-lucide="book-open"></i> Livre d'or</button>
+    <button class="folder-btn" onclick="window.location.href='mailto:pochbe@outlook.fr'" style="color: white !important; margin: 0 15px;"><i data-lucide="mail"></i> Contact</button>
+</div>
 
-
-    <div class="grid-categories">
-        <a href="voyages/index.html" class="folder-btn"><i data-lucide="plane"></i> Voyages</a>
-        <a href="Oiseaux/index.html" class="folder-btn"><i data-lucide="twitter"></i> Oiseaux</a>
-        <a href="Fleurs/index.html" class="folder-btn"><i data-lucide="flower"></i> Fleurs</a>
-        <a href="insectes/index.html" class="folder-btn"><i data-lucide="bug"></i> Insectes</a>
-        <a href="ciels/index.html" class="folder-btn"><i data-lucide="cloud-sun"></i> Ciels</a>
-        <a href="macros/index.html" class="folder-btn"><i data-lucide="zoom-in"></i> Macros</a>
-        <a href="paysages/index.html" class="folder-btn"><i data-lucide="image"></i> Paysages</a>
-        <a href="animaux-divers/index.html" class="folder-btn"><i data-lucide="paw-print"></i> Animaux divers</a>       
-        <a href="saisons/index.html" class="folder-btn"><i data-lucide="calendar"></i> Saisons</a>
-        <a href="papillons/index.html" class="folder-btn"><i data-lucide="butterfly"></i> Papillons</a>
-        <a href="cervides/index.html" class="folder-btn"><i data-lucide="heart"></i> Cervidés</a>
-        <a href="renards/index.html" class="folder-btn"><i data-lucide="eye"></i> Renards</a>
-    </div>
+ <div class="menu-container">
+    <button class="folder-btn" onclick="window.location.href='voyages/index.html'"><i data-lucide="compass"></i> Voyages</button>
+    <button class="folder-btn" onclick="window.location.href='Oiseaux/index.html'" style="color: white !important;"><i data-lucide="feather"></i> Oiseaux</button>
+    <button class="folder-btn" onclick="window.location.href='Fleurs/index.html'"><i data-lucide="flower"></i> Fleurs</button>
+    <button class="folder-btn" onclick="openGallery('insectes')"><i data-lucide="bug"></i> Insectes</button>
+    <button class="folder-btn" onclick="openGallery('ciels')"><i data-lucide="cloud-sun"></i> Ciels</button>
+    <button class="folder-btn" onclick="openGallery('macros')"><i data-lucide="zoom-in"></i> Macros</button>
+    <button class="folder-btn" onclick="openGallery('paysages')"><i data-lucide="mountain"></i> Paysages</button>
+    <button class="folder-btn" onclick="openGallery('animaux')"><i data-lucide="paw-print"></i> Animaux divers</button>
+    <button class="folder-btn" onclick="openGallery('saisons')"><i data-lucide="leaf"></i> Saisons</button>
+    <button class="folder-btn" onclick="openGallery('papillons')"><i data-lucide="sparkles"></i> Papillons</button>
+    <button class="folder-btn" onclick="openGallery('cervides')"><i data-lucide="trees"></i> Cervidés</button>
+    <button class="folder-btn" onclick="openGallery('renards')"><i data-lucide="eye"></i> Renards</button>
+</div>
     <div id="welcome-msg">Sélectionnez une catégorie ci-dessus pour découvrir la galerie.</div>
 
    
@@ -123,6 +122,182 @@
         <img id="lightbox-img" src="" alt="Zoom">
     </div>
 
-<script></script> 
+<script>
+        const photoDatabase = {
+            fleurs:[
+                { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Fleurs/DSC07869-topaz-sharpen-denoise-lighting.jpeg", desc: "tulipier de virginie" },
+                { src: "https://i.postimg.cc/MHqmWNGw/DSC07936-topaz-denoise-sharpen-lighting-color-upscale-1-5x.jpg", desc: "gerbera" },
+                { src: "https://i.postimg.cc/zBmkQVZN/DSC07928-topaz-denoise-sharpen-lighting-upscale-1-5x.jpg", desc: "coquelicot" },
+                { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Fleurs/DSC00297-topaz-sharpen-denoise-lighting-upscale-1.5x.jpeg", desc: "soufflons-un peu" },
+                { src: "", desc: "" }, 
+                { src: "", desc: "" }, 
+                { src: "", desc: "" }, 
+                { src: "", desc: "" }, 
+                { src: "", desc: "" }, 
+                { src: "", desc: "" }, 
+                { src: "", desc: "" }, 
+                { src: "", desc: "" }, 
+                { src: "", desc: "" },
+            ],
+
+            insectes:[ 
+                { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Insectes%202/Coccilnelle%207%20points-topaz-denoise-sharpen-lighting-upscale-4x.jpeg", desc: "Coccinelle 6 points" }, 
+                       { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Insectes%202/Syrphe%20ceinture%CC%81%201.jpeg", desc: "Syrphe ceinturé" },
+                       { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Insectes%202/Lepture%20tachete%CC%81.jpeg", desc: "Lepture tacheté" },
+                       { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Insectes%202/Sympe%CC%81trum%20strie%CC%81.jpeg", desc: "Sympetrum strié" }, 
+                       { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Insectes%202/Ce%CC%81toine%20dore%CC%81e.jpeg", desc: "Cétoine doré" }, 
+                     ],
+            
+            ciels:[ 
+                       { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Lever%20%26%20coucher%20soleil/ciels/DSC01658%2B%20copie.jpeg", desc: "Lune rouge" }, 
+                       { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Lever%20%26%20coucher%20soleil/ciels/DSC01529-topaz-denoise-sharpen-lighting-color-upscale-1.5x.jpeg", desc: "Dernier quartier" }, 
+                       { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Lever%20%26%20coucher%20soleil/ciels/Orages/IMG_0038-topaz-sharpen-denoise-lighting.jpeg", desc: "Flash" }, 
+                       { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Lever%20%26%20coucher%20soleil/DSC00277.jpeg", desc: "Suivons la voie" }, 
+                       { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Lever%20%26%20coucher%20soleil/DSC05364-Modifier.jpg", desc: "Festivités" }, 
+                     ],
+            
+            macros:[ 
+                       { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Macros/DSC08486-topaz-denoise-sharpen-lighting-color-upscale-1.5x.jpeg", desc: "Argiope fasciée" }, 
+                       { src: "", desc: "" }, 
+                       { src: "", desc: "" }, 
+                       { src: "", desc: "" }, 
+                       { src: "", desc: "" }, 
+                     ],
+            
+            paysages:[ { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Lever%20%26%20coucher%20soleil/DSC07693.jpeg", desc: "brmes matinales" },
+                        { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Lever%20%26%20coucher%20soleil/IMG_0362.png", desc: "cache-cache" },
+                        { src: "", desc: "" }, 
+                        { src: "", desc: "" }, 
+                        { src: "", desc: "" }, 
+                    ],
+            oiseaux:[ { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/oiseaux%201/DSC07997-topaz-denoise-sharpen-upscale-1.5x.jpeg", desc: "Fauvette à tête noire" }, 
+                       { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/oiseaux%201/DSC08209-topaz-denoise-sharpen-upscale-1.5x.jpeg", desc: "Chardonneret élégant" },   
+                       { src: "", desc: "" }, 
+                       { src: "", desc: "" }, 
+                       { src: "", desc: "" }, 
+                     ],
+                
+            animaux:[ 
+                       { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Annimaux%20divers/DSC09890-topaz-denoise-sharpen-color-lighting-upscale-1.5x.jpeg", desc: "Buse variable" }, 
+                       { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Annimaux%20divers/DSC07516-topaz-denoise-sharpen-upscale-1.5x.jpeg", desc: "Bléreau" }, 
+                       { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Annimaux%20divers/DSC00603-topaz-denoise-sharpen-lighting-color-upscale-2x.jpeg", desc: "Grenouille verte" }, 
+                       { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Annimaux%20divers/DSC09897-topaz-denoise-sharpen-lighting-color-upscale-2x.jpeg", desc: "Le lièvre et la rosée" }, 
+                       { src: "", desc: "" },
+                     ],
+                
+            saisons:[
+                      { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Lever%20%26%20coucher%20soleil/DSC06943-Modifier-4.jpg", desc: "frimas d'hiver" },
+                      { src: "", desc: "" }, 
+                      { src: "", desc: "" }, 
+                      { src: "", desc: "" }, 
+                      { src: "", desc: "" },
+                   ],
+
+            Voyages:[
+                      { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Provence%20I/DSC03505.jpg", desc: "Pont du Gard" },
+                      { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Venise/DSC02440-Avec%20accentuation-Bruit.jpg", desc: "Crépuscule à Venise" }, 
+                      { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Venise/DSC02443-Avec%20accentuation-Bruit.jpg", desc: "Venise" }, 
+                      { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Venise/DSC02515-Avec%20accentuation-Bruit.jpg", desc: "Venise, grand canal" }, 
+                      { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Venise/DSC02547.jpg", desc: "Venise, la lagune" },
+                      { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Venise/DSC02594.jpg", desc: "Venise, le Rialto" },
+                      { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Venise/DSC02435-Avec%20accentuation-Bruit.jpg", desc: "Venise, crépuscule" }, 
+                      { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Ljubiajna/DSC02270-Avec%20accentuation-Bruit.jpg", desc: "Ljubljana" }, 
+                      { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Provence%20I/DSC03519.jpg", desc: "L'Isle-sur-la-Sorgues" }, 
+                      { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Piran/DSC02304.jpg", desc: "Piran (Slovénie)" },
+                   ],
+
+            Papillons:[
+                      { src: "", desc: "" },
+                      { src: "", desc: "" }, 
+                      { src: "", desc: "" }, 
+                      { src: "", desc: "" }, 
+                      { src: "", desc: "" },
+                   ],   
+                   
+            Cervidés:[
+                      { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/cervide%CC%81s/DSC03536-Modifier.jpg", desc: "tu a de beaux yeux toi" },
+                      { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/cervide%CC%81s/DSC05263-Modifier.jpg", desc: "Brocard" }, 
+                      { src: "", desc: "" }, 
+                      { src: "", desc: "" }, 
+                      { src: "", desc: "" },
+                   ],    
+                   
+            Renards:[
+                      { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/renards/DSC01851-Modifier.jpg", desc: "jeux de renardeaux" },
+                      { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/renards/DSC01468-Modifier.jpg", desc: "en chasse" }, 
+                      { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/renards/DSC01279-Modifier.jpg", desc: "j'ai faim" }, 
+                      { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/renards/DSC01946-Avec%20accentuation-Bruit.jpg", desc: "en chasse" }, 
+                      { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/renards/DSC01853-Modifier.jpg", desc: "jeux" },
+                      { src: "https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/renards/DSC01230-Modifier-2.jpg", desc: "zoom" },
+                      { src: "", desc: "" }, 
+                      { src: "", desc: "" }, 
+                      { src: "", desc: "" }, 
+                      { src: "", desc: "" },
+                   ],       
+        };
+
+        function openGallery(category) {
+            document.getElementById('welcome-msg').style.display = 'none';
+            const buttons = document.querySelectorAll('.folder-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            if(event) event.currentTarget.classList.add('active');
+            
+            document.getElementById('current-gallery-title').innerText = category;
+            const container = document.getElementById('gallery-images-container');
+            container.innerHTML = "";
+            
+            const photos = photoDatabase[category];
+            if (photos && photos.length > 0) {
+                photos.forEach(photo => {
+                    if(!photo.src || photo.src === "") return;
+                    const item = document.createElement('div');
+                    item.className = 'photo-item';
+                    item.onclick = function() { openLightbox(photo.src); };
+                    item.innerHTML = `
+                        <img src="${photo.src}">
+                        <div class="photo-info">${photo.desc}</div>
+                    `;
+                    container.appendChild(item);
+                });
+            }
+            if (container.children.length === 0) {
+                container.innerHTML = "<p style='grid-column: 1/-1; text-align: center; color: #888; font-style: italic;'>Cet album ne contient pas encore de photos.</p>";
+            }
+            document.getElementById('gallery-view').style.display = 'flex';
+        }
+
+        function resetToHome() {
+            document.getElementById('gallery-view').style.display = 'none';
+            document.getElementById('welcome-msg').style.display = 'block';
+            const buttons = document.querySelectorAll('.folder-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+        }
+
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        const scrollTopBtn = document.getElementById("scrollTopBtn");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollTopBtn.style.display = "flex";
+            } else {
+                scrollTopBtn.style.display = "none";
+            }
+        };
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    </script>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+lucide.createIcons();
+</script>
+   
 </body>
 </html>
