@@ -7,59 +7,59 @@
     <style>
         body { font-family: sans-serif; background: #1a1a1a; color: white; margin: 0; padding: 20px; text-align: center; }
         
-        /* Ta magnifique bannière d'origine */
-        .banner { max-width: 900px; margin: 20px auto; border-radius: 12px; border: 3px double #7A4801; box-shadow: 1px 1px 15px rgba(225, 201, 168, 0.4); padding: 10px; }
+        /* Ta superbe bannière originale double liseré or */
+        .banner { max-width: 900px; margin: 20px auto; border-radius: 12px; border: 3px double #7A4801; box-shadow: 1px 1px 15px rgba(225, 201, 168, 0.4); padding: 10px; background: rgba(20, 20, 20, 0.6); }
         .banner img { width: 100%; height: auto; border-radius: 8px; display: block; }
         
-        /* Le bandeau dégradé magique pour tes 3 boutons principaux */
-        .nav-container { max-width: 800px; margin: 40px auto; padding: 20px; background: linear-gradient(135deg, #111e2e, #4a122e); border-radius: 15px; border: 1px solid #7A4801; box-shadow: inset 0 0 15px rgba(225, 201, 168, 0.2); display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        /* Le menu principal avec son magnifique dégradé de couleurs */
+        .nav-container { max-width: 800px; margin: 40px auto; padding: 20px; background: linear-gradient(135deg, #111e2e, #4a122e); border-radius: 15px; border: 1px solid #7A4801; box-shadow: inset 0 0 15px rgba(225, 201, 168, 0.3); display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
         
-        /* Ta grille de 12 boutons d'origine */
-        .grid-categories { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; max-width: 900px; margin: 30px auto; }
+        /* Ta grille de 12 boutons en version Luciole d'origine */
+        .grid-categories { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; max-width: 900px; margin: 30px auto; }
         
-        /* Tes superbes boutons avec icônes Lucide */
-        .folder-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #222; color: #E1C9A8; border: 1px solid #444; padding: 10px 15px; font-size: 14px; font-weight: bold; border-radius: 5px; cursor: pointer; text-decoration: none; box-sizing: border-box; }
-        .folder-btn:hover { background: #333; color: white; border-color: #7A4801; }
+        /* Le bouton Luciole d'Émile avec son dégradé orange et marron royal */
+        .folder-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: linear-gradient(135deg, #a86b18, #613903) !important; color: white !important; border: none !important; padding: 12px 15px; font-size: 14px; font-weight: bold; border-radius: 25px; cursor: pointer; text-decoration: none; box-sizing: border-box; box-shadow: 0 4px 6px rgba(0,0,0,0.4); transition: transform 0.2s; }
+        .folder-btn:hover { transform: scale(1.03); box-shadow: 0 6px 12px rgba(225, 201, 168, 0.3); }
         
-        .footer-text { font-family: 'Georgia', serif; font-style: italic; color: #888; margin-top: 40px; font-size: 16px; }
+        /* Le petit rectangle orange vif bien intégré */
+        .orange-bar { width: 8px; height: 14px; background: #ff7b00; border-radius: 2px; display: inline-block; flex-shrink: 0; box-shadow: 0 0 8px #ff7b00; }
+        
+        .footer-text { font-family: 'Georgia', serif; font-style: italic; color: #E1C9A8; margin-top: 40px; font-size: 16px; font-weight: bold; }
     </style>
 </head>
 <body>
 
-    <!-- Ta superbe photo brumeuse du matin -->
+    <!-- Ton panorama brumeux restauré avec le bon lien direct -->
     <div class="banner">
         <img src="https://filedn.eu" alt="Paysage brumeux">
     </div>
 
-    <!-- Tes 3 gros boutons du haut sur leur fond dégradé -->
+    <!-- Menu principal du haut -->
     <div class="nav-container">
-        <button class="folder-btn" onclick="window.location.href='index.html'"><i data-lucide="home"></i> Accueil</button>
-        <button class="folder-btn" onclick="window.location.href='commentaires.html'"><i data-lucide="book-open"></i> Livre d'or</button>
-        <button class="folder-btn" onclick="window.location.href='contact.html'"><i data-lucide="mail"></i> Contact</button>
+        <a href="index.html" class="folder-btn"><span class="orange-bar"></span> Accueil</a>
+        <a href="commentaires.html" class="folder-btn"><span class="orange-bar"></span> Livre d'or</a>
+        <a href="contact.html" class="folder-btn"><span class="orange-bar"></span> Contact</a>
     </div>
 
-    <!-- Ta grille royale de 12 catégories d'origine avec leurs icônes Lucide -->
+    <!-- Tes 12 catégories en version boutons Lucioles luminescents -->
     <div class="grid-categories">
-        <button class="folder-btn" onclick="window.location.href='voyages/index.html'"><i data-lucide="plane"></i> Voyages</button>
-        <button class="folder-btn" onclick="window.location.href='Oiseaux/index.html'"><i data-lucide="twitter"></i> Oiseaux</button>
-        <button class="folder-btn" onclick="window.location.href='Fleurs/index.html'"><i data-lucide="flower"></i> Fleurs</button>
-        <button class="folder-btn" onclick="window.location.href='insectes/index.html'"><i data-lucide="bug"></i> Insectes</button>
+        <a href="voyages/index.html" class="folder-btn"><span class="orange-bar"></span> Voyages</a>
+        <a href="Oiseaux/index.html" class="folder-btn"><span class="orange-bar"></span> Oiseaux</a>
+        <a href="Fleurs/index.html" class="folder-btn"><span class="orange-bar"></span> Fleurs</a>
+        <a href="insectes/index.html" class="folder-btn"><span class="orange-bar"></span> Insectes</a>
         
-        <button class="folder-btn" onclick="window.location.href='ciels/index.html'"><i data-lucide="cloud-sun"></i> Ciels</button>
-        <button class="folder-btn" onclick="window.location.href='macros/index.html'"><i data-lucide="zoom-in"></i> Macros</button>
-        <button class="folder-btn" onclick="window.location.href='paysages/index.html'"><i data-lucide="image"></i> Paysages</button>
-        <button class="folder-btn" onclick="window.location.href='animaux-divers/index.html'"><i data-lucide="paw-print"></i> Animaux divers</button>
+        <a href="ciels/index.html" class="folder-btn"><span class="orange-bar"></span> Ciels</a>
+        <a href="macros/index.html" class="folder-btn"><span class="orange-bar"></span> Macros</a>
+        <a href="paysages/index.html" class="folder-btn"><span class="orange-bar"></span> Paysages</a>
+        <a href="animaux-divers/index.html" class="folder-btn"><span class="orange-bar"></span> Animaux divers</a>
         
-        <button class="folder-btn" onclick="window.location.href='saisons/index.html'"><i data-lucide="calendar"></i> Saisons</button>
-        <button class="folder-btn" onclick="window.location.href='papillons/index.html'"><i data-lucide="butterfly"></i> Papillons</button>
-        <button class="folder-btn" onclick="window.location.href='cervides/index.html'"><i data-lucide="heart"></i> Cervidés</button>
-        <button class="folder-btn" onclick="window.location.href='renards/index.html'"><i data-lucide="eye"></i> Renards</button>
+        <a href="saisons/index.html" class="folder-btn"><span class="orange-bar"></span> Saisons</a>
+        <a href="papillons/index.html" class="folder-btn"><span class="orange-bar"></span> Papillons</a>
+        <a href="cervides/index.html" class="folder-btn"><span class="orange-bar"></span> Cervidés</a>
+        <a href="renards/index.html" class="folder-btn"><span class="orange-bar"></span> Renards</a>
     </div>
 
     <p class="footer-text">Sélectionnez une catégorie ci-dessus pour découvrir la galerie.</p>
 
-    <!-- Le script magique Lucide qui dessine toutes tes petites icônes -->
-    <script src="https://unpkg.com"></script>
-    <script>lucide.createIcons();</script>
 </body>
 </html>
