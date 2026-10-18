@@ -11,23 +11,21 @@
         .photo-item img { width: 100%; height: 180px; object-fit: cover; object-position: center; border-radius: 4px; cursor: pointer; }
         .bouton-retour { display: inline-block; text-decoration: none; color: #E1C9A8; font-weight: bold; }
         .bouton-retour:hover { color: white; }
-    </style>  
+    </style>
 </head>
 <body>
 
     <div class="galerie">
-        
         <!-- Menu supérieur avec le bon chemin de retour vers l'accueil général -->
                 <div style="grid-column: 1 / -1; width: 100%; text-align: center; margin: 20px 0; display: flex; flex-direction: column; align-items: center; gap: 12px;">
             <button class="folder-btn" onclick="window.location.href='../commentaires.html'" style="color: white !important; background: linear-gradient(135deg, #a86b18, #613903) !important; border: none !important; padding: 10px 25px !important; font-size: 15px !important; font-weight: bold !important; border-radius: 25px !important; box-shadow: 0 4px 6px rgba(0,0,0,0.4) !important; cursor: pointer !important; display: inline-flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 5px;"><i data-lucide="book-open"></i> Livre d'or</button>
             <a href="../index.html" class="bouton-retour">⬅️ Retour à l'accueil général</a>
         </div>
-
+        
         <!-- Ton grand titre de section parfaitement centré -->
         <h1 style="grid-column: 1 / -1; width: 100%; text-align: center; color: white; margin-bottom: 30px;">🐛 Ma Galerie des Insectes</h1>
 
         <!-- TES 8 PHOTOS D'INSECTES SUR DES RAILS PARFAITS -->
-            <div class="galerie">
         <div class="photo-item"><img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Insectes%202/Syrphe%20ceinture%CC%81%201.jpeg" alt="syrphe ceinturé"></div>
         <div class="photo-item"><img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Insectes%202/Lepture%20tachete%CC%81.jpeg" alt="lepture tacheté"></div>
         <div class="photo-item"><img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Insectes%202/Coccinelle%20sept%20points-topaz-sharpen-denoise-lighting-color-upscale-2x.jpeg" alt="coccinelle set points"></div>
@@ -38,19 +36,24 @@
         <div class="photo-item"><img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Provence%20Avignon/P1000497.jpeg" alt="hespérie du chiendent"></div>
     </div>
 
+    
         <!-- Ta barre de pagination PAGE 1 du bloc-notes (Le bouton 1 est orange actif !) -->
         <div style="grid-column: 1 / -1; width: 100%; text-align: center; margin: 40px auto; display: flex; justify-content: center; align-items: center; gap: 10px;">
-            <a href="insectes-page2.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">&laquo;</a>
-            <a href="index.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">1</a>
-            <a href="insectes-page2.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">2</a>
-            <a style="color: white; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: linear-gradient(135deg, #a86b18, #613903); font-weight: bold;">3</a>
-            <a href="insectes-page4.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">4</a>
-            <a href="insectes-page5.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">5</a>
-            <a href="insectes-page6.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">6</a>
-            <a href="insectes-page4.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">&raquo;</a>
-        </div>
-
-
+    <!-- Bouton 1 (Pointe vers l'accueil de la galerie des insectes) -->
+    <a href="index.html" style="color: #FFFFFF; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: linear-gradient(135deg, #a86b18, #613903); font-weight: bold;">1</a>
+    <!-- Bouton 2 -->
+    <a href="insectes-page2.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">2</a>   
+    <!-- Bouton 3 -->
+    <a href="insectes-page3.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">3</a>   
+    <!-- Bouton 4 -->
+    <a href="insectes-page4.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">4</a> 
+    <!-- Bouton 5 -->
+    <a href="insectes-page5.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">5</a>
+    <!-- Bouton 6 -->
+    <a href="insectes-page6.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">6</a>  
+    <!-- Bouton Suivant -->
+    <a href="insectes-page2.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">&gt;</a>
+</div>
 
     <!-- Le double script magique (Descriptions automatiques + Zoom Pop-up d'Émile au clic) -->
     <script src="https://unpkg.com"></script>
