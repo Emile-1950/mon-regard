@@ -47,7 +47,25 @@
             <a href="bretagne-page2.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">&raquo;</a>
         </div>
 
-    <!-- Le script magique unique : descriptions dorées automatiques sans pop-up -->
+    <script>
+        const popup = document.createElement('div');
+        popup.style.cssText = "display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; justify-content:center; align-items:center; cursor:pointer;";
+        const popupImg = document.createElement('img');
+        popupImg.style.cssText = "max-width:90%; max-height:85%; border-radius:8px; object-fit:contain;";
+        popup.appendChild(popupImg);
+        document.body.appendChild(popup);
+
+        document.querySelectorAll('.galerie img').forEach(img => {
+            img.style.cursor = "pointer";
+            img.addEventListener('click', () => {
+                popupImg.src = img.src;
+                popup.style.display = "flex";
+            });
+        });
+        popup.addEventListener('click', () => popup.style.display = "none");
+    </script>
+    <script src="https://unpkg.com"></script>
+    <script>lucide.createIcons();</script>
     <script>
         document.querySelectorAll('.photo-item').forEach(item => {
             const img = item.querySelector('img');
@@ -62,11 +80,5 @@
             }
         });
     </script>
-
-    <script src="https://unpkg.com"></script>
-    <script>lucide.createIcons();</script>
-</body>
-</html>
-
 </body>
 </html>
