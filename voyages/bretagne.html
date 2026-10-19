@@ -2,39 +2,69 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Voyage en bretagne - Mon Portfolio</title>
+    <title>Voyage Provence - Mon Portfolio</title>
+   
     <style>
-        body { background-color: #121212; color: white; font-family: sans-serif; padding: 20px; }
-        .galerie { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 20px; }
-        .galerie img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; }
-        .photo-item { display: flex; flex-direction: column; align-items: center; background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px; }
-        .description { margin-top: 10px; font-weight: bold; color: #fff; font-size: 14px; text-align: center; }
+        body { font-family: sans-serif; background: #1a1a1a; color: white; margin: 0; padding: 20px; }
+        .galerie { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1200px; margin: 40px auto; }
+        .photo-item { background: #222; padding: 10px; border-radius: 8px; border: 1px solid #7A4801; box-shadow: 0 4px 6px rgba(0,0,0,0.3); text-align: center; }
+        .photo-item img { width: 100%; height: 180px; object-fit: cover; object-position: center; border-radius: 4px; cursor: pointer; }
+        .bouton-retour { display: inline-block; text-decoration: none; color: #E1C9A8; font-weight: bold; }
+        .bouton-retour:hover { color: white; }
     </style>
 </head>
 <body>
-
-    <h1>🇬🇧 Voyage en bretagne</h1>
-    
+    <!-- On ouvre l'unique galerie du site -->
     <div class="galerie">
-       <div class="photo-item"><img src="METS_TON_LIEN_PCLOUD_1_ICI.jpg" alt="📸 Description de la photo 1"></div>
-       <div class="photo-item"><img src="METS_TON_LIEN_PCLOUD_2_ICI.jpg" alt="📸 Description de la photo 2"></div>
-       <div class="photo-item"><img src="METS_TON_LIEN_PCLOUD_3_ICI.jpg" alt="📸 Description de la photo 3"></div>
-       <div class="photo-item"><img src="METS_TON_LIEN_PCLOUD_4_ICI.jpg" alt="📸 Description de la photo 4"></div>
-       <div class="photo-item"><img src="METS_TON_LIEN_PCLOUD_5_ICI.jpg" alt="📸 Description de la photo 5"></div>
-       <div class="photo-item"><img src="METS_TON_LIEN_PCLOUD_6_ICI.jpg" alt="📸 Description de la photo 6"></div>
-       <div class="photo-item"><img src="METS_TON_LIEN_PCLOUD_7_ICI.jpg" alt="📸 Description de la photo 7"></div>
-       <div class="photo-item"><img src="METS_TON_LIEN_PCLOUD_8_ICI.jpg" alt="📸 Description de la photo 8"></div>
-       <div class="photo-item"><img src="METS_TON_LIEN_PCLOUD_9_ICI.jpg" alt="📸 Description de la photo 9"></div>
-       <div class="photo-item"><img src="METS_TON_LIEN_PCLOUD_10_ICI.jpg" alt="📸 Description de la photo 10"></div>
-       <div class="photo-item"><img src="METS_TON_LIEN_PCLOUD_1_ICI.jpg" alt="📸 Description de la photo 1"></div>
-       <div class="photo-item"><img src="METS_TON_LIEN_PCLOUD_2_ICI.jpg" alt="📸 Description de la photo 2"></div>
+                <!-- Le menu supérieur empilé verticalement et centré par Émile -->
+         <div style="grid-column: 1 / -1; width: 100%; text-align: center; margin: 20px 0; display: flex; flex-direction: column; align-items: center; gap: 12px;">
+            <button class="folder-btn" onclick="window.location.href='../commentaires.html'" style="color: white !important; background: linear-gradient(135deg, #a86b18, #613903) !important; border: none !important; padding: 10px 25px !important; font-size: 15px !important; font-weight: bold !important; border-radius: 25px !important; box-shadow: 0 4px 6px rgba(0,0,0,0.4) !important; cursor: pointer !important; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 5px;"><i data-lucide="book-open"></i> Livre d'or</button>
+            <a href="index.html" class="bouton-retour" style="margin: 0;">⬅️ Retour aux destinations</a>
+        </div>
+
+        <!-- Le titre principal centré pile au milieu -->
+        <h1 style="grid-column: 1 / -1; width: 100%; text-align: center; color: white; margin-bottom: 30px;">☀️ Voyage en Bretagne</h1>
+        
+        <div class="galerie">
+        <div class="photo-item"><img src="" alt=""></div>
+        <div class="photo-item"><img src="" alt=""></div>
+        <div class="photo-item"><img src="" alt=""></div>
+        <div class="photo-item"><img src="" alt=""></div>
+        <div class="photo-item"><img src="" alt=""></div>
+        <div class="photo-item"><img src="" alt=""></div>
+        <div class="photo-item"><img src="" alt=""></div>
+        <div class="photo-item"><img src="" alt=""></div>
     </div>
+
+    <div style="grid-column: 1 / -1; width: 100%; text-align: center; margin: 40px auto; display: flex; justify-content: center; align-items: center; gap: 10px;">
+            <a style="color: white; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: linear-gradient(135deg, #a86b18, #613903); font-weight: bold;">1</a>
+            <a href="NOM-page2.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">2</a>
+            <a href="NOM-page3.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">3</a>
+            <a href="NOM-page4.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">4</a>
+            <a href="NOM-page5.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">5</a>
+            <a href="NOM-page6.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">6</a>
+            <a href="NOM-page2.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">&raquo;</a>
+        </div>
+
     <script>
-        // Ton système de zoom automatique magique qui fonctionne tout seul !
+        document.querySelectorAll('.galerie img').forEach(img => {
+            if (img.getAttribute('alt')) {
+                // On vérifie s'il y a déjà un texte en dessous pour éviter les doublons
+                if (!img.nextElementSibling || !img.nextElementSibling.classList.contains('description')) {
+                    const desc = document.createElement('div');
+                    desc.className = 'description';
+                    desc.style.cssText = "margin-top: 10px; font-weight: bold; color: #fff; font-size: 14px; text-align: center;";
+                    desc.innerText = img.getAttribute('alt');
+                    img.parentNode.insertBefore(desc, img.nextSibling);
+                }
+            }
+        });
+
+        // Système de zoom Pop-up au clic
         const popup = document.createElement('div');
         popup.style.cssText = "display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; justify-content:center; align-items:center; cursor:pointer;";
         const popupImg = document.createElement('img');
-        popupImg.style.cssText = "max-width:90%; max-height:85%; border-radius:8px; object-fit:contain;";
+        popupImg.style.cssText = "max-width:90%; max-height:85%; border-radius:8px; box-shadow:0 0 20px rgba(0,0,0,0.5); object-fit:contain;";
         popup.appendChild(popupImg);
         document.body.appendChild(popup);
 
@@ -45,7 +75,25 @@
                 popup.style.display = "flex";
             });
         });
-        popup.addEventListener('click', () => popup.style.display = "none");
+        popup.addEventListener('click', () => {
+            popup.style.display = "none";
+        });
     </script>
+ <script src="https://unpkg.com"></script>
+<script>lucide.createIcons();</script>  
+ <script>
+        document.querySelectorAll('.photo-item').forEach(item => {
+            const img = item.querySelector('img');
+            if(img && img.getAttribute('alt')) {
+                const p = document.createElement('p');
+                p.textContent = img.getAttribute('alt');
+                p.style.margin = "10px 0 0 0";
+                p.style.fontSize = "14px";
+                p.style.color = "#E1C9A8";
+                p.style.fontWeight = "bold";
+                item.appendChild(p);
+            }
+        });
+    </script>  
 </body>
 </html>
