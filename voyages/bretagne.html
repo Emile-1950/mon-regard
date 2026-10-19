@@ -2,8 +2,8 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Voyage Provence - Mon Portfolio</title>
-   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Voyage Provence - Mon Portfolio</title>
     <style>
         body { font-family: sans-serif; background: #1a1a1a; color: white; margin: 0; padding: 20px; }
         .galerie { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1200px; margin: 40px auto; }
@@ -14,12 +14,14 @@
     </style>
 </head>
 <body>
-    <!-- On ouvre l'unique galerie du site -->
+
     <div class="galerie">
-                <!-- Le menu supérieur empilé verticalement et centré par Émile -->
-         <div style="grid-column: 1 / -1; width: 100%; text-align: center; margin: 20px 0; display: flex; flex-direction: column; align-items: center; gap: 12px;">
-            <button class="folder-btn" onclick="window.location.href='../commentaires.html'" style="color: white !important; background: linear-gradient(135deg, #a86b18, #613903) !important; border: none !important; padding: 10px 25px !important; font-size: 15px !important; font-weight: bold !important; border-radius: 25px !important; box-shadow: 0 4px 6px rgba(0,0,0,0.4) !important; cursor: pointer !important; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 5px;"><i data-lucide="book-open"></i> Livre d'or</button>
-            <a href="index.html" class="bouton-retour" style="margin: 0;">⬅️ Retour aux destinations</a>
+        
+        <!-- Menu supérieur avec le bon chemin de retour vers l'accueil général -->
+                <div style="grid-column: 1 / -1; width: 100%; text-align: center; margin: 20px 0; display: flex; flex-direction: column; align-items: center; gap: 12px;">
+            <button class="folder-btn" onclick="window.location.href='../commentaires.html'" style="color: white !important; background: linear-gradient(135deg, #a86b18, #613903) !important; border: none !important; padding: 10px 25px !important; font-size: 15px !important; font-weight: bold !important; border-radius: 25px !important; box-shadow: 0 4px 6px rgba(0,0,0,0.4) !important; cursor: pointer !important; display: inline-flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 5px;"><i data-lucide="book-open"></i> Livre d'or</button>
+            <a href="../index.html" class="bouton-retour">⬅️ Retour à l'accueil général</a>
+        </div>
         
 
         <!-- Le titre principal centré pile au milieu -->
