@@ -74,6 +74,7 @@
         <div class="photo-item"><img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Fleurs/DSC07944-topaz-sharpen-denoise-lighting.jpeg" alt="anémone du Japon"></div>
         <div class="photo-item"><img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Fleurs/DSC07942-topaz-sharpen-denoise-lighting-upscale-1.5x.jpeg" alt="hémérocalle"></div>
         <div class="photo-item"><img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Fleurs/DSC07939-topaz-denoise-sharpen-lighting-upscale-1.5x.jpeg" alt="cosmos bipenné"></div>
+    </div>
 
      <!-- La barre de pagination 100 % exacte pour la PAGE 2 (fleurs-page2.html) -->
         <div style="grid-column: 1 / -1; width: 100%; text-align: center; margin: 40px auto; display: flex; justify-content: center; align-items: center; gap: 10px;">
@@ -92,22 +93,43 @@
             <a href="fleurs-page3.html" style="color: #E1C9A8; text-decoration: none; padding: 8px 14px; border: 1px solid #7A4801; border-radius: 5px; background: #111;">&raquo;</a>
         </div>
 
-    <!-- Le script pour l'icône du livre ouvert -->
+ <!-- Le double script magique (Descriptions automatiques + Zoom Pop-up d'Émile au clic) -->
     <script src="https://unpkg.com"></script>
     <script>lucide.createIcons();</script>
-
-        <!-- Système d'affichage automatique des descriptions d'Émile -->
     <script>
+        // 1. Système d'affichage automatique des légendes dorées
         document.querySelectorAll('.photo-item').forEach(item => {
             const img = item.querySelector('img');
             if(img && img.getAttribute('alt')) {
                 const p = document.createElement('p');
                 p.textContent = img.getAttribute('alt');
+                p.style.margin = "10px 0 0 0";
+                p.style.fontSize = "14px";
+                p.style.color = "#E1C9A8";
+                p.style.fontWeight = "bold";
                 item.appendChild(p);
             }
         });
-    </script>
 
-    <script></script>
+        // 2. Grand système de Zoom Pop-up automatique au clic sur l'image
+        const popup = document.createElement('div');
+        popup.style.cssText = "display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; justify-content:center; align-items:center; cursor:pointer;";
+        const popupImg = document.createElement('img');
+        popupImg.style.cssText = "max-width:90%; max-height:85%; border-radius:8px; object-fit:contain;";
+        popup.appendChild(popupImg);
+        document.body.appendChild(popup);
+
+        document.querySelectorAll('.photo-item img').forEach(img => {
+            img.addEventListener('click', () => {
+                popupImg.src = img.src;
+                popup.style.display = "flex";
+            });
+        });
+
+        popup.addEventListener('click', () => {
+            popup.style.display = "none";
+        });
+    </script>
 </body>
 </html>
+
