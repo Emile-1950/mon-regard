@@ -2,61 +2,21 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🐛 Mon Herbier - Insectes - Page 1</title>
+    <title>Menu Oiseaux - Mon Portfolio</title>
     <style>
-        body { font-family: sans-serif; background: #1a1a1a; color: white; margin: 0; padding: 20px; }
-        .galerie { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1200px; margin: 40px auto; }
-        .photo-item { background: #222; padding: 10px; border-radius: 8px; border: 1px solid #7A4801; box-shadow: 0 4px 6px rgba(0,0,0,0.3); text-align: center; }
-        .photo-item img { width: 100%; height: 180px; object-fit: cover; object-position: center; border-radius: 4px; cursor: pointer; }
-        .bouton-retour { display: inline-block; text-decoration: none; color: #E1C9A8; font-weight: bold; }
-        .bouton-retour:hover { color: white; }
-
-    /* Style pour les petits boutons ronds de navigation */
-.nav-bouton-rond {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 65px;
-    height: 65px;
-    border-radius: 50%; /* Rend le bouton parfaitement rond */
-    background: linear-gradient(135deg, #a86b18, #613903); /* Ton dégradé marron/orange */
-    border: 2px solid #fbae41;
-    color: white !important;
-    text-decoration: none;
-    font-size: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* La jolie ombre portée */
-    transition: all 0.3s ease; /* Pour une animation fluide */
-    cursor: pointer;
-    box-shadow: 0px 0px 10px 0px #d6cd9c; }
-
-/* Effet au survol de la souris */
-.nav-bouton-rond:hover {
-    transform: translateY(-3px); /* Le bouton se soulève légèrement */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7); /* L'ombre devient plus intense */
-    background: linear-gradient(135deg, #c58224, #7a4801); /* Éclaircissement au survol */
-}
-
-/* Conteneur pour aligner les deux boutons côte à côte */
-.conteneur-boutons-ronds {
-    display: flex;
-    gap: 40px;
-    justify-content: center;
-    margin-bottom: 20px; }
+        body { font-family: sans-serif; background-color: #121212; color: white; text-align: center; padding: 20px; }
+        .menu-oiseaux { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin: 40px auto; max-width: 800px; }
+        .btn-oiseau { padding: 15px; font-size: 16px; font-weight: bold; color: white; background-color: #1e1e1e; border: 2px solid #333; border-radius: 8px; cursor: pointer; transition: 0.3s; text-align: center; }
+        .btn-oiseau:hover { background-color: #2a2a2a; border-color: #007bff; transform: scale(1.02); }
+        .bouton-accueil { display: inline-block; margin-bottom: 20px; text-decoration: none; color: #aaa; }
+        .bouton-accueil:hover { color: #fff; }
     </style>
 </head>
 <body>
 
-    <div class="galerie">
-            
-                 <div class="conteneur-boutons-ronds" style="grid-column: 1 / -1;">
-            <!-- Bouton 1 : Retour à l'accueil général -->
-            <a href="../index.html" class="nav-bouton-rond" title="Retour à l'accueil général">🏠</a>   
-            <!-- Bouton 2 : Livre d'or (Avis) -->
-            <a href="../commentaires.html" class="nav-bouton-rond" title="Livre d'or" style="font-size: 13px; font-weight: bold;"> ✍️</a>
-            <!-- Bouton 3 : Retour aux destinations (Voyages) -->
-            <a href="../voyages/index.html" class="nav-bouton-rond" title="Retour aux destinations">✈️</a>
-        </div>
+    <div style="text-align: center;">
+        <a href="../index.html" class="bouton-accueil">⬅️ Retour à l'accueil générale</a>
+    </div>
 
     <h1>🦅 Univers des Oiseaux</h1>
 
