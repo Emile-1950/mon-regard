@@ -3,30 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Voyage Provence - Mon Portfolio</title>
+    <title>🐛 Mon Herbier - Insectes - Page 1</title>
     <style>
-        body { font-family: sans-serif; background: #1a1a1a; color: white; margin: 0; padding: 20px; }
+        body { font-family: sans-serif; background: #1a1a1a; color: white; margin: 0; padding: 20px; margin-top: 20px;}
         .galerie { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1200px; margin: 40px auto; }
         .photo-item { background: #222; padding: 10px; border-radius: 8px; border: 1px solid #7A4801; box-shadow: 0 4px 6px rgba(0,0,0,0.3); text-align: center; }
         .photo-item img { width: 100%; height: 180px; object-fit: cover; object-position: center; border-radius: 4px; cursor: pointer; }
         .bouton-retour { display: inline-block; text-decoration: none; color: #E1C9A8; font-weight: bold; }
         .bouton-retour:hover { color: white; }
+
+    /* Style pour les petits boutons ronds de navigation */
+.nav-bouton-rond {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%; /* Rend le bouton parfaitement rond */
+    background: linear-gradient(135deg, #a86b18, #613903); /* Ton dégradé marron/orange */
+    border: 2px solid #fbae41;
+    color: white !important;
+    text-decoration: none;
+    font-size: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* La jolie ombre portée */
+    transition: all 0.3s ease; /* Pour une animation fluide */
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 0px #d6cd9c; }
+
+/* Effet au survol de la souris */
+.nav-bouton-rond:hover {
+    transform: translateY(-3px); /* Le bouton se soulève légèrement */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7); /* L'ombre devient plus intense */
+    background: linear-gradient(135deg, #c58224, #7a4801); /* Éclaircissement au survol */
+}
+
+/* Conteneur pour aligner les deux boutons côte à côte */
+.conteneur-boutons-ronds {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    margin-bottom: 20px; }
     </style>
 </head>
 <body>
 
-    <div class="galerie">
+    <div class="conteneur-boutons-ronds">
+        <!-- Bouton 1 : Retour à l'accueil général -->
+        <a href="../index.html" class="nav-bouton-rond" title="Retour à l'accueil général">🏠</a>
         
-        <!-- Menu supérieur avec le bon chemin de retour vers l'accueil général -->
-                <div style="grid-column: 1 / -1; width: 100%; text-align: center; margin: 20px 0; display: flex; flex-direction: column; align-items: center; gap: 12px;">
-            <button class="folder-btn" onclick="window.location.href='../commentaires.html'" style="color: white !important; background: linear-gradient(135deg, #a86b18, #613903) !important; border: none !important; padding: 10px 25px !important; font-size: 15px !important; font-weight: bold !important; border-radius: 25px !important; box-shadow: 0 4px 6px rgba(0,0,0,0.4) !important; cursor: pointer !important; display: inline-flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 5px;"><i data-lucide="book-open"></i> Livre d'or</button>
-            <a href="index.html" class="bouton-retour" style="margin: 0;">⬅️ Retour aux destinations</a>
-        </div>
+        <!-- Bouton 2 : Livre d'or (Avis) -->
+        <a href="../commentaires.html" class="nav-bouton-rond" title="Livre d'or" style="font-size: 13px; font-weight: bold;">Avis</a>
         
+        <!-- Bouton 3 : Retour aux destinations (Voyages) -->
+        <a href="../voyages/index.html" class="nav-bouton-rond" title="Retour aux destinations">✈️</a>
+    </div>
 
         <!-- Le titre principal centré pile au milieu -->
         <h1 style="grid-column: 1 / -1; width: 100%; text-align: center; color: white; margin-bottom: 30px;">☀️ Voyage en Bretagne</h1>
 
+    <div class="galerie">    
         <div class="photo-item"><img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bretagne%201/6W1A6741.jpg" alt="moulin Breton"></div>
         <div class="photo-item"><img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bretagne%202/%20.JPG" alt="Perros-Guirec"></div>
         <div class="photo-item"><img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bretagne%202/6W1A1761.JPG" alt="côte de granit rose"></div>
