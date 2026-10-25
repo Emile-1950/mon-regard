@@ -10,47 +10,44 @@
      body { font-family: sans-serif; background: #1a1a1a; color: #333; margin-top: 30px; padding: 0px !important; display: flex; flex-direction: column; align-items: center; margin-top: 30px !important; }
      .menu-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; width: 90%; max-width: 1250px; margin-top: 20px; }
 
-        /* Le conteneur qui flotte à gauche et aligne les boutons verticalement */
-.ma-banniere-accueil {
-    position: absolute;
-    top: 15px;       /* Distance depuis le haut de la photo */
-    left: 20px;      /* Distance depuis le bord gauche de la photo */
+        /* La boîte qui contient tes boutons (placée juste au-dessus de la photo, tout à droite) */
+    .ma-banniere-accueil {
+    position: relative; /* 👈 On enlève le mode "flottant sur la photo" pour les remettre au-dessus */
+    width: 100%;
+    max-width: 1100px;
+    margin: 20px auto 15px auto !important; /* Crée l'espace parfait au-dessus de la bannière */
     display: flex;
-    flex-direction: column; /* 👈 C'est cette ligne magique qui les empile les uns au-dessus des autres ! */
-    gap: 12px;       /* L'espace vertical entre chaque bouton rond */
-    z-index: 10;     
+    justify-content: flex-end; /* 👈 Pousse tout le bloc tout à droite */
+    gap: 15px; /* Espace horizontal entre les trois boutons */
     background: none !important;
     border: none !important;
     box-shadow: none !important;
-    width: auto !important;
     height: auto !important;
-    margin: 0 !important;
-    padding: 0 !important; }
+    padding: 0 10px !important; }
 
-/* Le style pour transformer les boutons en magnifiques petits ronds chics */
-.ma-banniere-accueil .folder-btn {
+    /* Le style pour tes superbes boutons rectangulaires arrondis en relief */
+   .ma-banniere-accueil .folder-btn {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    width: 42px;    /* Largeur fixe pour faire un rond parfait */
-    height: 42px;   /* Hauteur fixe identique */
-    border-radius: 50% !important; /* 👈 Rend le bouton parfaitement rond ! */
-    border: 1px solid #7A4801 !important; 
-    background: rgba(17, 17, 17, 0.85) !important; /* Fond noir semi-transparent */
-    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6) !important; /* Ombre portée en relief */
+    gap: 8px; /* Espace entre la petite icône et le texte */
+    padding: 8px 18px !important; /* Donne une belle forme de rectangle généreux */
+    font-size: 14px !important;
+    font-weight: bold;
     color: white !important;
-    font-size: 18px !important; /* Taille parfaite pour les émojis/icônes */
+    border: 1px solid #7A4801 !important; /* Ton encadrement marron/doré signature */
+    border-radius: 8px !important; /* 👈 Un joli arrondi sur les angles (style "capsule") */
+    background: #111 !important; /* Fond noir profond comme tes rubriques du bas */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6) !important; /* 👈 La jolie ombre portée bien visible pour le relief */
     cursor: pointer;
-    transition: all 0.2s ease;
-    padding: 0 !important; /* On enlève le padding pour bien centrer l'icône */
-    text-indent: 0 !important; }
+    transition: all 0.2s ease; }
 
-/* Effet de survol sur les petits ronds */
-.ma-banniere-accueil .folder-btn:hover {
-    background: rgba(34, 34, 34, 0.95) !important;
-    border-color: #E1C9A8 !important;
-    transform: scale(1.08); /* Le rond grossit un tout petit peu quand on passe dessus */
-    box-shadow: 3px 5px 12px rgba(0, 0, 0, 0.8) !important; }
+    /* Effet au survol à la souris */
+    .ma-banniere-accueil .folder-btn:hover {
+    background: #222 !important;
+    border-color: #E1C9A8 !important; /* L'encadrement s'illumine au survol */
+    transform: translateY(-2px); /* Le bouton se soulève légèrement */
+    box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.8) !important; /* L'ombre s'intensifie */ }
+    
 
         .folder-btn { background: url('https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bannie%CC%80re/94013.jpg'); border: 1px solid #ccc; padding: 15px 25px 15px 25px; font-weight: bold; border-radius: 6px; cursor: pointer; margin-top: 30px; margin: 5px; }
         .folder-btn:hover, .folder-btn.active { background: #111; color: #fff; }
