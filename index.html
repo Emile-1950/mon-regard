@@ -10,33 +10,43 @@
      body { font-family: sans-serif; background: #1a1a1a; color: #333; margin-top: 30px; padding: 0px !important; display: flex; flex-direction: column; align-items: center; margin-top: 30px !important; }
      .menu-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; width: 90%; max-width: 1250px; margin-top: 20px; }
 
-     .ma-banniere-accueil {
-    width: 100%;
-    max-width: 1100px;
-    margin: 20px auto 10px auto;
+        /* Le conteneur magique qui flotte par-dessus la photo, calé en haut à gauche */
+.ma-banniere-accueil {
+    position: absolute;
+    top: 20px;       /* Éloignement du bord haut de la photo */
+    left: 40px;      /* Éloignement du bord gauche de la photo */
     display: flex;
-    justify-content: flex-end; /* Pousse les boutons tout à droite */
-    background: none !important; /* Enlève le fond dégradé */
-    border: none !important; /* Enlève la bordure marron */
-    box-shadow: none !important; /* Enlève l'ombre de l'ancien rectangle */
+    gap: 15px;       /* Espace horizontal entre les trois boutons */
+    z-index: 10;     /* Force les boutons à rester toujours au-dessus de l'image */
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    width: auto !important;
     height: auto !important;
-    padding: 0 10px !important; }
+    margin: 0 !important;
+    padding: 0 !important; }
 
+/* Le style de tes boutons en relief avec l'ombre portée */
 .ma-banniere-accueil .folder-btn {
-    margin-left: 15px;
-    padding: 6px 12px !important;
+    padding: 8px 16px !important;
     font-size: 14px !important;
-    border: 1px solid #7A4801 !important; /* Petit encadrement discret */
+    font-weight: bold;
+    border: 1px solid #7A4801 !important; /* Petit encadrement fin */
     border-radius: 5px !important;
-    background: #111 !important; /* Fond noir comme le reste */
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4) !important; /* Ombre portée discrète */
+    /* Un fond sombre légèrement transparent (semi-opaque) pour laisser deviner la forêt derrière */
+    background: rgba(17, 17, 17, 0.8) !important; 
+    /* Une jolie ombre portée bien visible pour mettre le bouton en relief */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7) !important; 
     cursor: pointer;
     transition: all 0.2s ease; }
 
+/* Effet de survol */
 .ma-banniere-accueil .folder-btn:hover {
-    background: #222 !important;
+    background: rgba(34, 34, 34, 0.9) !important;
     border-color: #E1C9A8 !important;
-    transform: translateY(-1px); }
+    transform: translateY(-2px); /* Le bouton se soulève un poil au survol */
+    box-shadow: 3px 5px 12px rgba(0, 0, 0, 0.9) !important; }
+
 
         .folder-btn { background: url('https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bannie%CC%80re/94013.jpg'); border: 1px solid #ccc; padding: 15px 25px 15px 25px; font-weight: bold; border-radius: 6px; cursor: pointer; margin-top: 30px; margin: 5px; }
         .folder-btn:hover, .folder-btn.active { background: #111; color: #fff; }
@@ -77,24 +87,18 @@
 }
 </style>
 
-  
-    <img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bannie%CC%80re/DSC01670.jpeg" 
-     alt="Bannière mon Portfolio" 
-     style="
-        display: block;
-        max-width: 100%;
-        height: auto;
-        border-radius: 15px; 
-        border: 4px double #d4af37; 
-        box-shadow: 0px 0px 30px 5px rgba(219, 209, 149, 0.5);
-        -webkit-box-shadow: 0px 0px 30px 5px rgba(219, 209, 149, 0.5);
-     " />
+<div style="position: relative; width: 100%; max-width: 1100px; margin: 0 auto;">
 
+    <!-- Les boutons qui flottent par-dessus (en haut à gauche) -->
     <div class="ma-banniere-accueil">
         <button class="folder-btn" onclick="window.location.href='index.html'" style="color: white !important;"><i data-lucide="house"></i> Accueil</button>
         <button class="folder-btn" onclick="window.location.href='commentaires.html'" style="color: white !important;"><i data-lucide="book-open"></i> Livre d'or</button>
         <button class="folder-btn" onclick="window.location.href='mailto:pochbe@outlook.fr'" style="color: white !important;"><i data-lucide="mail"></i> Contact</button>
     </div>
+
+    <!-- Ta grande photo de forêt (qui sert de fond) -->
+    <img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bannie%CC%80re/DSC01670.jpeg" style="width: 100%; border-radius: 15px; display: block; box-shadow: 0px 0px 30px 5px rgba(219, 209, 149, 0.5); border: 4px double #7A4801;">
+</div>
 
  <div class="menu-container">
     <button class="folder-btn" onclick="window.location.href='voyages/index.html'"><i data-lucide="compass"></i> Voyages</button>
