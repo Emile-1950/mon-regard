@@ -10,14 +10,15 @@
      body { font-family: sans-serif; background: #1a1a1a; color: #333; margin-top: 30px; padding: 0px !important; display: flex; flex-direction: column; align-items: center; margin-top: 30px !important; }
      .menu-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; width: 90%; max-width: 1250px; margin-top: 20px; }
 
-        /* Le conteneur magique qui flotte par-dessus la photo, calé en haut à gauche */
+        /* Le conteneur qui flotte à gauche et aligne les boutons verticalement */
 .ma-banniere-accueil {
     position: absolute;
-    top: 20px;       /* Éloignement du bord haut de la photo */
-    left: 40px;      /* Éloignement du bord gauche de la photo */
+    top: 15px;       /* Distance depuis le haut de la photo */
+    left: 20px;      /* Distance depuis le bord gauche de la photo */
     display: flex;
-    gap: 15px;       /* Espace horizontal entre les trois boutons */
-    z-index: 10;     /* Force les boutons à rester toujours au-dessus de l'image */
+    flex-direction: column; /* 👈 C'est cette ligne magique qui les empile les uns au-dessus des autres ! */
+    gap: 12px;       /* L'espace vertical entre chaque bouton rond */
+    z-index: 10;     
     background: none !important;
     border: none !important;
     box-shadow: none !important;
@@ -26,27 +27,30 @@
     margin: 0 !important;
     padding: 0 !important; }
 
-/* Le style de tes boutons en relief avec l'ombre portée */
+/* Le style pour transformer les boutons en magnifiques petits ronds chics */
 .ma-banniere-accueil .folder-btn {
-    padding: 8px 16px !important;
-    font-size: 14px !important;
-    font-weight: bold;
-    border: 1px solid #7A4801 !important; /* Petit encadrement fin */
-    border-radius: 5px !important;
-    /* Un fond sombre légèrement transparent (semi-opaque) pour laisser deviner la forêt derrière */
-    background: rgba(17, 17, 17, 0.8) !important; 
-    /* Une jolie ombre portée bien visible pour mettre le bouton en relief */
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7) !important; 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;    /* Largeur fixe pour faire un rond parfait */
+    height: 42px;   /* Hauteur fixe identique */
+    border-radius: 50% !important; /* 👈 Rend le bouton parfaitement rond ! */
+    border: 1px solid #7A4801 !important; 
+    background: rgba(17, 17, 17, 0.85) !important; /* Fond noir semi-transparent */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6) !important; /* Ombre portée en relief */
+    color: white !important;
+    font-size: 18px !important; /* Taille parfaite pour les émojis/icônes */
     cursor: pointer;
-    transition: all 0.2s ease; }
+    transition: all 0.2s ease;
+    padding: 0 !important; /* On enlève le padding pour bien centrer l'icône */
+    text-indent: 0 !important; }
 
-/* Effet de survol */
+/* Effet de survol sur les petits ronds */
 .ma-banniere-accueil .folder-btn:hover {
-    background: rgba(34, 34, 34, 0.9) !important;
+    background: rgba(34, 34, 34, 0.95) !important;
     border-color: #E1C9A8 !important;
-    transform: translateY(-2px); /* Le bouton se soulève un poil au survol */
-    box-shadow: 3px 5px 12px rgba(0, 0, 0, 0.9) !important; }
-
+    transform: scale(1.08); /* Le rond grossit un tout petit peu quand on passe dessus */
+    box-shadow: 3px 5px 12px rgba(0, 0, 0, 0.8) !important; }
 
         .folder-btn { background: url('https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bannie%CC%80re/94013.jpg'); border: 1px solid #ccc; padding: 15px 25px 15px 25px; font-weight: bold; border-radius: 6px; cursor: pointer; margin-top: 30px; margin: 5px; }
         .folder-btn:hover, .folder-btn.active { background: #111; color: #fff; }
