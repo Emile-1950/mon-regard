@@ -30,8 +30,8 @@
     .menu-container { 
         display: grid; 
         grid-template-columns: repeat(4, 1fr); 
-        gap: 6px; 
-        width: 90%; 
+        gap: 10px; 
+        width: 100%; 
         max-width: 1250px; 
         margin-top: 25px !important;
     }
@@ -62,7 +62,7 @@
         background: #111111 !important; /* Fond noir uni */
         border: 1px solid #7A4801 !important;
         padding: 6px 16px !important;
-        font-size: 24px !important; /* Ajusté pour une meilleure lisibilité en cursive */
+        font-size: 24px !important; 
         font-family: "Qwitcher Grypen", cursive !important;
         font-weight: 700 !important;
         color: white !important;
@@ -70,8 +70,8 @@
         box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5) !important;
         cursor: pointer;
         transition: all 0.2s ease;
-        margin: 0 !important; /* Annule les marges de la grille */
-        width: auto !important; /* Évite qu'ils s'étirent */
+        margin: 0 !important; 
+        width: auto !important; 
         display: inline-flex;
         align-items: center;
         gap: 8px;
@@ -111,28 +111,29 @@
         border-left: 1px solid #7A4801;
     }
 
-    /* 2. LES BOUTONS DE CATÉGORIES (Grille principale) */
+    /* 2. LES BOUTONS DE CATÉGORIES (Grille principale du bas) */
     .menu-container .folder-btn { 
-        background: #2a2a2a !important; 
+        background: #111111 !important; 
         border: 1px solid #7A4801 !important; 
-        padding: 12px 15px !important; 
+        padding: 14px 15px !important; 
         font-family: "Qwitcher Grypen", cursive !important; 
         font-size: 26px !important; 
         font-weight: 700 !important; 
         color: #fff !important;
-        border-radius: 6px !important; 
+        border-radius: 8px !important; 
         cursor: pointer; 
-        margin: 3px !important; 
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        transition: transform 0.2s;
+        box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+        transition: all 0.2s ease;
     }
 
     .menu-container .folder-btn:hover {
-        transform: scale(1.02);
-        background: #333 !important;
+        transform: translateY(-2px);
+        background: #222 !important;
+        border-color: #E1C9A8 !important;
+        box-shadow: 3px 5px 15px rgba(0,0,0,0.7);
     }
 
     /* Les petites icônes Lucide en dégradé chaud */
@@ -156,14 +157,14 @@
         font-weight: 700;
         color: #fff !important;
         text-align: center;
-        margin-top: 30px !important;
+        margin-top: 40px !important;
         width: 100%;
         margin-bottom: 30px;
     }
 
-    @media (max-width: 768px) { 
-        .menu-container { grid-template-columns: repeat(2, 1fr); } 
-    }
+    /* Tablettes et mobiles */
+    @media (max-width: 1024px) { .menu-container { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 768px) { .menu-container { grid-template-columns: repeat(2, 1fr); } }
     </style>
 </head>
 <body>
@@ -185,15 +186,25 @@
             </div>
         </div>
 
-        <!-- 2. Grande photo de forêt (Placée juste en dessous de la barre) -->
-        <img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bannie%CC%80re/DSC07482.jpeg" style="width: 100%; height: 350px; object-fit: cover; border-radius: 15px; display: block; box-shadow: 0px 0px 30px 5px rgba(219, 209, 149, 0.5); border: 4px double #7A4801; box-sizing: border-box;">
+        <!-- 2. Grande photo de forêt -->
+        <img src="https://filedn.eu" style="width: 100%; height: 350px; object-fit: cover; border-radius: 15px; display: block; box-shadow: 0px 0px 30px 5px rgba(219, 209, 149, 0.5); border: 4px double #7A4801; box-sizing: border-box;">
 
-        <!-- 3. Grille des dossiers de rubriques -->
+        <!-- 3. Grille complète des 12 dossiers de rubriques -->
         <div class="menu-container">
-            <button class="folder-btn" onclick="window.location.href='voyages/index.html'"><i data-lucide="plane"></i> Voyages</button>
-            <button class="folder-btn" onclick="window.location.href='nature/index.html'"><i data-lucide="tree-pine"></i> Nature</button>
-            <button class="folder-btn" onclick="window.location.href='architecture/index.html'"><i data-lucide="building"></i> Architecture</button>
-            <button class="folder-btn" onclick="window.location.href='portraits/index.html'"><i data-lucide="users"></i> Portraits</button>
+            <button class="folder-btn" onclick="window.location.href='paysages.html'"><i data-lucide="image"></i> Photo Paysage</button>
+            <button class="folder-btn" onclick="window.location.href='oiseaux.html'"><i data-lucide="twitter"></i> Photo Oiseaux</button>
+            <button class="folder-btn" onclick="window.location.href='macro.html'"><i data-lucide="flower-2"></i> Photo Macro</button>
+            <button class="folder-btn" onclick="window.location.href='nature.html'"><i data-lucide="tree-pine"></i> Photo Nature</button>
+
+            <button class="folder-btn" onclick="window.location.href='voyages.html'"><i data-lucide="plane"></i> Photo Voyages</button>
+            <button class="folder-btn" onclick="window.location.href='architecture.html'"><i data-lucide="building"></i> Photo Architecture</button>
+            <button class="folder-btn" onclick="window.location.href='portraits.html'"><i data-lucide="users"></i> Photo Portraits</button>
+            <button class="folder-btn" onclick="window.location.href='animaux.html'"><i data-lucide="paw-print"></i> Photo Animaux</button>
+
+            <button class="folder-btn" onclick="window.location.href='noir-blanc.html'"><i data-lucide="contrast"></i> Noir & Blanc</button>
+            <button class="folder-btn" onclick="window.location.href='lever-coucher.html'"><i data-lucide="sunrise"></i> Lever / Coucher</button>
+            <button class="folder-btn" onclick="window.location.href='eau.html'"><i data-lucide="droplet"></i> Éléments d'Eau</button>
+            <button class="folder-btn" onclick="window.location.href='nocturne.html'"><i data-lucide="moon"></i> Photo Nocturne</button>
         </div>
 
         <!-- 4. Pied de page -->
