@@ -4,98 +4,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>📷 Mon Regard Photographique</title>
+    <style>
+@import url('https://googleapis.com');
 
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@700&display=swap');
+/* Classe pour la police cursive globale */
+.qwither-grypen-bold {
+    font-family: "Qwither Grypen", cursive;
+    font-weight: 800;
+    font-style: normal;
+}
 
-/* Classe pour la police cursive */
-.qwitcher-grypen-bold {
-  font-family: "Qwitcher Grypen", cursive;
-  font-weight: 800;
-  font-style: normal; }
+body { 
+    background: #1a1a1a; 
+    color: #333; 
+    padding: 0px !important; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    margin-top: 15px !important;
+}
 
-        body { background: #1a1a1a; color: #333; padding: 0px !important; display: flex;         flex-direction: column; align-items: center; margin-top: 15px !important; }
-        .menu-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; width: 90%; max-width: 1250px; margin-top: 20px; }
+/* Grille des 12 rubriques du bas */
+.menu-container { 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 12px; 
+    width: 90%; 
+    max-width: 1250px; 
+    margin-top: 20px; 
+}
 
-         /* La boîte qui contient tes boutons (plus compacte verticalement) */
-        .ma-banniere-accueil {
-        position: relative;
-        width: 100%;
-        max-width: 1250px; /* 👈 Aligné pile sur la largeur de ta nouvelle photo */
-        margin: 0px auto 12px auto !important; /* 👈 Réduit l'espace au-dessus et en-dessous à l'essentiel */
-        display: flex;
-        justify-content: right;
-        gap: 12px; /* Un poil moins d'espace entre les boutons */
-        background: none !important;
-        border: none !important;
-        box-shadow: none !important;
-        height: auto !important;
-        padding: 0px !important; }
+/* 1. LES TROIS BOUTONS DU HAUT (Accueil, Livre d'or, Contact) */
+.ma-banniere-accueil {
+    position: relative;
+    width: 100%;
+    max-width: 1250px;
+    margin: 0px auto 12px auto !important;
+    display: flex;
+    justify-content: center; /* Boutons centrés comme tu aimes */
+    gap: 12px;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    height: auto !important;
+    padding: 0 !important;
+}
 
-         /* Vos boutons du haut version "mini" élégante */
-        .ma-banniere-accueil .folder-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px; /* Espace icône-texte légèrement réduit */
-        padding: 5px 12px !important; /* 👈 Moins haut et moins large (au lieu de 8px 18px) */
-        font-size: 12px !important; /* 👈 Écriture un poil plus petite et fine (au lieu de 14px) */
-        font-family: "Qwitcher Grypen", cursive;
-        font-weight: 800;
-        color: white !important;
-        border: 1px solid #7A4801 !important;
-        border-radius: 6px !important; /* Arrondi légèrement adapté à la taille */
-        background: #111 !important;
-        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5) !important;
-        cursor: pointer;
-        transition: all 0.2s ease;
-        margin-right: 10px;  }
+.ma-banniere-accueil .folder-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 14px !important;
+    font-size: 20px !important; /* 👈 Agrandit l'écriture cursive du haut */
+    font-family: "Qwither Grypen", cursive !important;
+    font-weight: 800;
+    color: white !important;
+    border: 1px solid #7A4801 !important;
+    border-radius: 6px !important;
+    background: #111 !important;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5) !important;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-right: 10px;
+}
 
-        /* Effet au survol à la souris (conservé mais adapté) */
-        .ma-banniere-accueil .folder-btn:hover {
-        background: #222 !important;
-        border-color: #E1C9A8 !important;
-        transform: translateY(-1px); /* Soulèvement plus subtil adapté au petit bouton */     
-        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.7) !important; }
+.ma-banniere-accueil .folder-btn:hover {
+    background: #222 !important;
+    border-color: #E1C9A8 !important;
+    transform: translateY(-1px);
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.7) !important;
+}
 
+/* 2. LES 12 GRANDS BOUTONS DE CATÉGORIES (Voyages, Oiseaux...) */
+.folder-btn { 
+    background: url('https://filedn.eu') !important; 
+    border: 1px solid #ccc !important; 
+    padding: 12px 20px !important; 
+    font-family: "Qwither Grypen", cursive !important; 
+    font-size: 24px !important; /* 👈 Agrandit l'écriture des rubriques */
+    font-weight: 800 !important; 
+    border-radius: 6px !important; 
+    cursor: pointer; 
+    margin: 5px !important; 
+}
 
-        .folder-btn { background: url('https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bannie%CC%80re/94013.jpg'); border: 1px solid #ccc; padding: 15px 25px 15px 25px; font-family: "Qwitcher Grypen"; font-weight: 800; border-radius: 6px; cursor: pointer; margin-top: 30px; margin: 5px; }
-        .folder-btn:hover, .folder-btn.active { background: #111; color: #fff; }
-        .gallery-view { width: 90%; max-width: 1200px; display: none; flex-direction: column; align-items: center; margin-bottom: 40px; }
-        .gallery-title { font-size: 1.6rem; margin-bottom: 25px; text-transform: capitalize; border-bottom: 2px solid #111; padding-bottom: 5px; }
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; width: 100%; }
-        .photo-item { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.06); cursor: pointer; transition: transform 0.3s ease; }
-        .photo-item:hover { transform: translateY(-4px); }
-        .photo-item img { width: 100%; height: 220px; object-fit: cover; display: block; }
-        .photo-info { padding: Â15px; text-align: center; font-weight: 500; }
-        #welcome-msg { text-align: center; color: #777; font-style: italic; margin: 40px 0; }
-        .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; z-index: 1000; }
-        .lightbox img { max-width: 90%; max-height: 85%; border-radius: 4px; }
-        .scroll-top-btn { position: fixed; bottom: 30px; right: 15px; width: 50px; height: 50px; background: linear-gradient(135deg, #111111, #333333); color: #ffffff; border: 2px solid #ffffff; border-radius: 50%; font-size: 1.5rem; font-weight: bold; cursor: pointer; display: none; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(0,0,0,0.3); transition: all 0.3s; z-index: 2000; }
-        .scroll-top-btn:hover { background: linear-gradient(135deg, #ffffff, #e0e0e0); color: #111111; border-color: #111111; transform: translateY(-5px) scale(1.1); }
-        .comments-section { width: 90%; max-width: 800px; margin: 40px auto 60px auto; padding: 30px; background: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); box-sizing: border-box; }
-        .comments-section h2 { text-align: center; margin-top: 0; margin-bottom: 25px; color: #111; font-size: 1.5rem; }
-        @media (max-width: 768px) { .menu-container { grid-template-columns: repeat(2, 1fr); } }
+/* Style des petites icônes Lucide dans TOUS les boutons */
+.folder-btn [data-lucide] {
+    margin-right: 10px;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+}
 
-        /* Ligne 30 : Style pour TOUTES les icônes de vos boutons */
-        .folder-btn [data-lucide] {
-        margin-right: 10px;
-        vertical-align: middle;
-        background: linear-gradient(135deg, #ff9f43, #ff5252); /* Votre dégradé chaud */
-        padding: 6px;
-        border-radius: 8px;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-        color: white;
-        stroke-width: 2.5;
-        transition: all 0.3s ease;
-        width: 9px;  /* Sécurité pour la taille */
-        height: 9px; /* Sécurité pour la taille */ }
+/* 3. LE MESSAGE DE NOTATION TOUT EN BAS */
+.footer-text {
+    font-family: "Qwither Grypen", cursive !important;
+    font-size: 28px !important; /* 👈 Une belle taille pour être lue sans problème */
+    font-weight: 800;
+    color: #fff !important;
+    text-align: center;
+    margin-top: 25px !important;
+    width: 100%;
+}
 
-
-        /* Ligne 45 : L'effet au survol pour TOUTES les icônes */
-        .folder-btn:hover [data-lucide] {
-        transform: translateY(-3px) scale(1.1);
-        box-shadow: 0 6px 12px rgba(255, 159, 67, 0.5); }
+/* Reste de tes styles de page (Galerie, Lightbox, etc.) */
+.gallery-view { width: 90%; max-width: 1200px; display: none; flex-direction: column; align-items: center; margin-bottom: 40px; }
+.gallery-title { font-size: 1.6rem; margin-bottom: 25px; text-transform: capitalize; border-bottom: 2px solid #111; padding-bottom: 5px; }
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; width: 100%; }
+.photo-item { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.06); cursor: pointer; transition: transform 0.3s ease; }
+.photo-item:hover { transform: translateY(-4px); }
+.photo-item img { width: 100%; height: 220px; object-fit: cover; display: block; }
+.photo-info { padding: 15px; text-align: center; font-weight: 500; }
+#welcome-msg { text-align: center; color: #777; font-style: italic; margin: 40px 0; }
+.lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; z-index: 1000; }
+.lightbox img { max-width: 90%; max-height: 85%; border-radius: 4px; }
+.scroll-top-btn { position: fixed; bottom: 30px; right: 15px; width: 50px; height: 50px; background: linear-gradient(135deg, #111111, #333333); color: #ffffff; border: 2px solid #ffffff; border-radius: 50%; font-size: 1.5rem; font-weight: bold; cursor: pointer; display: none; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(0,0,0,0.3); transition: all 0.3s; z-index: 2000; }
+.scroll-top-btn:hover { background: linear-gradient(135deg, #ffffff, #e0e0e0); color: #111111; border-color: #111111; transform: translateY(-5px) scale(1.1); }
+.comments-section { width: 90%; max-width: 800px; margin: 40px auto 60px auto; padding: 30px; background: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); box-sizing: border-box; }
+.comments-section h2 { text-align: center; margin-top: 0; margin-bottom: 25px; color: #111; font-size: 1.5rem; }
+@media (max-width: 768px) { .menu-container { grid-template-columns: repeat(2, 1fr); } }
 </style>
+
 
 <div style="position: relative; width: 100%; max-width: 1250px; margin: 0 auto;">
 
