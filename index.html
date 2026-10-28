@@ -6,8 +6,9 @@
     <title>📷 Mon Regard Photographique</title>
 
 <style>   
-@import url('https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@400;700&display=swap');
+@import url('https://googleapis.com');
 
+/* Classe pour la police cursive */
 .qwitcher-grypen-regular {
   font-family: "Qwitcher Grypen", cursive;
   font-weight: 400;
@@ -24,27 +25,17 @@ body {
   margin-top: 15px !important; 
 }
 
-.menu-container { 
-  display: grid; 
-  grid-template-columns: repeat(4, 1fr); 
-  gap: 2px; 
-  width: 90%; 
-  max-width: 1250px; 
-  margin-top: 20px; 
-}
-
-/* La boîte qui contient vos boutons du haut (positionnée de manière absolue par-dessus l'image) */
+/* Conteneur des boutons du haut : maintenant au-dessus de la bannière */
 .ma-banniere-accueil {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  z-index: 10;
+  width: 100%;
+  max-width: 1250px;
   display: flex;
   justify-content: flex-end;
   gap: 12px; 
+  margin-bottom: 10px; /* Crée un petit espace avant la photo */
 }
 
-/* Vos boutons du haut version "mini" élégante */
+/* Style mini élégant pour les trois boutons du haut */
 .ma-banniere-accueil .folder-btn {
   display: inline-flex;
   align-items: center;
@@ -62,7 +53,6 @@ body {
   margin: 0 !important;  
 }
 
-/* Effet au survol des boutons du haut */
 .ma-banniere-accueil .folder-btn:hover {
   background: #222 !important;
   border-color: #E1C9A8 !important;
@@ -70,9 +60,19 @@ body {
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.7) !important; 
 }
 
+/* Grille principale des catégories */
+.menu-container { 
+  display: grid; 
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 2px; 
+  width: 90%; 
+  max-width: 1250px; 
+  margin-top: 20px; 
+}
+
 /* Style général pour les gros boutons du menu */
 .folder-btn { 
-  background: url('https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bannie%CC%80re/94013.jpg'); 
+  background: url('https://filedn.eu'); 
   border: 1px solid #ccc; 
   padding: 15px 25px; 
   font-weight: bold; 
@@ -86,26 +86,19 @@ body {
   color: #fff; 
 }
 
-.gallery-view { display: none; width: 90%; max-width: 1200px; flex-direction: column; align-items: center; margin-bottom: 40px; }
-.gallery-title { font-size: 1.6rem; margin-bottom: 25px; text-transform: capitalize; border-bottom: 2px solid #111; padding-bottom: 5px; }
-.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; width: 100%; }
-.photo-item { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.06); cursor: pointer; transition: transform 0.3s ease; }
-.photo-item:hover { transform: translateY(-4px); }
-.photo-item img { width: 100%; height: 220px; object-fit: cover; display: block; }
-.photo-info { padding: 15px; text-align: center; font-weight: 500; }
-#welcome-msg { text-align: center; color: #777; font-style: italic; margin: 40px 0; }
-.lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; z-index: 1000; }
-.lightbox img { max-width: 90%; max-height: 85%; border-radius: 4px; }
-.scroll-top-btn { position: fixed; bottom: 30px; right: 15px; width: 50px; height: 50px; background: linear-gradient(135deg, #111111, #333333); color: #ffffff; border: 2px solid #ffffff; border-radius: 50%; font-size: 1.5rem; font-weight: bold; cursor: pointer; display: none; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(0,0,0,0.3); transition: all 0.3s; z-index: 2000; }
-.scroll-top-btn:hover { background: linear-gradient(135deg, #ffffff, #e0e0e0); color: #111111; border-color: #111111; transform: translateY(-5px) scale(1.1); }
-.comments-section { width: 90%; max-width: 800px; margin: 40px auto 60px auto; padding: 30px; background: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); box-sizing: border-box; }
-.comments-section h2 { text-align: center; margin-top: 0; margin-bottom: 25px; color: #111; font-size: 1.5rem; }
+/* Message d'accueil en bas de page */
+#welcome-msg { 
+  text-align: center; 
+  color: #e0e0e0; /* Couleur claire pour ressortir sur le fond sombre */
+  font-size: 2rem; /* Taille agrandie pour valoriser la police cursive */
+  margin: 40px 0; 
+}
 
 @media (max-width: 768px) { 
   .menu-container { grid-template-columns: repeat(2, 1fr); } 
 }
 
-/* Style pour TOUTES les icônes de vos boutons */
+/* Style pour les icônes Lucide */
 .folder-btn [data-lucide] {
   margin-right: 10px;
   vertical-align: middle;
@@ -120,7 +113,6 @@ body {
   height: 12px; 
 }
 
-/* L'effet au survol pour TOUTES les icônes */
 .folder-btn:hover [data-lucide] {
   transform: translateY(-3px) scale(1.1);
   box-shadow: 0 6px 12px rgba(255, 159, 67, 0.5); 
@@ -129,18 +121,19 @@ body {
 </head>
 <body>
 
-<div style="position: relative; width: 100%; max-width: 1250px; margin: 0 auto;">
-    <!-- Ta grande photo de forêt (qui sert de fond) -->
-    <img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bannie%CC%80re/DSC07482.jpeg" style="width: 100%; height: 350px; object-fit: cover; border-radius: 15px; display: block; box-shadow: 0px 0px 30px 5px rgba(219, 209, 149, 0.5); border: 4px double #7A4801;">
-
-    <!-- Les boutons qui flottent par-dessus (en haut à droite) -->
-    <div class="ma-banniere-accueil">
-        <button class="folder-btn" onclick="window.location.href='index.html'"><i data-lucide="house"></i> Accueil</button>
-        <button class="folder-btn" onclick="window.location.href='commentaires.html'"><i data-lucide="book-open"></i> Livre d'or</button>
-        <button class="folder-btn" onclick="window.location.href='mailto:pochbe@outlook.fr'"><i data-lucide="mail"></i> Contact</button>
-    </div>
+<!-- 1. Les boutons du haut, placés en dehors et au-dessus de la bannière -->
+<div class="ma-banniere-accueil">
+    <button class="folder-btn" onclick="window.location.href='index.html'"><i data-lucide="house"></i> Accueil</button>
+    <button class="folder-btn" onclick="window.location.href='commentaires.html'"><i data-lucide="book-open"></i> Livre d'or</button>
+    <button class="folder-btn" onclick="window.location.href='mailto:pochbe@outlook.fr'"><i data-lucide="mail"></i> Contact</button>
 </div>
 
+<!-- 2. Bloc contenant uniquement la grande photo de forêt -->
+<div style="width: 100%; max-width: 1250px; margin: 0 auto;">
+    <img src="https://filedn.eu" style="width: 100%; height: 350px; object-fit: cover; border-radius: 15px; display: block; box-shadow: 0px 0px 30px 5px rgba(219, 209, 149, 0.5); border: 4px double #7A4801;">
+</div>
+
+<!-- 3. Menu des catégories -->
 <div class="menu-container">
     <button class="folder-btn" onclick="window.location.href='voyages/index.html'"><i data-lucide="compass"></i> Voyages</button>
     <button class="folder-btn" onclick="window.location.href='Oiseaux/index.html'" style="color: white !important;"><i data-lucide="feather"></i> Oiseaux</button>
@@ -153,16 +146,13 @@ body {
     <button class="folder-btn" onclick="openGallery('saisons')"><i data-lucide="leaf"></i> Saisons</button>
     <button class="folder-btn" onclick="openGallery('papillons')"><i data-lucide="sparkles"></i> Papillons</button>
     <button class="folder-btn" onclick="openGallery('cervides')"><i data-lucide="trees"></i> Cervidés</button>
-    <button class="folder-btn" onclick="openGallery('renards')"><i data-lucide="eye"></i> Renards</button>
+    <button class="folder-btn" onclick="openGallery('renards')"><i data-lucide="paw-print"></i> Renards</button>
 </div>
 
-    <p class="footer-text">Sélectionnez une catégorie ci-dessus pour découvrir la galerie.</p>
+<!-- 4. Message de bienvenue avec la classe de police appliquée -->
+<div id="welcome-msg" class="qwitcher-grypen-regular">
+    Sélectionnez une catégorie ci-dessus pour découvrir la galerie.
+</div>
 
-        <!-- Le traducteur obligatoire pour allumer tes jolis dessins blancs -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-    lucide.createIcons();
-    </script>
 </body>
 </html>
-
