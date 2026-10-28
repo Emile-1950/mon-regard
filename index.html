@@ -6,12 +6,13 @@
     <title>Mon Regard - Portfolio</title>
     
     <style>
+    /* Chargement officiel de la police Google Fonts */
     @import url('https://googleapis.com');
 
     /* Classe pour la police cursive globale */
     .qwither-grypen-bold {
-        font-family: "Qwither Grypen", cursive;
-        font-weight: 800;
+        font-family: "Qwitcher Grypen", cursive;
+        font-weight: 700;
         font-style: normal;
     }
 
@@ -32,7 +33,7 @@
         gap: 6px; 
         width: 90%; 
         max-width: 1250px; 
-        margin-top: 10px !important;
+        margin-top: 25px !important;
     }
 
     /* 1. LA BARRE DU HAUT (Titre à gauche, boutons à droite) */
@@ -40,7 +41,7 @@
         position: relative;
         width: 100%;
         max-width: 1250px;
-        margin: 0px auto 10px auto !important;
+        margin: 10px auto 20px auto !important;
         display: flex;
         justify-content: space-between !important; /* Pousse le titre à gauche et les boutons à droite */
         align-items: center;
@@ -60,10 +61,10 @@
     .mes-boutons-droite .folder-btn {
         background: #111111 !important; /* Fond noir uni */
         border: 1px solid #7A4801 !important;
-        padding: 4px 14px !important;
-        font-size: 18px !important;
-        font-family: "Qwither Grypen", cursive !important;
-        font-weight: 800 !important;
+        padding: 6px 16px !important;
+        font-size: 24px !important; /* Ajusté pour une meilleure lisibilité en cursive */
+        font-family: "Qwitcher Grypen", cursive !important;
+        font-weight: 700 !important;
         color: white !important;
         border-radius: 6px !important;
         box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5) !important;
@@ -71,6 +72,9 @@
         transition: all 0.2s ease;
         margin: 0 !important; /* Annule les marges de la grille */
         width: auto !important; /* Évite qu'ils s'étirent */
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
     }
 
     .mes-boutons-droite .folder-btn:hover {
@@ -87,42 +91,53 @@
         border-radius: 8px;
         overflow: hidden;
         box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
-        font-family: "Qwither Grypen", cursive !important;
+        font-family: "Qwitcher Grypen", cursive !important;
     }
 
     .mon-titre-logo .partie-claire {
         background: #E1C9A8;
         color: #4A2E0B;
         padding: 6px 16px;
-        font-size: 26px;
-        font-weight: 800;
+        font-size: 32px;
+        font-weight: 700;
     }
 
     .mon-titre-logo .partie-sombre {
         background: #111111;
         color: #E1C9A8;
         padding: 6px 16px;
-        font-size: 22px;
-        font-weight: 800;
+        font-size: 26px;
+        font-weight: 700;
         border-left: 1px solid #7A4801;
     }
 
-    /* 2. LES 12 BOUTONS DE CATÉGORIES (Rétrécis avec fond marron) */
-    .folder-btn { 
-        background: url('https://filedn.eu') !important; 
-        border: 1px solid #ccc !important; 
-        padding: 6px 12px !important; 
-        font-family: "Qwither Grypen", cursive !important; 
-        font-size: 21px !important; 
-        font-weight: 800 !important; 
+    /* 2. LES BOUTONS DE CATÉGORIES (Grille principale) */
+    .menu-container .folder-btn { 
+        background: #2a2a2a !important; 
+        border: 1px solid #7A4801 !important; 
+        padding: 12px 15px !important; 
+        font-family: "Qwitcher Grypen", cursive !important; 
+        font-size: 26px !important; 
+        font-weight: 700 !important; 
+        color: #fff !important;
         border-radius: 6px !important; 
         cursor: pointer; 
         margin: 3px !important; 
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        transition: transform 0.2s;
+    }
+
+    .menu-container .folder-btn:hover {
+        transform: scale(1.02);
+        background: #333 !important;
     }
 
     /* Les petites icônes Lucide en dégradé chaud */
     .folder-btn [data-lucide] {
-        margin-right: 10px;
+        margin-right: 12px;
         vertical-align: middle;
         background: linear-gradient(135deg, #ff9f43, #ff5252) !important;
         padding: 5px !important;
@@ -130,84 +145,68 @@
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3) !important;
         color: white !important;
         stroke-width: 2.5 !important;
-        transition: all 0.3s ease;
-        width: 12px !important;
-        height: 12px !important;
+        width: 16px !important;
+        height: 16px !important;
     }
 
     /* 3. LE MESSAGE DE NOTATION TOUT EN BAS */
     .footer-text {
-        font-family: "Qwither Grypen", cursive !important;
-        font-size: 22px !important; 
-        font-weight: 800;
+        font-family: "Qwitcher Grypen", cursive !important;
+        font-size: 24px !important; 
+        font-weight: 700;
         color: #fff !important;
         text-align: center;
-        margin-top: 15px !important;
+        margin-top: 30px !important;
         width: 100%;
+        margin-bottom: 30px;
     }
 
-    /* Reste de tes styles de page (Galerie, Lightbox, etc.) */
-    .gallery-view { width: 90%; max-width: 1200px; display: none; flex-direction: column; align-items: center; margin-bottom: 40px; }
-    .gallery-title { font-size: 1.6rem; margin-bottom: 25px; text-transform: capitalize; border-bottom: 2px solid #111; padding-bottom: 5px; }
-    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; width: 100%; }
-    .photo-item { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.06); cursor: pointer; transition: transform 0.3s ease; }
-    .photo-item:hover { transform: translateY(-4px); }
-    .photo-item img { width: 100%; height: 220px; object-fit: cover; display: block; }
-    .photo-info { padding: 15px; text-align: center; font-weight: 500; }
-    #welcome-msg { text-align: center; color: #777; font-style: italic; margin: 40px 0; }
-    .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; z-index: 1000; }
-    .lightbox img { max-width: 90%; max-height: 85%; border-radius: 4px; }
-    .scroll-top-btn { position: fixed; bottom: 30px; right: 15px; width: 50px; height: 50px; background: linear-gradient(135deg, #111111, #333333); color: #ffffff; border: 2px solid #ffffff; border-radius: 50%; font-size: 1.5rem; font-weight: bold; cursor: pointer; display: none; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(0,0,0,0.3); transition: all 0.3s; z-index: 2000; }
-    .scroll-top-btn:hover { background: linear-gradient(135deg, #ffffff, #e0e0e0); color: #111111; border-color: #111111; transform: translateY(-5px) scale(1.1); }
-    .comments-section { width: 90%; max-width: 800px; margin: 40px auto 60px auto; padding: 30px; background: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); box-sizing: border-box; }
-    .comments-section h2 { text-align: center; margin-top: 0; margin-bottom: 25px; color: #111; font-size: 1.5rem; }
-    @media (max-width: 768px) { .menu-container { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 768px) { 
+        .menu-container { grid-template-columns: repeat(2, 1fr); } 
+    }
     </style>
 </head>
 <body>
 
-    <div style="position: relative; width: 100%; max-width: 1250px; margin: 0 auto;">
+    <!-- Conteneur principal bien cadré -->
+    <div style="position: relative; width: 100%; max-width: 1250px; margin: 0 auto; padding: 0 10px; box-sizing: border-box;">
 
-        <!-- La barre du haut avec ton titre logo et tes boutons -->
+        <!-- 1. La barre du haut autonome (Titre + Boutons) -->
         <div class="ma-banniere-accueil">
-            <!-- Le titre bicolore à gauche -->
             <div class="mon-titre-logo">
                 <span class="partie-claire">Mon Regard</span>
                 <span class="partie-sombre">Un espace photographique</span>
             </div>
 
-            <!-- Les boutons à droite -->
             <div class="mes-boutons-droite">
-                <button class="folder-btn" onclick="window.location.href='index.html'" style="color: white !important;"><i data-lucide="house"></i> Accueil</button>
-                <button class="folder-btn" onclick="window.location.href='commentaires.html'" style="color: white !important;"><i data-lucide="book-open"></i> Livre d'or</button>
-                <button class="folder-btn" onclick="window.location.href='mailto:pochbe@outlook.fr'" style="color: white !important;"><i data-lucide="mail"></i> Contact</button>
+                <button class="folder-btn" onclick="window.location.href='index.html'"><i data-lucide="house"></i> Accueil</button>
+                <button class="folder-btn" onclick="window.location.href='commentaires.html'"><i data-lucide="book-open"></i> Livre d'or</button>
+                <button class="folder-btn" onclick="window.location.href='mailto:pochbe@outlook.fr'"><i data-lucide="mail"></i> Contact</button>
             </div>
+        </div>
 
-    <!-- Ta grande photo de forêt (qui sert de fond) -->
-    <img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bannie%CC%80re/DSC07482.jpeg" style="width: 1250px; height: 350px; object-fit: cover; border-radius: 15px; display: block; box-shadow: 0px 0px 30px 5px rgba(219, 209, 149, 0.5); border: 4px double #7A4801;">
- </div>
+        <!-- 2. Grande photo de forêt (Placée juste en dessous de la barre) -->
+        <img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bannie%CC%80re/DSC07482.jpeg" style="width: 100%; height: 350px; object-fit: cover; border-radius: 15px; display: block; box-shadow: 0px 0px 30px 5px rgba(219, 209, 149, 0.5); border: 4px double #7A4801; box-sizing: border-box;">
 
-<div class="menu-container">
-    <button class="folder-btn" onclick="window.location.href='voyages/index.html'"><i data-lucide="compass"></i> Voyages</button>
-    <button class="folder-btn" onclick="window.location.href='Oiseaux/index.html'" style="color: white !important;"><i data-lucide="feather"></i> Oiseaux</button>
-     <button class="folder-btn" onclick="window.location.href='Fleurs/index.html'"><i data-lucide="flower"></i> Fleurs</button>
-     <button class="folder-btn" onclick="window.location.href='Insectes/index.html'"><i data-lucide="bug"></i> Insectes</button>
-    <button class="folder-btn" onclick="openGallery('ciels')"><i data-lucide="cloud-sun"></i> Ciels</button>
-    <button class="folder-btn" onclick="openGallery('macros')"><i data-lucide="zoom-in"></i> Macros</button>
-    <button class="folder-btn" onclick="openGallery('paysages')"><i data-lucide="mountain"></i> Paysages</button>
-    <button class="folder-btn" onclick="openGallery('animaux')"><i data-lucide="paw-print"></i> Animaux divers</button>
-    <button class="folder-btn" onclick="openGallery('saisons')"><i data-lucide="leaf"></i> Saisons</button>
-    <button class="folder-btn" onclick="openGallery('papillons')"><i data-lucide="sparkles"></i> Papillons</button>
-    <button class="folder-btn" onclick="openGallery('cervides')"><i data-lucide="trees"></i> Cervidés</button>
-    <button class="folder-btn" onclick="openGallery('renards')"><i data-lucide="eye"></i> Renards</button>
-</div>
+        <!-- 3. Grille des dossiers de rubriques -->
+        <div class="menu-container">
+            <button class="folder-btn" onclick="window.location.href='voyages/index.html'"><i data-lucide="plane"></i> Voyages</button>
+            <button class="folder-btn" onclick="window.location.href='nature/index.html'"><i data-lucide="tree-pine"></i> Nature</button>
+            <button class="folder-btn" onclick="window.location.href='architecture/index.html'"><i data-lucide="building"></i> Architecture</button>
+            <button class="folder-btn" onclick="window.location.href='portraits/index.html'"><i data-lucide="users"></i> Portraits</button>
+        </div>
 
-    <p class="footer-text">Sélectionnez une catégorie ci-dessus pour découvrir la galerie.</p>
+        <!-- 4. Pied de page -->
+        <div class="footer-text">
+            Mon Regard © 2026 - Tous droits réservés
+        </div>
 
-        <!-- Le traducteur obligatoire pour allumer tes jolis dessins blancs -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    </div>
+
+    <!-- Script indispensable pour faire apparaître tes petites icônes Lucide -->
+    <script src="https://unpkg.com"></script>
     <script>
-    lucide.createIcons();
+        lucide.createIcons();
     </script>
 </body>
 </html>
