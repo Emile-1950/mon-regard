@@ -133,16 +133,71 @@ body {
 .comments-section { width: 90%; max-width: 800px; margin: 40px auto 60px auto; padding: 30px; background: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); box-sizing: border-box; }
 .comments-section h2 { text-align: center; margin-top: 0; margin-bottom: 25px; color: #111; font-size: 1.5rem; }
 @media (max-width: 768px) { .menu-container { grid-template-columns: repeat(2, 1fr); } }
+
+/* --- LE STYLE DU NOUVEAU TITRE BICOLORE --- */
+.ma-banniere-accueil {
+    position: relative;
+    width: 100%;
+    max-width: 1250px;
+    margin: 0px auto 10px auto !important;
+    display: flex;
+    justify-content: space-between; /* Pousse le titre à gauche et les boutons à droite */
+    align-items: center;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    height: auto !important;
+    padding: 0 10px !important;
+}
+
+.mes-boutons-droite {
+    display: flex;
+    gap: 12px;
+}
+
+.mon-titre-logo {
+    display: inline-flex;
+    align-items: center;
+    border: 2px solid #7A4801;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+    font-family: "Qwither Grypen", cursive !important;
+}
+
+.mon-titre-logo .partie-claire {
+    background: #E1C9A8;
+    color: #4A2E0B;
+    padding: 6px 16px;
+    font-size: 26px;
+    font-weight: 800;
+}
+
+.mon-titre-logo .partie-sombre {
+    background: #111111;
+    color: #E1C9A8;
+    padding: 6px 16px;
+    font-size: 22px;
+    font-weight: 800;
+    border-left: 1px solid #7A4801; }
 </style>
 
 <div style="position: relative; width: 100%; max-width: 1250px; margin: 0 auto;">
 
     <!-- Les boutons qui flottent par-dessus (en haut droite) -->
-    <div class="ma-banniere-accueil">
-        <button class="folder-btn" onclick="window.location.href='index.html'" style="color: white !important;"><i data-lucide="house"></i> Accueil</button>
-        <button class="folder-btn" onclick="window.location.href='commentaires.html'" style="color: white !important;"><i data-lucide="book-open"></i> Livre d'or</button>
-        <button class="folder-btn" onclick="window.location.href='mailto:pochbe@outlook.fr'" style="color: white !important;"><i data-lucide="mail"></i> Contact</button>
-    </div>
+            <div class="ma-banniere-accueil">
+            <!-- Le titre à gauche -->
+            <div class="mon-titre-logo">
+                <span class="partie-claire">Mon Regard</span>
+                <span class="partie-sombre">Un espace photographique</span>
+            </div>
+
+            <!-- Les boutons à droite -->
+            <div class="mes-boutons-droite">
+                <button class="folder-btn" onclick="window.location.href='index.html'" style="color: white !important;"><i data-lucide="house"></i> Accueil</button>
+                <button class="folder-btn" onclick="window.location.href='commentaires.html'" style="color: white !important;"><i data-lucide="book-open"></i> Livre d'or</button>
+                <button class="folder-btn" onclick="window.location.href='mailto:pochbe@outlook.fr'" style="color: white !important;"><i data-lucide="mail"></i> Contact</button>
+            </div>
 
     <!-- Ta grande photo de forêt (qui sert de fond) -->
     <img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bannie%CC%80re/DSC07482.jpeg" style="width: 1250px; height: 350px; object-fit: cover; border-radius: 15px; display: block; box-shadow: 0px 0px 30px 5px rgba(219, 209, 149, 0.5); border: 4px double #7A4801;">
