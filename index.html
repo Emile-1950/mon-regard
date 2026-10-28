@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>📷 Mon Regard Photographique</title>
-    <style>
+<style>
 @import url('https://googleapis.com');
 
 /* Classe pour la police cursive globale */
@@ -21,27 +21,27 @@ body {
     display: flex; 
     flex-direction: column; 
     align-items: center;
-    margin-top: 10px !important; /* 👈 Un poil plus haut pour faire remonter le texte du bas */
+    margin-top: 10px !important;
 }
 
 /* Grille des 12 rubriques */
 .menu-container { 
     display: grid; 
     grid-template-columns: repeat(4, 1fr); 
-    gap: 8px; /* 👈 Espacement réduit pour gagner de la hauteur */
+    gap: 6px; /* 👈 Espacement légèrement réduit */
     width: 90%; 
     max-width: 1250px; 
-    margin-top: 10px !important; /* 👈 Fait remonter toute la grille pour libérer le texte du bas */
+    margin-top: 10px !important;
 }
 
-/* 1. LES TROIS BOUTONS DU HAUT (Calés à droite et taille raisonnable comme hier) */
+/* 1. LES TROIS BOUTONS DU HAUT (Avec la police cursive demandée !) */
 .ma-banniere-accueil {
     position: relative;
     width: 100%;
     max-width: 1250px;
     margin: 0px auto 10px auto !important;
     display: flex;
-    justify-content: flex-end; /* 👈 Remis à l'extérieur droite comme tu l'avais calé */
+    justify-content: flex-end;
     gap: 12px;
     background: none !important;
     border: none !important;
@@ -54,10 +54,10 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    padding: 4px 12px !important; /* 👈 Taille compacte et raisonnable */
-    font-size: 14px !important; /* 👈 Écriture plus petite et fine */
-    font-family: Arial, sans-serif !important; /* 👈 On garde une police classique et propre en haut */
-    font-weight: bold;
+    padding: 4px 14px !important;
+    font-size: 18px !important; /* 👈 Taille ajustée pour que l'écriture cursive du haut soit lisible */
+    font-family: "Qwither Grypen", cursive !important; /* 👈 Ta police cursive appliquée ici aussi ! */
+    font-weight: 800 !important;
     color: white !important;
     border: 1px solid #7A4801 !important;
     border-radius: 6px !important;
@@ -73,32 +73,32 @@ body {
     transform: translateY(-1px);
 }
 
-/* 2. LES 12 GRANDS BOUTONS DE CATÉGORIES (Avec ta police cursive) */
+/* 2. LES 12 BOUTONS DE CATÉGORIES (Rétrécis comme demandé) */
 .folder-btn { 
     background: url('https://filedn.eu') !important; 
     border: 1px solid #ccc !important; 
-    padding: 10px 15px !important; 
+    padding: 6px 12px !important; /* 👈 Moins de rembourrage pour faire des boutons plus compacts */
     font-family: "Qwither Grypen", cursive !important; 
-    font-size: 24px !important; 
+    font-size: 21px !important; /* 👈 Écriture légèrement descendue (de 24px à 21px) */
     font-weight: 800 !important; 
     border-radius: 6px !important; 
     cursor: pointer; 
-    margin: 4px !important; 
+    margin: 3px !important; /* 👈 Moins d'espace autour */
 }
 
-/* 🔴 LE RETOUR DE TES BOUTONS ROUGES (Tes magnifiques icônes en dégradé chaud) */
+/* Style des petites icônes Lucide en dégradé chaud */
 .folder-btn [data-lucide] {
     margin-right: 10px;
     vertical-align: middle;
-    background: linear-gradient(135deg, #ff9f43, #ff5252) !important; /* 👈 Ton dégradé fétiche */
-    padding: 6px !important;
-    border-radius: 8px !important;
+    background: linear-gradient(135deg, #ff9f43, #ff5252) !important;
+    padding: 5px !important; /* 👈 Légèrement réduit pour suivre le bouton */
+    border-radius: 6px !important;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3) !important;
     color: white !important;
     stroke-width: 2.5 !important;
     transition: all 0.3s ease;
-    width: 14px !important; /* Adapté pour que l'icône respire dans son carré rouge */
-    height: 14px !important;
+    width: 12px !important; /* 👈 Icône un poil plus petite */
+    height: 12px !important;
 }
 
 .folder-btn:hover [data-lucide] {
@@ -106,14 +106,14 @@ body {
     box-shadow: 0 6px 12px rgba(255, 159, 67, 0.5) !important;
 }
 
-/* 3. LE MESSAGE DE NOTATION TOUT EN BAS (Avec ta belle écriture d'automne) */
+/* 3. LE MESSAGE DE NOTATION TOUT EN BAS (Affiné) */
 .footer-text {
     font-family: "Qwither Grypen", cursive !important;
-    font-size: 26px !important; 
+    font-size: 22px !important; /* 👈 Réduit (de 26px à 22px) pour un rendu plus fin et discret */
     font-weight: 800;
     color: #fff !important;
     text-align: center;
-    margin-top: 15px !important; /* Réduit pour être sûr qu'il rentre dans l'écran */
+    margin-top: 15px !important;
     width: 100%;
 }
 
