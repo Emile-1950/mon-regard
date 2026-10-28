@@ -86,19 +86,19 @@ body {
   color: #fff; 
 }
 
-/* Message d'accueil en bas de page */
+/* Message d'accueil rapproché et taille ajustée */
 #welcome-msg { 
   text-align: center; 
-  color: #e0e0e0; /* Couleur claire pour ressortir sur le fond sombre */
-  font-size: 2rem; /* Taille agrandie pour valoriser la police cursive */
-  margin: 40px 0; 
+  color: #e0e0e0; 
+  font-size: 1.8rem; 
+  margin: 10px 0 40px 0; /* Rapproche fortement le texte de la grille du dessus */
 }
 
 @media (max-width: 768px) { 
   .menu-container { grid-template-columns: repeat(2, 1fr); } 
 }
 
-/* Style pour les icônes Lucide */
+/* Style corrigé pour les icônes Lucide */
 .folder-btn [data-lucide] {
   margin-right: 10px;
   vertical-align: middle;
@@ -109,8 +109,9 @@ body {
   color: white;
   stroke-width: 2.5;
   transition: all 0.3s ease;
-  width: 12px;  
-  height: 12px; 
+  width: 16px;   /* Taille minimale pour afficher l'icône à l'intérieur */
+  height: 16px;  /* Taille minimale pour afficher l'icône à l'intérieur */
+  display: inline-block;
 }
 
 .folder-btn:hover [data-lucide] {
@@ -153,6 +154,12 @@ body {
 <div id="welcome-msg" class="qwitcher-grypen-regular">
     Sélectionnez une catégorie ci-dessus pour découvrir la galerie.
 </div>
+
+<!-- Ne pas oublier d'ajouter la bibliothèque Lucide à la fin du document si ce n'est pas fait -->
+<script src="https://unpkg.com"></script>
+<script>
+  lucide.createIcons();
+</script>
 
 </body>
 </html>
