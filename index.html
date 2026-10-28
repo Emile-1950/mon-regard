@@ -3,190 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>📷 Mon Regard Photographique</title>
-<style>
-@import url('https://googleapis.com');
+    <title>Mon Regard - Portfolio</title>
+    
+    <style>
+    @import url('https://googleapis.com');
 
-/* Classe pour la police cursive globale */
-.qwither-grypen-bold {
-    font-family: "Qwither Grypen", cursive;
-    font-weight: 800;
-    font-style: normal;
-}
+    /* Classe pour la police cursive globale */
+    .qwither-grypen-bold {
+        font-family: "Qwither Grypen", cursive;
+        font-weight: 800;
+        font-style: normal;
+    }
 
-body { 
-    background: #1a1a1a; 
-    color: #333; 
-    padding: 0px !important; 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center;
-    margin-top: 10px !important;
-}
+    body { 
+        background: #1a1a1a; 
+        color: #333; 
+        padding: 0px !important; 
+        display: flex; 
+        flex-direction: column; 
+        align-items: center;
+        margin-top: 10px !important;
+    }
 
-/* Grille des 12 rubriques */
-.menu-container { 
-    display: grid; 
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 6px; /* 👈 Espacement légèrement réduit */
-    width: 90%; 
-    max-width: 1250px; 
-    margin-top: 10px !important;
-}
+    /* Grille des 12 rubriques */
+    .menu-container { 
+        display: grid; 
+        grid-template-columns: repeat(4, 1fr); 
+        gap: 6px; 
+        width: 90%; 
+        max-width: 1250px; 
+        margin-top: 10px !important;
+    }
 
-/* 1. LES TROIS BOUTONS DU HAUT (Avec la police cursive demandée !) */
-.ma-banniere-accueil {
-    position: relative;
-    width: 100%;
-    max-width: 1250px;
-    margin: 0px auto 10px auto !important;
-    display: flex;
-    justify-content: flex-end;
-    gap: 12px;
-    background: none !important;
-    border: none !important;
-    box-shadow: none !important;
-    height: auto !important;
-    padding: 0 10px !important;
-}
+    /* 1. LA BARRE DU HAUT (Titre à gauche, boutons à droite) */
+    .ma-banniere-accueil {
+        position: relative;
+        width: 100%;
+        max-width: 1250px;
+        margin: 0px auto 10px auto !important;
+        display: flex;
+        justify-content: space-between !important; /* Pousse le titre à gauche et les boutons à droite */
+        align-items: center;
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: auto !important;
+        padding: 0 10px !important;
+    }
 
-.ma-banniere-accueil .folder-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 4px 14px !important;
-    font-size: 18px !important; /* 👈 Taille ajustée pour que l'écriture cursive du haut soit lisible */
-    font-family: "Qwither Grypen", cursive !important; /* 👈 Ta police cursive appliquée ici aussi ! */
-    font-weight: 800 !important;
-    color: white !important;
-    border: 1px solid #7A4801 !important;
-    border-radius: 6px !important;
-    background: #111 !important;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5) !important;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
+    .mes-boutons-droite {
+        display: flex;
+        gap: 12px;
+    }
 
-.ma-banniere-accueil .folder-btn:hover {
-    background: #222 !important;
-    border-color: #E1C9A8 !important;
-    transform: translateY(-1px);
-}
+    /* Style spécifique pour les 3 boutons du haut (noirs et compacts) */
+    .mes-boutons-droite .folder-btn {
+        background: #111111 !important; /* Fond noir uni */
+        border: 1px solid #7A4801 !important;
+        padding: 4px 14px !important;
+        font-size: 18px !important;
+        font-family: "Qwither Grypen", cursive !important;
+        font-weight: 800 !important;
+        color: white !important;
+        border-radius: 6px !important;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5) !important;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        margin: 0 !important; /* Annule les marges de la grille */
+        width: auto !important; /* Évite qu'ils s'étirent */
+    }
 
-/* 2. LES 12 BOUTONS DE CATÉGORIES (Rétrécis comme demandé) */
-.folder-btn { 
-    background: url('https://filedn.eu') !important; 
-    border: 1px solid #ccc !important; 
-    padding: 6px 12px !important; /* 👈 Moins de rembourrage pour faire des boutons plus compacts */
-    font-family: "Qwither Grypen", cursive !important; 
-    font-size: 21px !important; /* 👈 Écriture légèrement descendue (de 24px à 21px) */
-    font-weight: 800 !important; 
-    border-radius: 6px !important; 
-    cursor: pointer; 
-    margin: 3px !important; /* 👈 Moins d'espace autour */
-}
+    .mes-boutons-droite .folder-btn:hover {
+        background: #222 !important;
+        border-color: #E1C9A8 !important;
+        transform: translateY(-1px);
+    }
 
-/* Style des petites icônes Lucide en dégradé chaud */
-.folder-btn [data-lucide] {
-    margin-right: 10px;
-    vertical-align: middle;
-    background: linear-gradient(135deg, #ff9f43, #ff5252) !important;
-    padding: 5px !important; /* 👈 Légèrement réduit pour suivre le bouton */
-    border-radius: 6px !important;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3) !important;
-    color: white !important;
-    stroke-width: 2.5 !important;
-    transition: all 0.3s ease;
-    width: 12px !important; /* 👈 Icône un poil plus petite */
-    height: 12px !important;
-}
+    /* 🎨 LE DESIGN DE TON TITRE LOGO BICOLORE */
+    .mon-titre-logo {
+        display: inline-flex;
+        align-items: center;
+        border: 2px solid #7A4801;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+        font-family: "Qwither Grypen", cursive !important;
+    }
 
-.folder-btn:hover [data-lucide] {
-    transform: translateY(-2px) scale(1.1);
-    box-shadow: 0 6px 12px rgba(255, 159, 67, 0.5) !important;
-}
+    .mon-titre-logo .partie-claire {
+        background: #E1C9A8;
+        color: #4A2E0B;
+        padding: 6px 16px;
+        font-size: 26px;
+        font-weight: 800;
+    }
 
-/* 3. LE MESSAGE DE NOTATION TOUT EN BAS (Affiné) */
-.footer-text {
-    font-family: "Qwither Grypen", cursive !important;
-    font-size: 22px !important; /* 👈 Réduit (de 26px à 22px) pour un rendu plus fin et discret */
-    font-weight: 800;
-    color: #fff !important;
-    text-align: center;
-    margin-top: 15px !important;
-    width: 100%;
-}
+    .mon-titre-logo .partie-sombre {
+        background: #111111;
+        color: #E1C9A8;
+        padding: 6px 16px;
+        font-size: 22px;
+        font-weight: 800;
+        border-left: 1px solid #7A4801;
+    }
 
-/* Reste de tes styles de page (Galerie, Lightbox, etc.) */
-.gallery-view { width: 90%; max-width: 1200px; display: none; flex-direction: column; align-items: center; margin-bottom: 40px; }
-.gallery-title { font-size: 1.6rem; margin-bottom: 25px; text-transform: capitalize; border-bottom: 2px solid #111; padding-bottom: 5px; }
-.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; width: 100%; }
-.photo-item { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.06); cursor: pointer; transition: transform 0.3s ease; }
-.photo-item:hover { transform: translateY(-4px); }
-.photo-item img { width: 100%; height: 220px; object-fit: cover; display: block; }
-.photo-info { padding: 15px; text-align: center; font-weight: 500; }
-#welcome-msg { text-align: center; color: #777; font-style: italic; margin: 40px 0; }
-.lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; z-index: 1000; }
-.lightbox img { max-width: 90%; max-height: 85%; border-radius: 4px; }
-.scroll-top-btn { position: fixed; bottom: 30px; right: 15px; width: 50px; height: 50px; background: linear-gradient(135deg, #111111, #333333); color: #ffffff; border: 2px solid #ffffff; border-radius: 50%; font-size: 1.5rem; font-weight: bold; cursor: pointer; display: none; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(0,0,0,0.3); transition: all 0.3s; z-index: 2000; }
-.scroll-top-btn:hover { background: linear-gradient(135deg, #ffffff, #e0e0e0); color: #111111; border-color: #111111; transform: translateY(-5px) scale(1.1); }
-.comments-section { width: 90%; max-width: 800px; margin: 40px auto 60px auto; padding: 30px; background: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); box-sizing: border-box; }
-.comments-section h2 { text-align: center; margin-top: 0; margin-bottom: 25px; color: #111; font-size: 1.5rem; }
-@media (max-width: 768px) { .menu-container { grid-template-columns: repeat(2, 1fr); } }
+    /* 2. LES 12 BOUTONS DE CATÉGORIES (Rétrécis avec fond marron) */
+    .folder-btn { 
+        background: url('https://filedn.eu') !important; 
+        border: 1px solid #ccc !important; 
+        padding: 6px 12px !important; 
+        font-family: "Qwither Grypen", cursive !important; 
+        font-size: 21px !important; 
+        font-weight: 800 !important; 
+        border-radius: 6px !important; 
+        cursor: pointer; 
+        margin: 3px !important; 
+    }
 
-/* --- LE STYLE DU NOUVEAU TITRE BICOLORE --- */
-.ma-banniere-accueil {
-    position: relative;
-    width: 100%;
-    max-width: 1250px;
-    margin: 0px auto 10px auto !important;
-    display: flex;
-    justify-content: space-between; /* Pousse le titre à gauche et les boutons à droite */
-    align-items: center;
-    background: none !important;
-    border: none !important;
-    box-shadow: none !important;
-    height: auto !important;
-    padding: 0 10px !important;
-}
+    /* Les petites icônes Lucide en dégradé chaud */
+    .folder-btn [data-lucide] {
+        margin-right: 10px;
+        vertical-align: middle;
+        background: linear-gradient(135deg, #ff9f43, #ff5252) !important;
+        padding: 5px !important;
+        border-radius: 6px !important;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3) !important;
+        color: white !important;
+        stroke-width: 2.5 !important;
+        transition: all 0.3s ease;
+        width: 12px !important;
+        height: 12px !important;
+    }
 
-.mes-boutons-droite {
-    display: flex;
-    gap: 12px;
-}
+    /* 3. LE MESSAGE DE NOTATION TOUT EN BAS */
+    .footer-text {
+        font-family: "Qwither Grypen", cursive !important;
+        font-size: 22px !important; 
+        font-weight: 800;
+        color: #fff !important;
+        text-align: center;
+        margin-top: 15px !important;
+        width: 100%;
+    }
 
-.mon-titre-logo {
-    display: inline-flex;
-    align-items: center;
-    border: 2px solid #7A4801;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
-    font-family: "Qwither Grypen", cursive !important;
-}
+    /* Reste de tes styles de page (Galerie, Lightbox, etc.) */
+    .gallery-view { width: 90%; max-width: 1200px; display: none; flex-direction: column; align-items: center; margin-bottom: 40px; }
+    .gallery-title { font-size: 1.6rem; margin-bottom: 25px; text-transform: capitalize; border-bottom: 2px solid #111; padding-bottom: 5px; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; width: 100%; }
+    .photo-item { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.06); cursor: pointer; transition: transform 0.3s ease; }
+    .photo-item:hover { transform: translateY(-4px); }
+    .photo-item img { width: 100%; height: 220px; object-fit: cover; display: block; }
+    .photo-info { padding: 15px; text-align: center; font-weight: 500; }
+    #welcome-msg { text-align: center; color: #777; font-style: italic; margin: 40px 0; }
+    .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; z-index: 1000; }
+    .lightbox img { max-width: 90%; max-height: 85%; border-radius: 4px; }
+    .scroll-top-btn { position: fixed; bottom: 30px; right: 15px; width: 50px; height: 50px; background: linear-gradient(135deg, #111111, #333333); color: #ffffff; border: 2px solid #ffffff; border-radius: 50%; font-size: 1.5rem; font-weight: bold; cursor: pointer; display: none; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(0,0,0,0.3); transition: all 0.3s; z-index: 2000; }
+    .scroll-top-btn:hover { background: linear-gradient(135deg, #ffffff, #e0e0e0); color: #111111; border-color: #111111; transform: translateY(-5px) scale(1.1); }
+    .comments-section { width: 90%; max-width: 800px; margin: 40px auto 60px auto; padding: 30px; background: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); box-sizing: border-box; }
+    .comments-section h2 { text-align: center; margin-top: 0; margin-bottom: 25px; color: #111; font-size: 1.5rem; }
+    @media (max-width: 768px) { .menu-container { grid-template-columns: repeat(2, 1fr); } }
+    </style>
+</head>
+<body>
 
-.mon-titre-logo .partie-claire {
-    background: #E1C9A8;
-    color: #4A2E0B;
-    padding: 6px 16px;
-    font-size: 26px;
-    font-weight: 800;
-}
+    <div style="position: relative; width: 100%; max-width: 1250px; margin: 0 auto;">
 
-.mon-titre-logo .partie-sombre {
-    background: #111111;
-    color: #E1C9A8;
-    padding: 6px 16px;
-    font-size: 22px;
-    font-weight: 800;
-    border-left: 1px solid #7A4801; }
-</style>
-
-<div style="position: relative; width: 100%; max-width: 1250px; margin: 0 auto;">
-
-    <!-- Les boutons qui flottent par-dessus (en haut droite) -->
-            <div class="ma-banniere-accueil">
-            <!-- Le titre à gauche -->
+        <!-- La barre du haut avec ton titre logo et tes boutons -->
+        <div class="ma-banniere-accueil">
+            <!-- Le titre bicolore à gauche -->
             <div class="mon-titre-logo">
                 <span class="partie-claire">Mon Regard</span>
                 <span class="partie-sombre">Un espace photographique</span>
