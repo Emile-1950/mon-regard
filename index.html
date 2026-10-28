@@ -3,221 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Regard - Portfolio</title>
-    
-    <style>
-    /* Chargement officiel de la police Google Fonts */
-    @import url('https://googleapis.com');
+    <title>📷 Mon Regard Photographique</title>
 
-    /* Classe pour la police cursive globale */
-    .qwither-grypen-bold {
-        font-family: "Qwitcher Grypen", cursive;
-        font-weight: 700;
-        font-style: normal;
-    }
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@700&display=swap');
 
-    body { 
-        background: #1a1a1a; 
-        color: #333; 
-        padding: 0px !important; 
-        display: flex; 
-        flex-direction: column; 
-        align-items: center;
-        margin-top: 10px !important;
-    }
+/* Classe pour la police cursive */
+.qwitcher-grypen-bold {
+  font-family: "Qwitcher Grypen", cursive;
+  font-weight: 800;
+  font-style: normal; }
 
-    /* Grille des 12 rubriques */
-    .menu-container { 
-        display: grid; 
-        grid-template-columns: repeat(4, 1fr); 
-        gap: 10px; 
-        width: 100%; 
-        max-width: 1250px; 
-        margin-top: 25px !important;
-    }
+        body { font-family: "Qwitcher Grypen", cursive; background: #1a1a1a; color: #333; padding: 0px !important; display: flex;         flex-direction: column; align-items: center; margin-top: 15px !important; }
+        .menu-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; width: 90%; max-width: 1250px; margin-top: 20px; }
 
-    /* 1. LA BARRE DU HAUT (Titre à gauche, boutons à droite) */
-    .ma-banniere-accueil {
+         /* La boîte qui contient tes boutons (plus compacte verticalement) */
+        .ma-banniere-accueil {
         position: relative;
         width: 100%;
-        max-width: 1250px;
-        margin: 10px auto 20px auto !important;
+        max-width: 1250px; /* 👈 Aligné pile sur la largeur de ta nouvelle photo */
+        margin: 0px auto 12px auto !important; /* 👈 Réduit l'espace au-dessus et en-dessous à l'essentiel */
         display: flex;
-        justify-content: space-between !important; /* Pousse le titre à gauche et les boutons à droite */
-        align-items: center;
+        justify-content: right;
+        gap: 12px; /* Un poil moins d'espace entre les boutons */
         background: none !important;
         border: none !important;
         box-shadow: none !important;
         height: auto !important;
-        padding: 0 10px !important;
-    }
+        padding: 0px !important; }
 
-    .mes-boutons-droite {
-        display: flex;
-        gap: 12px;
-    }
-
-    /* Style spécifique pour les 3 boutons du haut (noirs et compacts) */
-    .mes-boutons-droite .folder-btn {
-        background: #111111 !important; /* Fond noir uni */
-        border: 1px solid #7A4801 !important;
-        padding: 6px 16px !important;
-        font-size: 24px !important; 
-        font-family: "Qwitcher Grypen", cursive !important;
-        font-weight: 700 !important;
+         /* Vos boutons du haut version "mini" élégante */
+        .ma-banniere-accueil .folder-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px; /* Espace icône-texte légèrement réduit */
+        padding: 5px 12px !important; /* 👈 Moins haut et moins large (au lieu de 8px 18px) */
+        font-size: 12px !important; /* 👈 Écriture un poil plus petite et fine (au lieu de 14px) */
+        font-weight: bold;
         color: white !important;
-        border-radius: 6px !important;
+        border: 1px solid #7A4801 !important;
+        border-radius: 6px !important; /* Arrondi légèrement adapté à la taille */
+        background: #111 !important;
         box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5) !important;
         cursor: pointer;
         transition: all 0.2s ease;
-        margin: 0 !important; 
-        width: auto !important; 
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-    }
+        margin-right: 10px;  }
 
-    .mes-boutons-droite .folder-btn:hover {
+        /* Effet au survol à la souris (conservé mais adapté) */
+        .ma-banniere-accueil .folder-btn:hover {
         background: #222 !important;
         border-color: #E1C9A8 !important;
-        transform: translateY(-1px);
-    }
+        transform: translateY(-1px); /* Soulèvement plus subtil adapté au petit bouton */     
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.7) !important; }
 
-    /* 🎨 LE DESIGN DE TON TITRE LOGO BICOLORE */
-    .mon-titre-logo {
-        display: inline-flex;
-        align-items: center;
-        border: 2px solid #7A4801;
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
-        font-family: "Qwitcher Grypen", cursive !important;
-    }
 
-    .mon-titre-logo .partie-claire {
-        background: #E1C9A8;
-        color: #4A2E0B;
-        padding: 6px 16px;
-        font-size: 32px;
-        font-weight: 700;
-    }
+        .folder-btn { background: url('https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bannie%CC%80re/94013.jpg'); border: 1px solid #ccc; padding: 15px 25px 15px 25px; font-weight: "Qwitcher Grypen"; border-radius: 6px; cursor: pointer; margin-top: 30px; margin: 5px; }
+        .folder-btn:hover, .folder-btn.active { background: #111; color: #fff; }
+        .gallery-view { width: 90%; max-width: 1200px; display: none; flex-direction: column; align-items: center; margin-bottom: 40px; }
+        .gallery-title { font-size: 1.6rem; margin-bottom: 25px; text-transform: capitalize; border-bottom: 2px solid #111; padding-bottom: 5px; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; width: 100%; }
+        .photo-item { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.06); cursor: pointer; transition: transform 0.3s ease; }
+        .photo-item:hover { transform: translateY(-4px); }
+        .photo-item img { width: 100%; height: 220px; object-fit: cover; display: block; }
+        .photo-info { padding: Â15px; text-align: center; font-weight: 500; }
+        #welcome-msg { text-align: center; color: #777; font-style: italic; margin: 40px 0; }
+        .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; z-index: 1000; }
+        .lightbox img { max-width: 90%; max-height: 85%; border-radius: 4px; }
+        .scroll-top-btn { position: fixed; bottom: 30px; right: 15px; width: 50px; height: 50px; background: linear-gradient(135deg, #111111, #333333); color: #ffffff; border: 2px solid #ffffff; border-radius: 50%; font-size: 1.5rem; font-weight: bold; cursor: pointer; display: none; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(0,0,0,0.3); transition: all 0.3s; z-index: 2000; }
+        .scroll-top-btn:hover { background: linear-gradient(135deg, #ffffff, #e0e0e0); color: #111111; border-color: #111111; transform: translateY(-5px) scale(1.1); }
+        .comments-section { width: 90%; max-width: 800px; margin: 40px auto 60px auto; padding: 30px; background: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); box-sizing: border-box; }
+        .comments-section h2 { text-align: center; margin-top: 0; margin-bottom: 25px; color: #111; font-size: 1.5rem; }
+        @media (max-width: 768px) { .menu-container { grid-template-columns: repeat(2, 1fr); } }
 
-    .mon-titre-logo .partie-sombre {
-        background: #111111;
-        color: #E1C9A8;
-        padding: 6px 16px;
-        font-size: 26px;
-        font-weight: 700;
-        border-left: 1px solid #7A4801;
-    }
-
-    /* 2. LES BOUTONS DE CATÉGORIES (Grille principale du bas) */
-    .menu-container .folder-btn { 
-        background: #111111 !important; 
-        border: 1px solid #7A4801 !important; 
-        padding: 14px 15px !important; 
-        font-family: "Qwitcher Grypen", cursive !important; 
-        font-size: 26px !important; 
-        font-weight: 700 !important; 
-        color: #fff !important;
-        border-radius: 8px !important; 
-        cursor: pointer; 
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
-        transition: all 0.2s ease;
-    }
-
-    .menu-container .folder-btn:hover {
-        transform: translateY(-2px);
-        background: #222 !important;
-        border-color: #E1C9A8 !important;
-        box-shadow: 3px 5px 15px rgba(0,0,0,0.7);
-    }
-
-    /* Les petites icônes Lucide en dégradé chaud */
-    .folder-btn [data-lucide] {
-        margin-right: 12px;
+        /* Ligne 30 : Style pour TOUTES les icônes de vos boutons */
+        .folder-btn [data-lucide] {
+        margin-right: 10px;
         vertical-align: middle;
-        background: linear-gradient(135deg, #ff9f43, #ff5252) !important;
-        padding: 5px !important;
-        border-radius: 6px !important;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3) !important;
-        color: white !important;
-        stroke-width: 2.5 !important;
-        width: 16px !important;
-        height: 16px !important;
-    }
+        background: linear-gradient(135deg, #ff9f43, #ff5252); /* Votre dégradé chaud */
+        padding: 6px;
+        border-radius: 8px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+        color: white;
+        stroke-width: 2.5;
+        transition: all 0.3s ease;
+        width: 9px;  /* Sécurité pour la taille */
+        height: 9px; /* Sécurité pour la taille */ }
 
-    /* 3. LE MESSAGE DE NOTATION TOUT EN BAS */
-    .footer-text {
-        font-family: "Qwitcher Grypen", cursive !important;
-        font-size: 24px !important; 
-        font-weight: 700;
-        color: #fff !important;
-        text-align: center;
-        margin-top: 40px !important;
-        width: 100%;
-        margin-bottom: 30px;
-    }
 
-    /* Tablettes et mobiles */
-    @media (max-width: 1024px) { .menu-container { grid-template-columns: repeat(3, 1fr); } }
-    @media (max-width: 768px) { .menu-container { grid-template-columns: repeat(2, 1fr); } }
-    </style>
-</head>
-<body>
+        /* Ligne 45 : L'effet au survol pour TOUTES les icônes */
+        .folder-btn:hover [data-lucide] {
+        transform: translateY(-3px) scale(1.1);
+        box-shadow: 0 6px 12px rgba(255, 159, 67, 0.5); }
+</style>
 
-    <!-- Conteneur principal bien cadré -->
-    <div style="position: relative; width: 100%; max-width: 1250px; margin: 0 auto; padding: 0 10px; box-sizing: border-box;">
+<div style="position: relative; width: 100%; max-width: 1250px; margin: 0 auto;">
 
-        <!-- 1. La barre du haut autonome (Titre + Boutons) -->
-        <div class="ma-banniere-accueil">
-            <div class="mon-titre-logo">
-                <span class="partie-claire">Mon Regard</span>
-                <span class="partie-sombre">Un espace photographique</span>
-            </div>
-
-            <div class="mes-boutons-droite">
-                <button class="folder-btn" onclick="window.location.href='index.html'"><i data-lucide="house"></i> Accueil</button>
-                <button class="folder-btn" onclick="window.location.href='commentaires.html'"><i data-lucide="book-open"></i> Livre d'or</button>
-                <button class="folder-btn" onclick="window.location.href='mailto:pochbe@outlook.fr'"><i data-lucide="mail"></i> Contact</button>
-            </div>
-        </div>
-
-        <!-- 2. Grande photo de forêt -->
-        <img src="https://filedn.eu" style="width: 100%; height: 350px; object-fit: cover; border-radius: 15px; display: block; box-shadow: 0px 0px 30px 5px rgba(219, 209, 149, 0.5); border: 4px double #7A4801; box-sizing: border-box;">
-
-        <!-- 3. Grille complète des 12 dossiers de rubriques -->
-        <div class="menu-container">
-            <button class="folder-btn" onclick="window.location.href='paysages.html'"><i data-lucide="image"></i> Photo Paysage</button>
-            <button class="folder-btn" onclick="window.location.href='oiseaux.html'"><i data-lucide="twitter"></i> Photo Oiseaux</button>
-            <button class="folder-btn" onclick="window.location.href='macro.html'"><i data-lucide="flower-2"></i> Photo Macro</button>
-            <button class="folder-btn" onclick="window.location.href='nature.html'"><i data-lucide="tree-pine"></i> Photo Nature</button>
-
-            <button class="folder-btn" onclick="window.location.href='voyages.html'"><i data-lucide="plane"></i> Photo Voyages</button>
-            <button class="folder-btn" onclick="window.location.href='architecture.html'"><i data-lucide="building"></i> Photo Architecture</button>
-            <button class="folder-btn" onclick="window.location.href='portraits.html'"><i data-lucide="users"></i> Photo Portraits</button>
-            <button class="folder-btn" onclick="window.location.href='animaux.html'"><i data-lucide="paw-print"></i> Photo Animaux</button>
-
-            <button class="folder-btn" onclick="window.location.href='noir-blanc.html'"><i data-lucide="contrast"></i> Noir & Blanc</button>
-            <button class="folder-btn" onclick="window.location.href='lever-coucher.html'"><i data-lucide="sunrise"></i> Lever / Coucher</button>
-            <button class="folder-btn" onclick="window.location.href='eau.html'"><i data-lucide="droplet"></i> Éléments d'Eau</button>
-            <button class="folder-btn" onclick="window.location.href='nocturne.html'"><i data-lucide="moon"></i> Photo Nocturne</button>
-        </div>
-
-        <!-- 4. Pied de page -->
-        <div class="footer-text">
-            Mon Regard © 2026 - Tous droits réservés
-        </div>
-
+    <!-- Les boutons qui flottent par-dessus (en haut droite) -->
+    <div class="ma-banniere-accueil">
+        <button class="folder-btn" onclick="window.location.href='index.html'" style="color: white !important;"><i data-lucide="house"></i> Accueil</button>
+        <button class="folder-btn" onclick="window.location.href='commentaires.html'" style="color: white !important;"><i data-lucide="book-open"></i> Livre d'or</button>
+        <button class="folder-btn" onclick="window.location.href='mailto:pochbe@outlook.fr'" style="color: white !important;"><i data-lucide="mail"></i> Contact</button>
     </div>
 
-    <!-- Script indispensable pour faire apparaître tes petites icônes Lucide -->
-    <script src="https://unpkg.com"></script>
+    <!-- Ta grande photo de forêt (qui sert de fond) -->
+    <img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bannie%CC%80re/DSC07482.jpeg" style="width: 1250px; height: 350px; object-fit: cover; border-radius: 15px; display: block; box-shadow: 0px 0px 30px 5px rgba(219, 209, 149, 0.5); border: 4px double #7A4801;">
+ </div>
+
+<div class="menu-container">
+    <button class="folder-btn" onclick="window.location.href='voyages/index.html'"><i data-lucide="compass"></i> Voyages</button>
+    <button class="folder-btn" onclick="window.location.href='Oiseaux/index.html'" style="color: white !important;"><i data-lucide="feather"></i> Oiseaux</button>
+     <button class="folder-btn" onclick="window.location.href='Fleurs/index.html'"><i data-lucide="flower"></i> Fleurs</button>
+     <button class="folder-btn" onclick="window.location.href='Insectes/index.html'"><i data-lucide="bug"></i> Insectes</button>
+    <button class="folder-btn" onclick="openGallery('ciels')"><i data-lucide="cloud-sun"></i> Ciels</button>
+    <button class="folder-btn" onclick="openGallery('macros')"><i data-lucide="zoom-in"></i> Macros</button>
+    <button class="folder-btn" onclick="openGallery('paysages')"><i data-lucide="mountain"></i> Paysages</button>
+    <button class="folder-btn" onclick="openGallery('animaux')"><i data-lucide="paw-print"></i> Animaux divers</button>
+    <button class="folder-btn" onclick="openGallery('saisons')"><i data-lucide="leaf"></i> Saisons</button>
+    <button class="folder-btn" onclick="openGallery('papillons')"><i data-lucide="sparkles"></i> Papillons</button>
+    <button class="folder-btn" onclick="openGallery('cervides')"><i data-lucide="trees"></i> Cervidés</button>
+    <button class="folder-btn" onclick="openGallery('renards')"><i data-lucide="eye"></i> Renards</button>
+</div>
+
+    <p class="footer-text">Sélectionnez une catégorie ci-dessus pour découvrir la galerie.</p>
+
+        <!-- Le traducteur obligatoire pour allumer tes jolis dessins blancs -->
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script>
-        lucide.createIcons();
+    lucide.createIcons();
     </script>
 </body>
 </html>
