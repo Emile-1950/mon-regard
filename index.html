@@ -35,17 +35,16 @@ body {
 .ma-banniere-accueil {
     position: relative;
     width: 100%;
-    max-width: 1250px;
-    margin-left: 0px;
+    max-width: 1250px; /* 👈 Aligné pile sur la largeur de ta nouvelle photo */
+    margin: 10px auto 8px auto !important; /* 👈 Réduit l'espace au-dessus et en-dessous à l'essentiel */
     display: flex;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    gap: 12px;
+    justify-content: flex-end;
+    gap: 12px; /* Un poil moins d'espace entre les boutons */
     background: none !important;
     border: none !important;
     box-shadow: none !important;
     height: auto !important;
-    padding: 0 500px !important; }
+    padding: 0 5px !important; }
 
 .ma-banniere-accueil .folder-btn {
     display: inline-flex;
