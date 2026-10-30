@@ -32,26 +32,24 @@ body {
     margin-top: 30px !important; }
 
 /* 1. LA BANNIÈRE DU HAUT (Modifiée pour intégrer ton titre PNG à gauche et tes boutons à droite) */
+/* 1. LA BANNIÈRE DU HAUT (Remise en position normale au-dessus de la photo) */
 .ma-banniere-accueil {
-    position: absolute; /* 👈 Permet de flotter PAR-DESSUS la photo de forêt */
-    top: 20px; /* 👈 Descend légèrement le titre et les boutons depuis le haut de la photo */
-    left: 0;
-    z-index: 10; /* 👈 Force le bloc à rester au premier plan */
+    position: relative; /* 👈 On quitte le mode "autocollant" pour se remettre au-dessus */
     width: 100%;
     max-width: 1250px;
-    margin: 0px auto 10px auto !important;
+    margin: 15px auto 10px auto !important; /* Espace équilibré */
     display: flex;
-    justify-content: space-between !important; 
+    justify-content: space-between !important; /* Titre à gauche, boutons à droite */
     align-items: center;
     background: none;
     border: none !important;
     box-shadow: none !important;
     height: auto !important;
-    padding: 0px 30px !important; }
+    padding: 0px 10px !important; }
 
-/* Le style pour ton nouveau titre en lettres PNG transparentes */
+/* Le style pour ton titre en lettres PNG (Agrandi pour être bien visible) */
 .ma-banniere-accueil .mon-titre-png {
-    max-height: 45px; /* 👈 Ajuste cette hauteur si tu veux tes lettres plus grandes ou plus petites */
+    max-height: 75px; /* 👈 Augmenté de 45px à 75px pour qu'il soit bien grand et lisible */
     width: auto;
     object-fit: contain; }
 
@@ -138,7 +136,7 @@ body {
 @media (max-width: 768px) { .menu-container { grid-template-columns: repeat(2, 1fr); } }
 </style>
 
-<div style="position: relative; width: 100%; max-width: 1250px; margin: 0 auto;">
+<div style="position: relative; width: 100%; max-width: 1250px; margin: 20px auto 0 auto;">
 
     <!-- Les boutons et le titre qui flottent par-dessus -->
     <div class="ma-banniere-accueil">
