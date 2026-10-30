@@ -36,7 +36,7 @@ body {
     position: relative;
     width: 100%;
     max-width: 1250px;
-    margin: 5px auto 5px auto !important; /* 👈 Réduit l'espace vide au-dessus et au-dessous */
+    margin: -10px auto 5px auto !important; /* 👈 Un chiffre négatif (-10px) pour aspirer tout le bloc vers le haut et supprimer le vide ! */
     display: flex;
     justify-content: space-between !important; 
     align-items: center;
@@ -44,11 +44,11 @@ body {
     border: none !important;
     box-shadow: none !important;
     height: auto !important;
-    padding: 0px 60px 0px 10px !important; }
+    padding: 0px 110px 0px 10px !important; }
 
 /* Le style pour ton titre en lettres PNG */
 .ma-banniere-accueil .mon-titre-png {
-    max-height: 120px; /* 👈 Augmenté à 120px pour forcer ton image actuelle à s'afficher beaucoup plus grande ! */
+    max-height: 160px; /* 👈 Augmenté à 160px pour qu'il soit enfin bien grand et majestueux ! */
     width: auto;
     object-fit: contain; }
 
