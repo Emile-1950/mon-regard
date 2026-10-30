@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>📷 Mon Regard Photographique</title>
-    <style>
-
+    
+ <style>
 @import url('https://fonts.googleapis.com/css2?family=Montez&display=swap');
      
-     .montez-regular {
+.montez-regular {
   font-family: "Montez", cursive;
   font-weight: 400;
   font-style: normal; }
@@ -26,26 +26,38 @@ body {
 .menu-container { 
     display: grid; 
     grid-template-columns: repeat(4, 1fr); 
-    gap: 6px; /* 👈 Espacement légèrement réduit */
+    gap: 6px; 
     width: 90%; 
     max-width: 1250px; 
     margin-top: 30px !important; }
 
-/* 1. LES TROIS BOUTONS DU HAUT (Avec la police cursive demandée !) */
+/* 1. LA BANNIÈRE DU HAUT (Modifiée pour intégrer ton titre PNG à gauche et tes boutons à droite) */
 .ma-banniere-accueil {
-    position: relative;
+    position: absolute; /* 👈 Permet de flotter PAR-DESSUS la photo de forêt */
+    top: 20px; /* 👈 Descend légèrement le titre et les boutons depuis le haut de la photo */
+    left: 0;
+    z-index: 10; /* 👈 Force le bloc à rester au premier plan */
     width: 100%;
     max-width: 1250px;
     margin: 0px auto 10px auto !important;
     display: flex;
-    justify-content: flex-end !important; /* Garde les boutons groupés à droite */
+    justify-content: space-between !important; 
     align-items: center;
     background: none;
     border: none !important;
     box-shadow: none !important;
     height: auto !important;
-    padding: 0px !important; 
-    padding-right: 30px !important; /* 👈 C'est cette ligne qui va créer le recul parfait vers la gauche ! */
+    padding: 0px 30px !important; }
+
+/* Le style pour ton nouveau titre en lettres PNG transparentes */
+.ma-banniere-accueil .mon-titre-png {
+    max-height: 45px; /* 👈 Ajuste cette hauteur si tu veux tes lettres plus grandes ou plus petites */
+    width: auto;
+    object-fit: contain; }
+
+/* Le groupe qui contient tes trois boutons */
+.ma-banniere-accueil .les-boutons {
+    display: flex;
     gap: 12px; }
 
 .ma-banniere-accueil .folder-btn {
@@ -53,13 +65,12 @@ body {
     align-items: center;
     gap: 6px;
     padding: 4px 14px !important;
-    font-size: 18px !important; /* 👈 Taille ajustée pour que l'écriture cursive du haut soit lisible */
-    font-family: "Montez", cursive !important; /* 👈 Ta police cursive appliquée ici aussi ! */
+    font-size: 18px !important; 
+    font-family: "Montez", cursive !important; 
     font-weight: 800 !important;
     color: white !important;
     border: 1px solid #7A4801 !important;
     border-radius: 6px !important;
-
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5) !important;
     cursor: pointer;
     transition: all 0.2s ease; }
@@ -69,13 +80,13 @@ body {
     border-color: #E1C9A8 !important;
     transform: translateY(-1px); }
 
-/* 2. LES 12 BOUTONS DE CATÉGORIES (Rétrécis comme demandé) */
+/* 2. LES 12 BOUTONS DE CATÉGORIES */
 .folder-btn { 
     background: url('https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bannie%CC%80re/128601.jpg') !important; 
     border: 1px solid #ccc !important; 
-    padding: 6px 12px !important; /* 👈 Moins de rembourrage pour faire des boutons plus compacts */
+    padding: 6px 12px !important; 
     font-family: "Montez", cursive !important; 
-    font-size: 24px !important; /* 👈 Écriture légèrement descendue (de 24px à 21px) */
+    font-size: 24px !important; 
     font-weight: 800 !important; 
     border-radius: 6px !important; 
     cursor: pointer; 
@@ -86,23 +97,23 @@ body {
     margin-right: 10px;
     vertical-align: middle;
     background: linear-gradient(135deg, #ff9f43, #ff5252) !important;
-    padding: 5px !important; /* 👈 Légèrement réduit pour suivre le bouton */
+    padding: 5px !important; 
     border-radius: 6px !important;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3) !important;
     color: white !important;
     stroke-width: 2.5 !important;
     transition: all 0.3s ease;
-    width: 12px !important; /* 👈 Icône un poil plus petite */
+    width: 12px !important; 
     height: 12px !important; }
 
 .folder-btn:hover [data-lucide] {
     transform: translateY(-2px) scale(1.1);
     box-shadow: 0 6px 12px rgba(255, 159, 67, 0.5) !important; }
 
-/* 3. LE MESSAGE DE NOTATION TOUT EN BAS (Affiné) */
+/* 3. LE MESSAGE DE NOTATION TOUT EN BAS */
 .footer-text {
     font-family: "Montez", cursive !important;
-    font-size: 35px !important; /* 👈 Réduit (de 26px à 22px) pour un rendu plus fin et discret */
+    font-size: 35px !important; 
     font-weight: 800;
     color: #fff !important;
     text-align: center;
@@ -129,16 +140,22 @@ body {
 
 <div style="position: relative; width: 100%; max-width: 1250px; margin: 0 auto;">
 
-    <!-- Les boutons qui flottent par-dessus (en haut droite) -->
+    <!-- Les boutons et le titre qui flottent par-dessus -->
     <div class="ma-banniere-accueil">
-        <button class="folder-btn" onclick="window.location.href='index.html'" style="color: white !important;"><i data-lucide="house"></i> Accueil</button>
-        <button class="folder-btn" onclick="window.location.href='commentaires.html'" style="color: white !important;"><i data-lucide="book-open"></i> Livre d'or</button>
-        <button class="folder-btn" onclick="window.location.href='mailto:pochbe@outlook.fr'" style="color: white !important;"><i data-lucide="mail"></i> Contact</button>
+        <!-- TON TITRE EN LETTRES PNG -->
+        <img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bannie%CC%80re/ban.png" alt="Mon Portfolio" class="mon-titre-png">
+
+        <div class="les-boutons">
+            <button class="folder-btn">Accueil</button>
+            <button class="folder-btn">Livre d'or</button>
+            <button class="folder-btn">Contact</button>
     </div>
+</div>
 
     <!-- Ta grande photo de forêt (qui sert de fond) -->
     <img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bannie%CC%80re/DSC07482.jpeg" style="width: 1250px; height: 350px; object-fit: cover; border-radius: 15px; display: block; box-shadow: 0px 0px 30px 5px rgba(219, 209, 149, 0.5); border: 4px double #7A4801;">
- </div>
+</div>
+
 
 <div class="menu-container">
     <button class="folder-btn" onclick="window.location.href='voyages/index.html'"><i data-lucide="compass"></i> Voyages</button>
