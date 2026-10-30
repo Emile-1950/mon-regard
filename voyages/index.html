@@ -4,20 +4,65 @@
     <meta charset="UTF-8">
     <title>Mes Voyages - Mon Portfolio</title>
     <style>
+        @import url('https://googleapis.com');
 
-        @import url('https://fonts.googleapis.com/css2?family=Montez&display=swap');
-     
-       .montez-regular {
-        font-family: "Montez", cursive;
-        font-weight: 400;
-        font-style: normal; }
+.montez-regular {
+    font-family: "Montez", cursive;
+    font-weight: 400;
+    font-style: normal; }
 
-        body { font-family: "Montez", cursive; background-image: url('https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bannie%CC%80re/Texturelabs_InkPaint_325S.jpg'); text-align: center; padding: 20px 20px; }
-        .menu-voyages { font-family: "Montez", cursive; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin: 40px auto; max-width: 800px; }
-        .btn-destination { font-family: "Montez", cursive; padding: 15px; font-size: 16px; font-weight: bold; color: white; background-color: #1e1e1e; border: 2px solid #b3b286; box-shadow: 0px 0px 20px 2px #FFE9AA; border-radius: 20px; cursor: pointer; transition: 0.3s; text-align: center; }
-        .btn-destination:hover { background-color: #2a2a2a; border-color: #007bff; transform: scale(1.02); }
-        .bouton-accueil { display: inline-block; margin-bottom: 30px; text-decoration: none; color: #aaa; font-size: 16px; }
-        .bouton-accueil:hover { color: #fff; }
+body { 
+    font-family: "Montez", cursive; 
+    background-image: url('https://filedn.eu'); 
+    text-align: center; 
+    padding: 20px 20px; }
+
+/* Grille des destinations */
+.menu-voyages { 
+    font-family: "Montez", cursive; 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+    gap: 15px; 
+    margin: 40px auto; 
+    max-width: 1100px; }
+
+/* Le style de tes superbes boutons de destinations du bas */
+.btn-destination { 
+    font-family: "Montez", cursive; 
+    padding: 12px 20px; 
+    font-size: 24px; /* Augmenté pour que la police cursive soit bien lisible */
+    font-weight: bold; 
+    color: white; 
+    background-color: #111111; 
+    border: 2px solid #7A4801; 
+    box-shadow: 0px 0px 12px 1px #7A4801; 
+    border-radius: 12px; 
+    cursor: pointer; 
+    transition: 0.3s; 
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start; /* Aligne l'icône et le texte proprement à gauche */
+    gap: 10px; }
+
+/* Effet de survol sur les destinations */
+.btn-destination:hover { 
+    background-color: #2a2a2a; 
+    border-color: #007bff; 
+    transform: scale(1.03); }
+
+/* Bouton Retour à l'accueil du haut */
+.bouton-accueil { 
+    display: inline-flex; 
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 30px; 
+    text-decoration: none; 
+    color: #E1C9A8; 
+    font-size: 20px; }
+
+.bouton-accueil:hover { 
+    color: #fff; }
+
     </style>
 </head> 
 
