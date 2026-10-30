@@ -31,25 +31,24 @@ body {
     max-width: 1250px; 
     margin-top: 30px !important; }
 
-/* 1. LA BANNIÈRE DU HAUT (Modifiée pour intégrer ton titre PNG à gauche et tes boutons à droite) */
-/* 1. LA BANNIÈRE DU HAUT (Remise en position normale au-dessus de la photo) */
+/* 1. LA BANNIÈRE DU HAUT */
 .ma-banniere-accueil {
-    position: relative; /* 👈 On quitte le mode "autocollant" pour se remettre au-dessus */
+    position: relative;
     width: 100%;
     max-width: 1250px;
-    margin: 15px auto 10px auto !important; /* Espace équilibré */
+    margin: 5px auto 5px auto !important; /* 👈 Réduit l'espace vide au-dessus et au-dessous */
     display: flex;
-    justify-content: space-between !important; /* Titre à gauche, boutons à droite */
+    justify-content: space-between !important; 
     align-items: center;
     background: none;
     border: none !important;
     box-shadow: none !important;
     height: auto !important;
-    padding: 0px 10px !important; }
+    padding: 0px 60px 0px 10px !important; }
 
-/* Le style pour ton titre en lettres PNG (Agrandi pour être bien visible) */
+/* Le style pour ton titre en lettres PNG */
 .ma-banniere-accueil .mon-titre-png {
-    max-height: 75px; /* 👈 Augmenté de 45px à 75px pour qu'il soit bien grand et lisible */
+    max-height: 120px; /* 👈 Augmenté à 120px pour forcer ton image actuelle à s'afficher beaucoup plus grande ! */
     width: auto;
     object-fit: contain; }
 
