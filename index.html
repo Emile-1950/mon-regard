@@ -35,16 +35,18 @@ body {
 .ma-banniere-accueil {
     position: relative;
     width: 100%;
-    max-width: 1250px; /* 👈 Aligné pile sur la largeur de ta nouvelle photo */
-    margin: 0px 40px 15px 0px !important; 
+    max-width: 1250px;
+    margin: 10px auto 20px auto !important;
     display: flex;
-    justify-content: space-between !important;
-    gap: 12px; /* Un poil moins d'espace entre les boutons */
+    justify-content: space-between !important; /* Garde le titre à gauche et les boutons à droite */
+    align-items: center;
     background: none !important;
     border: none !important;
     box-shadow: none !important;
     height: auto !important;
-    padding: 0 5px !important; }
+    padding: 0 10px !important;
+    padding-right: 60px !important; }
+
 
 .ma-banniere-accueil .folder-btn {
     display: inline-flex;
