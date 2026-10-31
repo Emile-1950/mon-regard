@@ -20,7 +20,7 @@ body {
     display: flex; 
     flex-direction: column; 
     align-items: center;
-    margin-top: 0px !important; }
+    margin-top: 15px !important; }
 
 /* Grille des 12 rubriques */
 .menu-container { 
@@ -31,12 +31,15 @@ body {
     max-width: 1250px; 
     margin-top: 30px !important; }
 
-/* 1. LA BANNIÈRE DU HAUT */
+/* 1. LA BANNIÈRE DU HAUT (Modifiée pour intégrer ton titre PNG à gauche et tes boutons à droite) */
 .ma-banniere-accueil {
-    position: relative;
+    position: absolute; /* 👈 Permet de flotter PAR-DESSUS la photo de forêt */
+    top: 20px; /* 👈 Descend légèrement le titre et les boutons depuis le haut de la photo */
+    left: 0;
+    z-index: 10; /* 👈 Force le bloc à rester au premier plan */
     width: 100%;
     max-width: 1250px;
-    margin: -10px auto 5px auto !important; /* 👈 Un chiffre négatif (-10px) pour aspirer tout le bloc vers le haut et supprimer le vide ! */
+    margin: 0px auto 10px auto !important;
     display: flex;
     justify-content: space-between !important; 
     align-items: center;
@@ -44,11 +47,11 @@ body {
     border: none !important;
     box-shadow: none !important;
     height: auto !important;
-    padding: 0px 110px 0px 10px !important; }
+    padding: 0px 30px !important; }
 
-/* Le style pour ton titre en lettres PNG */
+/* Le style pour ton nouveau titre en lettres PNG transparentes */
 .ma-banniere-accueil .mon-titre-png {
-    max-height: 120px; /* 👈 Augmenté à 160px pour qu'il soit enfin bien grand et majestueux ! */
+    max-height: 45px; /* 👈 Ajuste cette hauteur si tu veux tes lettres plus grandes ou plus petites */
     width: auto;
     object-fit: contain; }
 
@@ -140,7 +143,7 @@ body {
     <!-- Les boutons et le titre qui flottent par-dessus -->
     <div class="ma-banniere-accueil">
         <!-- TON TITRE EN LETTRES PNG -->
-        <img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bannie%CC%80re/ban2.png" alt="Mon Portfolio" class="mon-titre-png">
+        <img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bannie%CC%80re/ban.png" alt="Mon Portfolio" class="mon-titre-png">
 
         <div class="les-boutons">
             <button class="folder-btn">Accueil</button>
