@@ -1,6 +1,6 @@
 @import url('https://googleapis.com');
 
-/* On applique la police uniquement sur les éléments qui auront la classe "police-montez" */
 .police-montez {
-    font-family: 'Montez', cursive !important; }
+    font-family: 'Montez', cursive; }
+
 
