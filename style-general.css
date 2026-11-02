@@ -1,5 +1,5 @@
 @import url('https://googleapis.com');
 
-/* On applique la police à toute la page, aux boutons et aux liens */
-body, button, p, h1, h2, a {
-    font-family: 'Montez', cursive !important; }
+.police-montez {
+    font-family: 'Montez', cursive !important;
+}
