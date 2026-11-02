@@ -9,28 +9,32 @@
 .montez-regular {
     font-family: "Montez", cursive;
     font-weight: 400;
-    font-style: normal; }
+    font-style: normal;
+}
 
 body { 
     font-family: "Montez", cursive; 
     background-image: url('https://filedn.eu'); 
     text-align: center; 
-    padding: 20px 20px; }
+    padding: 20px 20px;
+}
 
-/* Grille des destinations */
+/* Grille des destinations - C'est elle qui force toutes ses cases à avoir la même hauteur ! */
 .menu-voyages { 
     font-family: "Montez", cursive; 
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+    grid-auto-rows: 1fr; /* Placé ici, au bon endroit, ça aligne toutes les hauteurs ! */
     gap: 15px; 
     margin: 40px auto; 
-    max-width: 1100px; }
+    max-width: 1100px;
+}
 
 /* Le style de tes superbes boutons de destinations du bas */
 .btn-destination { 
     font-family: "Montez", cursive; 
     padding: 12px 20px; 
-    font-size: 24px; /* Augmenté pour que la police cursive soit bien lisible */
+    font-size: 24px; 
     font-weight: bold; 
     color: white; 
     background-color: #111111; 
@@ -39,21 +43,20 @@ body {
     border-radius: 12px; 
     cursor: pointer; 
     transition: 0.3s; 
-    display: inline-flex;
+    display: flex; /* Utilisation de flex standard pour les boutons de grille */
     align-items: center;
-    justify-content: flex-start; /* Aligne l'icône et le texte proprement à gauche */
+    justify-content: center; /* Aligne l'icône et le texte bien au centre du bouton */
     gap: 10px; 
-    height: 100%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    grid-auto-rows: 1fr; }
+    height: 100%; /* Dit au bouton de remplir toute la hauteur de sa case */
+    width: 100%;  /* Dit au bouton de remplir toute la largeur de sa case */
+}
 
 /* Effet de survol sur les destinations */
 .btn-destination:hover { 
     background-color: #2a2a2a; 
     border-color: #007bff; 
-    transform: scale(1.03); }
+    transform: scale(1.03);
+}
 
 /* Bouton Retour à l'accueil du haut */
 .bouton-accueil { 
@@ -63,13 +66,13 @@ body {
     margin-bottom: 30px; 
     text-decoration: none; 
     color: #E1C9A8; 
-    font-size: 20px; }
+    font-size: 20px;
+}
 
 .bouton-accueil:hover { 
-    color: #fff; }
-
-    </style>
-</head> 
+    color: #fff;
+}
+ </style>
 
     <div style="text-align: center; margin-bottom: 5px; margin-top: 25px;">
         <a href="../index.html" style="display: inline-flex; align-items: center; gap: 8px; color: #E1C9A8; text-decoration: none; padding: 5px 15px; border: 1px solid #7A4801; border-radius: 20px; background: #111; font-weight: bold; box-shadow: 0px 0px 12px 1px #DFD187; font-size: 20px;"><i data-lucide="arrow-left"></i> 🏠 Retour à l'accueil</a>
