@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <title>Mes Voyages - Mon Portfolio</title>
     <style>
-        
-body { 
+        @import url('https://googleapis.com');
 
+.montez-regular {
+    font-family: "Montez", cursive;
+    font-weight: 400;
+    font-style: normal; }
+
+body { 
+    font-family: "Montez", cursive; 
     background-image: url('https://filedn.eu'); 
     text-align: center; 
     padding: 20px 20px; }
 
 /* Grille des destinations */
 .menu-voyages { 
-    font-family: 'Montez', cursive;
+    font-family: "Montez", cursive; 
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
     gap: 15px; 
@@ -22,7 +28,7 @@ body {
 
 /* Le style de tes superbes boutons de destinations du bas */
 .btn-destination { 
-    font-family: 'Montez', cursive;
+    font-family: "Montez", cursive; 
     padding: 12px 20px; 
     font-size: 24px; /* Augmenté pour que la police cursive soit bien lisible */
     font-weight: bold; 
@@ -58,7 +64,6 @@ body {
     color: #fff; }
 
     </style>
-    <link rel="stylesheet" href="../style-general.css">
 </head> 
 
     <div style="text-align: center; margin-bottom: 5px; margin-top: 25px;">
@@ -82,7 +87,7 @@ body {
         <button class="btn-destination" onclick="window.location.href='piran.html'">🇭🇷 Voyage à Piran</button>
         <button class="btn-destination" onclick="window.location.href='piran.html'">🇭🇷 Voyage à la Ciotat</button>
        <!-- On pourra ajouter Paris, Venise et tes autres voyages juste ici plus tard ! -->
-       </div>
-    </script>
-  </body>
+    </div>
+ </script>
+</body>
 </html>
