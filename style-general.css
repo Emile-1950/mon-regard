@@ -1,2 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montez&display=swap');
-body { font-family: 'Montez', cursive; }
+@import url('https://googleapis.com');
+
+/* On applique la police à toute la page, aux boutons et aux liens */
+body, button, p, h1, h2, a {
+    font-family: 'Montez', cursive !important; }
