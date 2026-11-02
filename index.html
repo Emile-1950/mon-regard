@@ -1,102 +1,175 @@
-INDEX général mon regard (GitHub)
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>📷 Mon Regard Photographique</title>
+    <style>
 
+@import url('https://fonts.googleapis.com/css2?family=Montez&display=swap');
+     
+     .montez-regular {
+  font-family: "Montez", cursive;
+  font-weight: 400;
+  font-style: normal; }
 
-<style>
-     body { font-family: sans-serif; background: #1a1a1a; color: #333; margin-top: 30px; padding: 0px !important; display: flex; flex-direction: column; align-items: center; margin-top: 30px !important; }
-     .menu-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; width: 90%; max-width: 1250px; margin-top: 20px; }
+body { 
+    background: #1a1a1a; 
+    color: #333; 
+    padding: 0px !important; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    margin-top: 5px !important; }
 
-    .ma-banniere-accueil {
+/* Grille des 12 rubriques */
+.menu-container { 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 6px; /* 👈 Espacement légèrement réduit */
+    width: 90%; 
+    max-width: 1250px; 
+    margin-top: 30px !important; }
+
+            .ma-banniere-accueil .mon-titre-png {
+            max-height: 45px; /* 👈 Ajuste cette hauteur si tu veux tes lettres plus grandes ou plus petites */
+            width: auto;
+            object-fit: contain; }
+
+/* 1. LES TROIS BOUTONS DU HAUT ET LE TITRE */
+.ma-banniere-accueil {
+    position: relative;
     width: 100%;
-    max-width: 1100px;
-    height: 120px;
-    margin-top: 60px !important;
-    padding-top: 0; 
-    padding-bottom: 6px;
-    margin-bottom: 30px !important;
-    box-sizing: border-box;
-    background-image: url('https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bannie%CC%80re/kunal-patil-8ZKlgI_G-mw-unsplash.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 15px;
-    box-shadow: 1px 1px 16px #E1C9A8;
-    border: 3px #7A4801 double;
+    max-width: 1250px;
+    margin: 10px auto !important; /* Centre parfaitement le bloc au-dessus de la photo */
     display: flex;
-    justify-content: space-between;
-    align-items: center; 
-    padding-left: 75px;
-    padding-right: 75px; }
+    justify-content: space-between !important; /* 👈 Pousse le titre à gauche et les boutons à droite */
+    align-items: center;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    height: auto !important;
+    padding: 0px 40px 0px 20px !important; /* Crée une petite marge sur les côtés pour ne pas coller aux bords */ }
+
+/* On redonne la couleur d'origine et le relief aux boutons du haut */
+.ma-banniere-accueil .folder-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 16px !important;
+    font-size: 18px !important; 
+    font-family: "Montez", cursive !important; 
+    font-weight: 800 !important;
+    color: white !important;
+    background: #111 !important; /* 👈 Le fond noir profond d'origine */
+    border: 1px solid #7A4801 !important; /* 👈 Ta bordure marron/dorée signature */
+    border-radius: 6px !important;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6) !important; /* L'ombre pour le relief */
+    cursor: pointer;
+    transition: all 0.2s ease; }
+
+.ma-banniere-accueil .folder-btn:hover {
+    background: #222 !important;
+    border-color: #E1C9A8 !important;
+    transform: translateY(-1px); }
 
 
+.ma-banniere-accueil .folder-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 14px !important;
+    font-size: 18px !important; /* 👈 Taille ajustée pour que l'écriture cursive du haut soit lisible */
+    font-family: "Montez", cursive !important; /* 👈 Ta police cursive appliquée ici aussi ! */
+    font-weight: 800 !important;
+    color: white !important;
+    border: 1px solid #7A4801 !important;
+    border-radius: 6px !important;
+    background: url('https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bannie%CC%80re/94013.jpg') !important;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5) !important;
+    cursor: pointer;
+    transition: all 0.2s ease; }
 
+/* 2. LES 12 BOUTONS DE CATÉGORIES (Rétrécis comme demandé) */
+.folder-btn { 
+    background: url('https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bannie%CC%80re/128601.jpg') !important; 
+    border: 1px solid #ccc !important; 
+    padding: 6px 12px !important; /* 👈 Moins de rembourrage pour faire des boutons plus compacts */
+    font-family: "Montez", cursive !important; 
+    font-size: 24px !important; /* 👈 Écriture légèrement descendue (de 24px à 21px) */
+    font-weight: 800 !important; 
+    border-radius: 6px !important; 
+    cursor: pointer; 
+    margin: 4px !important; }
 
-
-        .folder-btn { background: url('https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bannie%CC%80re/94013.jpg'); border: 1px solid #ccc; padding: 15px 25px 15px 25px; font-weight: bold; border-radius: 6px; cursor: pointer; margin-top: 30px; margin: 5px; }
-        .folder-btn:hover, .folder-btn.active { background: #111; color: #fff; }
-        .gallery-view { width: 90%; max-width: 1200px; display: none; flex-direction: column; align-items: center; margin-bottom: 40px; }
-        .gallery-title { font-size: 1.6rem; margin-bottom: 25px; text-transform: capitalize; border-bottom: 2px solid #111; padding-bottom: 5px; }
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; width: 100%; }
-        .photo-item { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.06); cursor: pointer; transition: transform 0.3s ease; }
-        .photo-item:hover { transform: translateY(-4px); }
-        .photo-item img { width: 100%; height: 220px; object-fit: cover; display: block; }
-        .photo-info { padding: Â15px; text-align: center; font-weight: 500; }
-        #welcome-msg { text-align: center; color: #777; font-style: italic; margin: 40px 0; }
-        .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; z-index: 1000; }
-        .lightbox img { max-width: 90%; max-height: 85%; border-radius: 4px; }
-        .scroll-top-btn { position: fixed; bottom: 30px; right: 15px; width: 50px; height: 50px; background: linear-gradient(135deg, #111111, #333333); color: #ffffff; border: 2px solid #ffffff; border-radius: 50%; font-size: 1.5rem; font-weight: bold; cursor: pointer; display: none; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(0,0,0,0.3); transition: all 0.3s; z-index: 2000; }
-        .scroll-top-btn:hover { background: linear-gradient(135deg, #ffffff, #e0e0e0); color: #111111; border-color: #111111; transform: translateY(-5px) scale(1.1); }
-        .comments-section { width: 90%; max-width: 800px; margin: 40px auto 60px auto; padding: 30px; background: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); box-sizing: border-box; }
-        .comments-section h2 { text-align: center; margin-top: 0; margin-bottom: 25px; color: #111; font-size: 1.5rem; }
-        @media (max-width: 768px) { .menu-container { grid-template-columns: repeat(2, 1fr); } }
-
- /* Ligne 30 : Style pour TOUTES les icônes de vos boutons */
+/* Style des petites icônes Lucide en dégradé chaud */
 .folder-btn [data-lucide] {
-  margin-right: 10px;
-  vertical-align: middle;
-  background: linear-gradient(135deg, #ff9f43, #ff5252); /* Votre dégradé chaud */
-  padding: 6px;
-  border-radius: 8px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-  color: white;
-  stroke-width: 2.5;
-  transition: all 0.3s ease;
-  width: 18px;  /* Sécurité pour la taille */
-  height: 18px; /* Sécurité pour la taille */
-}
-/* Ligne 45 : L'effet au survol pour TOUTES les icônes */
+    margin-right: 10px;
+    vertical-align: middle;
+    background: linear-gradient(135deg, #ff9f43, #ff5252) !important;
+    padding: 5px !important; /* 👈 Légèrement réduit pour suivre le bouton */
+    border-radius: 6px !important;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3) !important;
+    color: white !important;
+    stroke-width: 2.5 !important;
+    transition: all 0.3s ease;
+    width: 12px !important; /* 👈 Icône un poil plus petite */
+    height: 12px !important; }
+
 .folder-btn:hover [data-lucide] {
-  transform: translateY(-3px) scale(1.1);
-  box-shadow: 0 6px 12px rgba(255, 159, 67, 0.5);
-}
+    transform: translateY(-2px) scale(1.1);
+    box-shadow: 0 6px 12px rgba(255, 159, 67, 0.5) !important; }
+
+/* 3. LE MESSAGE DE NOTATION TOUT EN BAS (Affiné) */
+.footer-text {
+    font-family: "Montez", cursive !important;
+    font-size: 35px !important; /* 👈 Réduit (de 26px à 22px) pour un rendu plus fin et discret */
+    font-weight: 800;
+    color: #fff !important;
+    text-align: center;
+    margin-top: 20px !important;
+    width: 100%; }
+
+/* Reste de tes styles de page (Galerie, Lightbox, etc.) */
+.gallery-view { width: 90%; max-width: 1200px; display: none; flex-direction: column; align-items: center; margin-bottom: 40px; }
+.gallery-title { font-size: 1.6rem; margin-bottom: 25px; text-transform: capitalize; border-bottom: 2px solid #111; padding-bottom: 5px; }
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; width: 100%; }
+.photo-item { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.06); cursor: pointer; transition: transform 0.3s ease; }
+.photo-item:hover { transform: translateY(-4px); }
+.photo-item img { width: 100%; height: 220px; object-fit: cover; display: block; }
+.photo-info { padding: 15px; text-align: center; font-weight: 500; }
+#welcome-msg { text-align: center; color: #777; font-style: italic; margin: 40px 0; }
+.lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; z-index: 1000; }
+.lightbox img { max-width: 90%; max-height: 85%; border-radius: 4px; }
+.scroll-top-btn { position: fixed; bottom: 30px; right: 15px; width: 50px; height: 50px; background: linear-gradient(135deg, #111111, #333333); color: #ffffff; border: 2px solid #ffffff; border-radius: 50%; font-size: 1.5rem; font-weight: bold; cursor: pointer; display: none; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(0,0,0,0.3); transition: all 0.3s; z-index: 2000; }
+.scroll-top-btn:hover { background: linear-gradient(135deg, #ffffff, #e0e0e0); color: #111111; border-color: #111111; transform: translateY(-5px) scale(1.1); }
+.comments-section { width: 90%; max-width: 800px; margin: 40px auto 60px auto; padding: 30px; background: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); box-sizing: border-box; }
+.comments-section h2 { text-align: center; margin-top: 0; margin-bottom: 25px; color: #111; font-size: 1.5rem; }
+@media (max-width: 768px) { .menu-container { grid-template-columns: repeat(2, 1fr); } }
+/* Décale le groupe de boutons du haut vers la gauche */
+.les-boutons { margin-right: 25px !important; /* 👈 Augmente ce chiffre (30, 35, 40...) pour les faire reculer encore plus vers la gauche */ }
 </style>
 
-  
-    <img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bannie%CC%80re/DSC01670.jpeg" 
-     alt="Bannière mon Portfolio" 
-     style="
-        display: block;
-        max-width: 100%;
-        height: auto;
-        border-radius: 15px; 
-        border: 4px double #d4af37; 
-        box-shadow: 0px 0px 30px 5px rgba(219, 209, 149, 0.5);
-        -webkit-box-shadow: 0px 0px 30px 5px rgba(219, 209, 149, 0.5);
-     " />
+<div style="position: relative; width: 100%; max-width: 1250px; margin: 0 auto;">
 
+ <!-- Les boutons et le titre qui flottent par-dessus -->
     <div class="ma-banniere-accueil">
-        <button class="folder-btn" onclick="window.location.href='index.html'" style="color: white !important;"><i data-lucide="house"></i> Accueil</button>
-        <button class="folder-btn" onclick="window.location.href='commentaires.html'" style="color: white !important;"><i data-lucide="book-open"></i> Livre d'or</button>
-        <button class="folder-btn" onclick="window.location.href='mailto:pochbe@outlook.fr'" style="color: white !important;"><i data-lucide="mail"></i> Contact</button>
-    </div>
+        <!-- TON TITRE EN LETTRES PNG -->
+        <img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bannie%CC%80re/ban2.png" alt="Mon Portfolio" class="mon-titre-png">
 
- <div class="menu-container">
+        <div class="les-boutons">
+            <button class="folder-btn">Accueil</button>
+            <button class="folder-btn">Livre d'or</button>
+            <button class="folder-btn">Contact</button>
+    </div>
+</div>
+
+
+    <!-- Ta grande photo de forêt (qui sert de fond) -->
+    <img src="https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bannie%CC%80re/DSC07482.jpeg" style="width: 1250px; height: 350px; object-fit: cover; border-radius: 15px; display: block; box-shadow: 0px 0px 30px 5px rgba(219, 209, 149, 0.5); border: 4px double #7A4801;">
+ </div>
+
+<div class="menu-container">
     <button class="folder-btn" onclick="window.location.href='voyages/index.html'"><i data-lucide="compass"></i> Voyages</button>
     <button class="folder-btn" onclick="window.location.href='Oiseaux/index.html'" style="color: white !important;"><i data-lucide="feather"></i> Oiseaux</button>
      <button class="folder-btn" onclick="window.location.href='Fleurs/index.html'"><i data-lucide="flower"></i> Fleurs</button>
@@ -111,7 +184,7 @@ INDEX général mon regard (GitHub)
     <button class="folder-btn" onclick="openGallery('renards')"><i data-lucide="eye"></i> Renards</button>
 </div>
 
-    <p class="footer-text">Sélectionnez une catégorie ci-dessus pour découvrir la galerie.</p>
+    <p class="footer-text"> ⬆️ Sélectionnez une catégorie ci-dessus pour découvrir la galerie.</p>
 
         <!-- Le traducteur obligatoire pour allumer tes jolis dessins blancs -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -120,4 +193,3 @@ INDEX général mon regard (GitHub)
     </script>
 </body>
 </html>
-
