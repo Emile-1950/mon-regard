@@ -8,10 +8,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montez&display=swap');
      
-     .montez-regular {
+.montez-regular {
   font-family: "Montez", cursive;
   font-weight: 400;
-  font-style: normal; }
+  font-style: normal; 
+}
 
 body { 
     background: #1a1a1a; 
@@ -20,38 +21,47 @@ body {
     display: flex; 
     flex-direction: column; 
     align-items: center;
-    margin-top: 5px !important; }
+    margin-top: 5px !important; 
+}
 
 /* Grille des 12 rubriques */
 .menu-container { 
     display: grid; 
     grid-template-columns: repeat(4, 1fr); 
-    gap: 6px; /* 👈 Espacement légèrement réduit */
+    gap: 6px; 
     width: 90%; 
     max-width: 1250px; 
-    margin-top: 30px !important; }
+    margin-top: 30px !important; 
+}
 
-            .ma-banniere-accueil .mon-titre-png {
-            max-height: 45px; /* 👈 Ajuste cette hauteur si tu veux tes lettres plus grandes ou plus petites */
-            width: auto;
-            object-fit: contain; }
+.ma-banniere-accueil .mon-titre-png {
+    max-height: 45px; 
+    width: auto;
+    object-fit: contain; 
+}
 
 /* 1. LES TROIS BOUTONS DU HAUT ET LE TITRE */
 .ma-banniere-accueil {
     position: relative;
     width: 100%;
     max-width: 1250px;
-    margin: 10px auto !important; /* Centre parfaitement le bloc au-dessus de la photo */
+    margin: 10px auto !important; 
     display: flex;
-    justify-content: space-between !important; /* 👈 Pousse le titre à gauche et les boutons à droite */
+    justify-content: space-between !important; 
     align-items: center;
     background: none !important;
     border: none !important;
     box-shadow: none !important;
     height: auto !important;
-    padding: 0px 40px 0px 20px !important; /* Crée une petite marge sur les côtés pour ne pas coller aux bords */ }
+    padding: 0px 0px 0px 0px !important; /* 👈 Nettoyé pour aligner parfaitement sur les bords extérieurs */
+}
 
-/* On redonne la couleur d'origine et le relief aux boutons du haut */
+/* Cible le bloc des boutons de droite pour ajuster l'alignement géométrique parfait */
+.mes-boutons-droite {
+    margin-right: 4px; /* 👈 Si ce n'est pas encore assez à gauche, passe à 8px, 12px ou 15px ! */
+}
+
+/* Style de base des boutons du haut */
 .ma-banniere-accueil .folder-btn {
     display: inline-flex;
     align-items: center;
@@ -61,74 +71,63 @@ body {
     font-family: "Montez", cursive !important; 
     font-weight: 800 !important;
     color: white !important;
-    background: #111 !important; /* 👈 Le fond noir profond d'origine */
-    border: 1px solid #7A4801 !important; /* 👈 Ta bordure marron/dorée signature */
-    border-radius: 6px !important;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6) !important; /* L'ombre pour le relief */
-    cursor: pointer;
-    transition: all 0.2s ease; }
-
-.ma-banniere-accueil .folder-btn:hover {
-    background: #222 !important;
-    border-color: #E1C9A8 !important;
-    transform: translateY(-1px); }
-
-
-.ma-banniere-accueil .folder-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 4px 14px !important;
-    font-size: 18px !important; /* 👈 Taille ajustée pour que l'écriture cursive du haut soit lisible */
-    font-family: "Montez", cursive !important; /* 👈 Ta police cursive appliquée ici aussi ! */
-    font-weight: 800 !important;
-    color: white !important;
     border: 1px solid #7A4801 !important;
     border-radius: 6px !important;
     background: url('https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bannie%CC%80re/94013.jpg') !important;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5) !important;
     cursor: pointer;
-    transition: all 0.2s ease; }
+    transition: all 0.2s ease; 
+}
 
-/* 2. LES 12 BOUTONS DE CATÉGORIES (Rétrécis comme demandé) */
+.ma-banniere-accueil .folder-btn:hover {
+    background: #222 !important;
+    border-color: #E1C9A8 !important;
+    transform: translateY(-1px); 
+}
+
+/* 2. LES 12 BOUTONS DE CATÉGORIES DU BAS */
 .folder-btn { 
     background: url('https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bannie%CC%80re/128601.jpg') !important; 
     border: 1px solid #ccc !important; 
-    padding: 6px 12px !important; /* 👈 Moins de rembourrage pour faire des boutons plus compacts */
+    padding: 6px 12px !important; 
     font-family: "Montez", cursive !important; 
-    font-size: 24px !important; /* 👈 Écriture légèrement descendue (de 24px à 21px) */
+    font-size: 24px !important; 
     font-weight: 800 !important; 
     border-radius: 6px !important; 
     cursor: pointer; 
-    margin: 4px !important; }
+    margin: 4px !important; 
+}
 
 /* Style des petites icônes Lucide en dégradé chaud */
 .folder-btn [data-lucide] {
     margin-right: 10px;
     vertical-align: middle;
     background: linear-gradient(135deg, #ff9f43, #ff5252) !important;
-    padding: 5px !important; /* 👈 Légèrement réduit pour suivre le bouton */
+    padding: 5px !important; 
     border-radius: 6px !important;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3) !important;
     color: white !important;
     stroke-width: 2.5 !important;
     transition: all 0.3s ease;
-    width: 12px !important; /* 👈 Icône un poil plus petite */
-    height: 12px !important; }
+    width: 12px !important; 
+    height: 12px !important; 
+}
 
 .folder-btn:hover [data-lucide] {
     transform: translateY(-2px) scale(1.1);
-    box-shadow: 0 6px 12px rgba(255, 159, 67, 0.5) !important; }
+    box-shadow: 0 6px 12px rgba(255, 159, 67, 0.5) !important; 
+}
 
-/* 3. LE MESSAGE DE NOTATION TOUT EN BAS (Affiné) */
+/* 3. LE MESSAGE DE NOTATION TOUT EN BAS */
 .footer-text {
     font-family: "Montez", cursive !important;
-    font-size: 35px !important; /* 👈 Réduit (de 26px à 22px) pour un rendu plus fin et discret */
+    font-size: 35px !important; 
     font-weight: 800;
     color: #fff !important;
     text-align: center;
     margin-top: 20px !important;
-    width: 100%; }
+    width: 100%; 
+}
 
 /* Reste de tes styles de page (Galerie, Lightbox, etc.) */
 .gallery-view { width: 90%; max-width: 1200px; display: none; flex-direction: column; align-items: center; margin-bottom: 40px; }
@@ -146,9 +145,8 @@ body {
 .comments-section { width: 90%; max-width: 800px; margin: 40px auto 60px auto; padding: 30px; background: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); box-sizing: border-box; }
 .comments-section h2 { text-align: center; margin-top: 0; margin-bottom: 25px; color: #111; font-size: 1.5rem; }
 @media (max-width: 768px) { .menu-container { grid-template-columns: repeat(2, 1fr); } }
-/* Décale le groupe de boutons du haut vers la gauche */
-.les-boutons { margin-right: 25px !important; /* 👈 Augmente ce chiffre (30, 35, 40...) pour les faire reculer encore plus vers la gauche */ }
 </style>
+
 
 <div style="position: relative; width: 100%; max-width: 1250px; margin: 0 auto;">
 
