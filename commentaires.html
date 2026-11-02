@@ -62,7 +62,7 @@
             const commentaires = JSON.parse(localStorage.getItem('livreDorEmile')) || [];
             
             if (commentaires.length === 0) {
-                container.innerHTML = '<p style="text-align:center; color:#888; font-style:italic;">Aucun message pour le moment. Soyez le premier !</p>';
+                container.innerHTML = '<p style="text-align:center; color:#888; font-style:italic;"></p>';
                 return;
             }
             
