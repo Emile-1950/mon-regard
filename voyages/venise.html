@@ -5,7 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🎭 Voyages - Venise - Page 1</title>
     <style>
-        body { font-family: sans-serif; background: #1a1a1a; color: white; margin: 0; padding: 20px; margin-top: 20px;}
+
+        @import url('https://fonts.googleapis.com/css2?family=Montez&display=swap');
+
+       .montez-regular {
+       font-family: "Montez", cursive;
+       font-weight: 400;
+       font-style: normal; }
+
+
+        body { font-family: "Montez", cursive; background: #1a1a1a; color: white; margin: 0; padding: 20px; margin-top: 20px;}
         .galerie { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1200px; margin: 40px auto; }
         .photo-item { background: #222; padding: 10px; border-radius: 8px; border: 1px solid #7A4801; box-shadow: 0 4px 6px rgba(0,0,0,0.3); text-align: center; }
         .photo-item img { width: 100%; height: 180px; object-fit: cover; object-position: center; border-radius: 4px; cursor: pointer; }
@@ -115,7 +124,7 @@
                 const p = document.createElement('p');
                 p.textContent = img.getAttribute('alt');
                 p.style.margin = "10px 0 0 0";
-                p.style.fontSize = "14px";
+                p.style.fontSize = "25px";
                 p.style.color = "#E1C9A8";
                 p.style.fontWeight = "bold";
                 item.appendChild(p);
