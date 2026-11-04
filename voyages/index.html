@@ -13,9 +13,32 @@
 
 body { 
     font-family: "Montez", cursive; 
-    background-image: url('https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bannie%CC%80re/pezibear-desert-790640_1920.jpg'); 
+    background-image: url(''); 
     text-align: center; 
     padding: 20px 20px; }
+
+.portfolio-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.portfolio-container::before {
+  content: "";
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  background-image: url('https://filedn.eu/lOR6k51X5UUSXzy7hr2EvS4/Bannie%CC%80re/pezibear-desert-790640_1920.jpg');
+  background-size: cover;
+  background-position: center;
+  /* Ajustez la valeur ci-dessous (0 = invisible, 1 = totalement opaque) */
+  opacity: 0.15; 
+  z-index: -1; /* Place l'image derrière le texte */
+}
+
 
 /* Grille des destinations - C'est elle qui force toutes ses cases à avoir la même hauteur ! */
 .menu-voyages { 
