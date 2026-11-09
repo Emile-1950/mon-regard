@@ -14,7 +14,7 @@
 /* Le bloc body propre avec votre image pCloud atténuée */
 body { 
     font-family: "Montez", cursive; 
-    text-align: center; 
+    text-align: center;
     padding: 20px 20px;
     background-image: 
          linear-gradient(rgba(255, 255, 255, 0.60), rgba(255, 255, 255, 0.60)), 
@@ -23,7 +23,9 @@ body {
     background-position: center;
     background-attachment: fixed; }
 
-/* Grille des destinations */
+.soustitre-voyage {
+    font-size: 24px; font-family: "Montez", cursive; text-align: center; }
+
 .menu-voyages { 
     font-family: "Montez", cursive; 
     display: grid; 
@@ -76,7 +78,8 @@ body {
     </div>
 
     <h1>✈️ Choisissez une destination</h1>  
-    <p>Cliquez sur un voyage pour découvrir mes galeries photos</p>
+
+    <p class="soustitre-voyage">Cliquez sur un voyage pour découvrir mes galeries photos</p>
 
     <div class="menu-voyages">
         <button class="btn-destination" onclick="window.location.href='provence.html'">☀️🌾 Voyage en Provence</button>
