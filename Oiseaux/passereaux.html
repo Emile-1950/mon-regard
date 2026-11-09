@@ -52,10 +52,11 @@
     justify-content: center;
     margin-bottom: 20px; }
 
- .info-clic {
-    font-size: 22px; /* Ajuste cette valeur pour modifier la taille */
-    opacity: 0.8;    /* Optionnel : adoucit légèrement le texte pour le rendre plus discret */
-    margin-left: 10px; /* Aligne proprement l'espace après la fleur de lys */ }
+ /* 1. On donne la grande taille au titre principal */
+h1 { font-size: 42px; /* Ton titre sera bien grand */ }
+
+/* 2. On dit au texte à l'intérieur du span d'être plus petit */
+h1 .info-clic { font-size: 20px !important; /* Le !important force le navigateur à accepter la taille plus petite */ }
 
 </style>
 </head>
@@ -69,8 +70,8 @@
             <!-- Bouton 3 : Retour aux destinations (Voyages) -->
             <a href="../voyages/index.html" class="nav-bouton-rond" title="Retour aux destinations">✈️</a>
         </div>
-        
-    <h1> Galerie des Passereaux <span>⚜️</span> <span class="info-clic">clic pour agrandir</span></h1>
+
+        <h1>Galerie des Passereaux ⚜️ <span class="info-clic">clic pour agrandir</span></h1>
 
     <div class="galerie">
         <!-- Tes deux premières photos magnifiques déjà installées -->
