@@ -2,34 +2,124 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Le Livre d'Or d'Émile</title>
-        <!-- Bouton de retour universel ajouté par Émile -->
-       <div style="text-align: center; margin-bottom: 5px; margin-top: 25px;">
-        <a href="index.html" style="display: inline-flex; align-items: center; gap: 8px; color: #E1C9A8; text-decoration: none; padding: 5px 12px; border: 1px solid #bc7107; border-radius: 25px; background: #112e23; font-weight: bold; box-shadow: 0px 0px 12px 1px #DFD187; font-family: 'Montez', cursive; font-size: 25px;"><i data-lucide="arrow-left"></i>🏡 Retour à l'accueil </a>
-    </div>
+    <title>Le Livre d'Or - Mon Portfolio</title>
+    <!-- Chargement sécurisé de la police Montez -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com" rel="stylesheet">
+    
     <style>
-
-    @import url('https://fonts.googleapis.com/css2?family=Montez&display=swap');
-     
-        .montez-regular {
-        font-family: "Montez", cursive;
-        font-weight: 400;
-        font-style: normal; }
-
-        body { background: #1a1a1a; color: white; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
-        .comment-box { background: rgba(26, 26, 26, 0.9); padding: 30px; border-radius: 15px; width: 100%; max-width: 1000px; box-sizing: border-box; border: 3px #7A4801 double; box-shadow: 1px 1px 10px #E1C9A8; margin-top: 40px; }
-        h2 { color: #E1C9A8; font-family: 'Montez', cursive; text-align: center; margin-top: 0; font-size: 45px; margin-bottom: 20px; }
-        label { display: block; color: #E1C9A8; font-weight: bold; margin-top: 15px; margin-bottom: 5px; font-size: 30px; font-family: 'Montez', cursive;}
-        input[type="text"], textarea { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #7A4801; background-color: #111; color: white; font-size: 30px; box-sizing: border-box; font-family: 'Montez', cursive;  }
-        textarea { resize: vertical; font-family: 'Montez', cursive; }
+        /* TES PROPRES STYLES POUR LES BOUTONS ET L'AFFICHAGE */
         .btn-container { text-align: center; margin-top: 25px; }
-        .submit-btn { color: white; background: linear-gradient(135deg, #a86b18, #613903); border: none; padding: 5px 20px; font-size: 22px; font-weight: bold; border-radius: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.4); cursor: pointer; transition: 0.2s; font-family: 'Montez', cursive; border: 2px dotted #a4b59f;}
-        .submit-btn:hover { transform: scale(1.05); }
-        .messages-display { width: 100%; max-width: 800px; margin-top: 40px; display: flex; flex-direction: column; gap: 20px; }
-        .single-comment { background-color: rgba(35, 35, 35, 0.9); padding: 15px 20px; border-radius: 10px; border-left: 4px solid #7A4801; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-        .back-btn { display: inline-block; margin-top: -30px; color: #E1C9A8; text-decoration: none; font-family: 'Montez', cursive; font-size: 35px; font-weight: bold; }
-    </style>
         
+        .submit-btn { 
+            color: white; 
+            background: linear-gradient(135deg, #a86b18, #613903); 
+            border: none; 
+            padding: 5px 20px; 
+            font-size: 22px; 
+            font-weight: bold; 
+            border-radius: 25px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.4); 
+            cursor: pointer; 
+            transition: 0.2s; 
+            font-family: 'Montez', cursive; 
+            border: 2px dotted #a4b59f; 
+        }
+        
+        .submit-btn:hover { transform: scale(1.05); }
+        
+        .messages-display { 
+            width: 100%; 
+            max-width: 800px; 
+            margin-top: 40px; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 20px; 
+        }
+        
+        .single-comment { 
+            background-color: rgba(35, 35, 35, 0.9); 
+            padding: 15px 20px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3); 
+            border-left: 4px solid #7A4801;
+            text-align: left;
+        }
+        
+        .back-btn { 
+            display: inline-block; 
+            margin-top: 20px; 
+            color: #E1C9A8; 
+            text-decoration: none; 
+            font-family: 'Montez', cursive; 
+            font-size: 30px; 
+            font-weight: bold; 
+        }
+
+        /* AJUSTEMENTS POUR LE FOND BOLLY ET LES ZONES DE TEXTE */
+        body { 
+            font-family: "Montez", cursive; 
+            text-align: center; 
+            padding: 40px 20px;
+            background-image: 
+                linear-gradient(rgba(30, 25, 20, 0.75), rgba(30, 25, 20, 0.75)), 
+                url('https://filedn.eu');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .comment-box {
+            width: 100%;
+            max-width: 800px;
+            background: rgba(17, 17, 17, 0.85);
+            padding: 30px;
+            border-radius: 16px;
+            border: 2px solid #7A4801;
+            box-shadow: 0px 0px 20px 2px rgba(122, 72, 1, 0.4);
+            box-sizing: border-box;
+        }
+
+        .comment-box h2 {
+            font-size: 36px;
+            color: #E1C9A8;
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+
+        form label {
+            display: block;
+            text-align: left;
+            font-size: 22px;
+            color: #E1C9A8;
+            margin: 15px 0 5px 5px;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 12px 15px;
+            font-size: 16px;
+            font-family: sans-serif;
+            background-color: #222;
+            border: 1px solid #7A4801;
+            border-radius: 8px;
+            color: white;
+            box-sizing: border-box;
+            transition: 0.3s;
+        }
+
+        input[type="text"]:focus, textarea:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+        }
+    </style>
 </head>
 <body>
 
@@ -52,24 +142,22 @@
 
     <!-- ZONE 2 : AFFICHAGE AUTOMATIQUE DES MESSAGES -->
     <div class="messages-display">
-        <h3 style="color: #E1C9A8; font-family: 'Montez', cursive; font-size: 30px; border-bottom: 1px solid #7A4801; padding-bottom: 10px; margin: auto; text-align: center;">💬 Les commentaires postés</h3>
-        <div id="commentsContainer"></div>
+        <h3 style="color: #E1C9A8; font-family: 'Montez', cursive; font-size: 30px; border-bottom: 1px solid #7A4801; padding-bottom: 10px; margin: 0 auto; text-align: center; width: 100%;">💬 Les commentaires postés</h3>
+        <div id="commentsContainer" style="width: 100%; display: flex; flex-direction: column; gap: 20px;"></div>
     </div>
 
     <a href="index.html" class="back-btn">⬅️ Retour à l'accueil</a>
 
     <!-- LE SCRIPT SANS SERVEUR D'ÉMILE -->
     <script>
-        // Fonction pour charger et afficher les messages stockés
         function afficherCommentaires() {
             const container = document.getElementById('commentsContainer');
             container.innerHTML = '';
             
-            // On récupère les messages dans la mémoire du navigateur
             const commentaires = JSON.parse(localStorage.getItem('livreDorEmile')) || [];
             
             if (commentaires.length === 0) {
-                container.innerHTML = '<p style="text-align:center; color:#888; font-style:italic;"></p>';
+                container.innerHTML = '<p style="text-align:center; color:#888; font-style:italic;">Aucun commentaire pour le moment.</p>';
                 return;
             }
             
@@ -77,14 +165,13 @@
                 const div = document.createElement('div');
                 div.className = 'single-comment';
                 div.innerHTML = `
-                    <p style="margin: 0 0 8px 0; color: #E1C9A8; font-weight: bold; font-size: 16px;">👤 ${c.nom} <span style="color: #888; font-weight: normal; font-size: 12px; margin-left: 10px;">${c.date}</span></p>
-                    <p style="margin: 0; color: white; font-size: 15px; line-height: 1.4;">"${c.texte}"</p>
+                    <p style="margin: 0 0 8px 0; color: #E1C9A8; font-weight: bold; font-size: 18px; font-family: 'Montez', cursive;">👤 ${c.nom} <span style="color: #888; font-family: sans-serif; font-weight: normal; font-size: 12px; margin-left: 10px;">${c.date}</span></p>
+                    <p style="margin: 0; color: white; font-family: sans-serif; font-size: 15px; line-height: 1.4;">"${c.texte}"</p>
                 `;
                 container.appendChild(div);
             });
         }
 
-        // Fonction pour ajouter un nouveau message
         function ajouterCommentaire(event) {
             event.preventDefault();
             
@@ -100,19 +187,16 @@
             };
             
             const commentaires = JSON.parse(localStorage.getItem('livreDorEmile')) || [];
-            commentaires.unshift(nouveauCommentaire); // Met le dernier message tout en haut
+            commentaires.unshift(nouveauCommentaire);
             
             localStorage.setItem('livreDorEmile', JSON.stringify(commentaires));
             
-            // Nettoyage des cases vides
             nomInput.value = '';
             messageInput.value = '';
             
-            // Rafraîchir l'affichage instantanément
             afficherCommentaires();
         }
 
-        // Lancement automatique au chargement de la page
         document.addEventListener('DOMContentLoaded', afficherCommentaires);
     </script>
 
