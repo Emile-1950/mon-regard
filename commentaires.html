@@ -24,8 +24,7 @@
             cursor: pointer; 
             transition: 0.2s; 
             font-family: 'Montez', cursive; 
-            border: 2px dotted #a4b59f; 
-        }
+            border: 2px dotted #a4b59f; }
         
         .submit-btn:hover { transform: scale(1.05); }
         
@@ -35,8 +34,7 @@
             margin-top: 40px; 
             display: flex; 
             flex-direction: column; 
-            gap: 20px; 
-        }
+            gap: 20px; }
         
         .single-comment { 
             background-color: rgba(35, 35, 35, 0.9); 
@@ -44,18 +42,24 @@
             border-radius: 10px; 
             box-shadow: 0 4px 10px rgba(0,0,0,0.3); 
             border-left: 4px solid #7A4801;
-            text-align: left;
-        }
+            text-align: left; }
         
         .back-btn { 
-            display: inline-block; 
-            margin-top: 20px; 
+            position: absolute; /* Permet de le positionner précisément */
+            top: 20px;          /* Distance par rapport au haut de l'écran */
+            left: 20px;         /* Distance par rapport à la gauche de l'écran */
             color: #E1C9A8; 
             text-decoration: none; 
             font-family: 'Montez', cursive; 
-            font-size: 30px; 
-            font-weight: bold; 
-        }
+            font-size: 26px;    /* Légèrement affiné pour le coin de page */
+            font-weight: bold;
+            transition: 0.3s;
+            z-index: 10;        /* Assure que le bouton reste toujours visible par-dessus le fond */ }
+
+        .back-btn:hover { 
+            color: #fff;
+            transform: scale(1.05); /* Petit effet de survol sympathique */ }
+
 
         /* AJUSTEMENTS POUR LE FOND BOLLY ET LES ZONES DE TEXTE */
         body { 
@@ -72,8 +76,7 @@
             margin: 0;
             display: flex;
             flex-direction: column;
-            align-items: center;
-        }
+            align-items: center; }
 
         .comment-box {
             width: 100%;
@@ -83,23 +86,20 @@
             border-radius: 16px;
             border: 2px solid #7A4801;
             box-shadow: 0px 0px 20px 2px rgba(122, 72, 1, 0.4);
-            box-sizing: border-box;
-        }
+            box-sizing: border-box; }
 
         .comment-box h2 {
             font-size: 36px;
             color: #E1C9A8;
             margin-top: 0;
-            margin-bottom: 25px;
-        }
+            margin-bottom: 25px; }
 
         form label {
             display: block;
             text-align: left;
             font-size: 22px;
             color: #E1C9A8;
-            margin: 15px 0 5px 5px;
-        }
+            margin: 15px 0 5px 5px; }
 
         input[type="text"], textarea {
             width: 100%;
@@ -111,17 +111,17 @@
             border-radius: 8px;
             color: white;
             box-sizing: border-box;
-            transition: 0.3s;
-        }
+            transition: 0.3s; }
 
         input[type="text"]:focus, textarea:focus {
             border-color: #007bff;
             outline: none;
-            box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
-        }
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); }
     </style>
 </head>
 <body>
+
+<a href="index.html" class="back-btn">⬅️ Retour à l'accueil</a>
 
     <!-- ZONE 1 : ÉCRIRE UN COMMENTAIRE -->
     <div class="comment-box">
@@ -145,8 +145,6 @@
         <h3 style="color: #E1C9A8; font-family: 'Montez', cursive; font-size: 30px; border-bottom: 1px solid #7A4801; padding-bottom: 10px; margin: 0 auto; text-align: center; width: 100%;">💬 Les commentaires postés</h3>
         <div id="commentsContainer" style="width: 100%; display: flex; flex-direction: column; gap: 20px;"></div>
     </div>
-
-    <a href="index.html" class="back-btn">⬅️ Retour à l'accueil</a>
 
     <!-- LE SCRIPT SANS SERVEUR D'ÉMILE -->
     <script>
