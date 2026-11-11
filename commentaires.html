@@ -7,7 +7,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montez&display=swap');     
         .montez-regular {
-           font-family: "Montez", cursive;
+           font-family: 'Montez', cursive;
            font-weight: 400;
            font-style: normal; }
 
@@ -65,7 +65,7 @@
 
         /* AJUSTEMENTS POUR LE FOND BOLLY ET LES ZONES DE TEXTE */
         body { 
-            font-family: "Montez", cursive; 
+            font-family: 'Montez', cursive; 
             text-align: center; 
             padding: 40px 20px;
             background-image: 
@@ -95,7 +95,7 @@
             color: #E1C9A8;
             margin-top: 0;
             margin-bottom: 25px;
-            font-family: "Montez", cursive; }
+            font-family: 'Montez', cursive; }
 
         form label {
             display: block;
@@ -108,7 +108,7 @@
             width: 100%;
             padding: 5px 20px;
             font-size: 25px;
-            font-family: "Montez", cursive;
+            font-family: 'Montez', cursive;
             background-color: #222;
             border: 1px solid #7A4801;
             border-radius: 8px;
@@ -166,7 +166,7 @@
                 const div = document.createElement('div');
                 div.className = 'single-comment';
                 div.innerHTML = `
-                    <p style="margin: 0 0 8px 0; color: #E1C9A8; font-weight: bold; font-size: 18px; font-family: 'Montez', cursive;">👤 ${c.nom} <span style="color: #888; font-family: "Montez", cursive; font-weight: normal; font-size: 12px; margin-left: 10px;">${c.date}</span></p>
+                    <p style="margin: 0 0 8px 0; color: #E1C9A8; font-weight: bold; font-size: 18px; font-family: 'Montez', cursive;">👤 ${c.nom} <span style="color: #888; font-family: 'Montez', cursive; font-weight: normal; font-size: 12px; margin-left: 10px;">${c.date}</span></p>
                     <p style="margin: 0; color: white; font-family: 'Montez', cursive; font-size: 30px; line-height: 1.4;">"${c.texte}"</p>
                 `;
                 container.appendChild(div);
