@@ -183,68 +183,75 @@
         <div id="commentsContainer" style="width: 100%; display: flex; flex-direction: column; gap: 20px;"></div>
     </div>
 
-    <!-- LE SCRIPT SANS SERVEUR D'ÉMILE -->
+         <!-- LE SCRIPT CONNECTÉ À GOOGLE SHEETS -->
     <script>
+        const GOOGLE_SCRIPT_URL = "https://google.com";
+
         function afficherCommentaires() {
-    const container = document.getElementById('commentsContainer');
-    container.innerHTML = '';
-    
-    const commentaires = JSON.parse(localStorage.getItem('livreDorEmile')) || [];
-    
-    if (commentaires.length === 0) {
-        container.innerHTML = '<p style="text-align:center; color:#888; font-style:italic;">Aucun commentaire pour le moment.</p>';
-        return;
-    }
-    
-    commentaires.forEach((c, index) => {
-        const div = document.createElement('div');
-        div.className = 'single-comment';
-        div.innerHTML = `
-            <button class="btn-supprimer" onclick="supprimerCommentaire(${index})" title="Supprimer ce message">✖</button>
-            <p style="margin: 0 0 8px 0; color: #E1C9A8; font-weight: bold; font-size: 18px; font-family: 'Montez', cursive;">👤 ${c.nom} <span style="color: #888; font-family: sans-serif; font-weight: normal; font-size: 12px; margin-left: 10px;">${c.date}</span></p>
-            <p style="margin: 0; color: white; font-family: sans-serif; font-size: 15px; line-height: 1.4;">"${c.texte}"</p>
-        `;
-        container.appendChild(div);
-    });
-}
-
-function supprimerCommentaire(index) {
-    const motDePasse = prompt("Entrez votre mot de passe administrateur pour supprimer ce message :");
-    
-    if (motDePasse === "emile") {
-        const commentaires = JSON.parse(localStorage.getItem('livreDorEmile')) || [];
-        commentaires.splice(index, 1);
-        localStorage.setItem('livreDorEmile', JSON.stringify(commentaires));
-        afficherCommentaires();
-    } else if (motDePasse !== null) {
-        alert("Mot de passe incorrect !");
-    }
-}
-
+            const container = document.getElementById('commentsContainer');
+            container.innerHTML = '<p style="text-align:center; color:#E1C9A8; font-style:italic;">Chargement des messages...</p>';
+            
+            fetch(GOOGLE_SCRIPT_URL)
+                .then(response => response.json())
+                .then(commentaires => {
+                    container.innerHTML = '';
+                    
+                    if (commentaires.length === 0) {
+                        container.innerHTML = '<p style="text-align:center; color:#888; font-style:italic;">Aucun message pour le moment. Soyez le premier !</p>';
+                        return;
+                    }
+                    
+                    commentaires.forEach(c => {
+                        const div = document.createElement('div');
+                        div.className = 'single-comment';
+                        div.innerHTML = `
+                            <p style="margin: 0 0 8px 0; color: #E1C9A8; font-weight: bold; font-size: 18px; font-family: 'Montez', cursive;">👤 ${c.nom} <span style="color: #888; font-family: sans-serif; font-weight: normal; font-size: 12px; margin-left: 10px;">${c.date}</span></p>
+                            <p style="margin: 0; color: white; font-family: sans-serif; font-size: 15px; line-height: 1.4;">"${c.texte}"</p>
+                        `;
+                        container.appendChild(div);
+                    });
+                })
+                .catch(error => {
+                    console.error('Erreur:', error);
+                    container.innerHTML = '<p style="text-align:center; color:#ff4d4d;">Impossible de charger les commentaires.</p>';
+                });
+        }
 
         function ajouterCommentaire(event) {
             event.preventDefault();
             
             const nomInput = document.getElementById('visitorName');
             const messageInput = document.getElementById('visitorMessage');
+            const btnSubmit = document.querySelector('.submit-btn');
             
-            const dateActuelle = new Date().toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
-            
-            const nouveauCommentaire = {
+            const texteOriginal = btnSubmit.innerHTML;
+            btnSubmit.innerHTML = "⏳ Envoi en cours...";
+            btnSubmit.disabled = true;
+
+            const donnees = {
                 nom: nomInput.value,
-                texte: messageInput.value,
-                date: dateActuelle
+                texte: messageInput.value
             };
             
-            const commentaires = JSON.parse(localStorage.getItem('livreDorEmile')) || [];
-            commentaires.unshift(nouveauCommentaire);
-            
-            localStorage.setItem('livreDorEmile', JSON.stringify(commentaires));
-            
-            nomInput.value = '';
-            messageInput.value = '';
-            
-            afficherCommentaires();
+            fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                body: JSON.stringify(donnees)
+            })
+            .then(response => response.json())
+            .then(data => {
+                nomInput.value = '';
+                messageInput.value = '';
+                btnSubmit.innerHTML = texteOriginal;
+                btnSubmit.disabled = false;
+                
+                afficherCommentaires();
+            })
+            .catch(error => {
+                console.error('Erreur:', error);
+                alert("Une erreur s'est produite lors de l'envoi.");
+                btnSubmit.innerHTML = texteOriginal;
+                btnSubmit.disabled = false;
+            });
         }
 
         document.addEventListener('DOMContentLoaded', afficherCommentaires);
