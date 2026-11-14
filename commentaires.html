@@ -205,9 +205,9 @@
                         const div = document.createElement('div');
                         div.className = 'single-comment';
                         div.innerHTML = `
-                            <p style="margin: 0 0 8px 0; color: #E1C9A8; font-weight: bold; font-size: 18px; font-family: 'Montez', cursive;">👤 ${c.nom} <span style="color: #888; font-family: 'Montez', cursive; font-weight: normal; font-size: 12px; margin-left: 10px;">${new Date(c.date).toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}
+                            <p style="margin: 0 0 8px 0; color: #E1C9A8; font-weight: bold; font-size: 22px; font-family: 'Montez', cursive;">👤 ${c.nom} <span style="color: #888; font-family: 'Montez', cursive; font-weight: normal; font-size: 18px; margin-left: 10px;">${new Date(c.date).toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}
 </span></p>
-                            <p style="margin: 0; color: white; font-family: 'Montez', cursive; font-size: 30px; line-height: 1.4;">"${c.texte}"</p>
+                            <p style="margin: 0; color: white; font-family: 'Montez', cursive; font-size: 35px; line-height: 1.4;">"${c.texte}"</p>
                         `;
                         container.appendChild(div);
                     });
