@@ -61,7 +61,14 @@
     gap: 40px;
     justify-content: center;
     margin-bottom: 20px; }
-    </style>
+
+     /* 1. On donne la grande taille au titre principal */
+h1 { font-size: 42px; text-align: center;/* Ton titre sera bien grand */ }
+
+/* 2. On dit au texte à l'intérieur du span d'être plus petit */
+h1 .info-clic { font-size: 20px !important; /* Le !important force le navigateur à accepter la taille plus petite */ }
+
+ </style>
 </head>
 <body>
 
@@ -76,7 +83,7 @@
         <a href="../voyages/index.html" class="nav-bouton-rond" title="Retour aux destinations">✈️</a>
     </div>
 
-        <h1 style="text-align: center; margin-top: 25px;">🐦 Galerie des martins-pecheur ⚜️ clic pour agrandir</h1> 
+    <h1>Galerie des Passereaux ⚜️ <span class="info-clic">clic pour agrandir</span></h1>
 
     <div class="galerie">
         
